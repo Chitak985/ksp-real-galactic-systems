@@ -1,0 +1,37 @@
+
+@Kopernicus:FOR[RealGalacticSystems]
+{
+  Body
+  {
+    name = alphaCentauriB
+    cacheFile = RealGalacticSystems/Cache/alphaCentauriB.bin
+     
+    Template
+    {
+      name = Sun
+    }
+    Properties
+    {
+      displayName = Alpha Centauri B
+      description = Maybe a PROXIMA REFERENCE DETECTED?
+      radius = 6.01E8
+      mass = 1.804E30
+      geeASL = 1.6
+      rotates = true
+      rotationPeriod = 3.17E6
+      tidallyLocked = false
+      sphereOfInfluence = 1.6E12
+    }
+    Orbit
+    {
+      referenceBody = AlphaCentauriABBarycenter
+      semiMajorAxis = 1.44E12
+      eccentricity = 0.52
+      inclination = 79.2
+      period = 2.52E9
+      longitudeOfAscendingNode = 204.9
+      argumentOfPeriapsis = 231.65
+      meanAnomalyAtEpoch = 5.51
+    }
+  }
+}
