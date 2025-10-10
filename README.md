@@ -5,6 +5,7 @@ This is a KSP planet pack that adds systems found in the Milky Way galaxy and ev
 **Required mods:** <br>
 Kopernicus Expansion Continued-er <br>
 ModuleManager <br>
+Singularity <br>
 
 **Compatible mods:** <br>
 Chitak's Weird Planet Pack <br>
@@ -14,4 +15,4 @@ Outer Planets <br>
 Outer Planets Expansion <br>
 True Outer Planets <br>
 Sol <br>
-RealSolarSystem
+Real Solar System
