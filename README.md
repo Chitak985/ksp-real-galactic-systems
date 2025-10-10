@@ -8,6 +8,7 @@ WARNING! The accretion disk for Sagittarius A* is currently taken from Kcalbeloh
 Kopernicus Expansion Continued-er <br>
 ModuleManager <br>
 Singularity <br>
+Sigma Loading Screens <br>
 
 **Supported mods:** <br>
 Extraplantary Launchpads <br>
