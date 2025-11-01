@@ -1,24 +1,20 @@
 # Real Galacitc Systems
 
-This is a KSP planet pack that adds systems found in the Milky Way galaxy and even adds other galaxies too! It functions using Kopernicus. Currently the mod adds the JADES-GS-Z14-0 galaxy as a simple barycenter and adds Sagittarius A*, the Alpha Centauri star system, and the Chara, SPECULOOS-3, and the SWEEPS-11 stars from the Milky Way galaxy. This mod does not modify the stock system, instead replacing the real-life Sol system, so feel free to add Kerbol system-modifying mods or use homeswitches from other mods! <br>
+This is a KSP planet pack that adds systems found in the Milky Way galaxy and even adds other galaxies too! It functions using Kopernicus. This mod does not modify the stock system, instead replacing the real-life Sol system, so feel free to add Kerbol system-modifying mods or use homeswitches from other mods! <br>
 
-WARNING! The accretion disk for Sagittarius A* is currently taken from KcalbelohTextures! It will be changed as soon as possible.
-
-**Required mods:** <br>
+<h2>Required mods:</h2>
 Kopernicus Expansion Continued-er <br>
 ModuleManager <br>
 Singularity <br>
 Sigma Loading Screens <br>
 
-**Supported mods:** <br>
+<h2>Supported mods:</h2>
 Extraplantary Launchpads <br>
 
-**Compatible mods:** <br>
+<h2>Compatible mods:</h2>
+All Almajara Packs as of 11/01/2025
 Chitak's Weird Planet Pack <br>
-Promised Worlds Debdeb <br>
-Kcalbeloh <br>
 Outer Planets <br>
 Outer Planets Expansion <br>
 True Outer Planets <br>
 Sol <br>
-Real Solar System
