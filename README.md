@@ -13,7 +13,7 @@ Scaled Decorator <br>
 Extraplantary Launchpads <br>
 
 <h2>Compatible mods:</h2>
-All Almajara Packs as of 11/01/2025
+All Almajara Packs as of 11/01/2025 <br>
 Chitak's Weird Planet Pack <br>
 Outer Planets <br>
 Outer Planets Expansion <br>
@@ -33,7 +33,7 @@ ________Moon <br>
 
 <h4>Tree:</h4>
 Milky Way <br>
-__Kerbol (not created) <br>
+__Home System (stock but modified by other mods) <br>
 __<strong>Galactic Center</strong> (Sagittarius A*) <br>
 __Alpha Centauri <br>
 ____Tolliman <br>
@@ -46,7 +46,8 @@ __HD 127334 <br>
 __S 55 <br>
 __SPECULOOS-3 <br>
 __SWEEPS-11 <br>
-__TOI 2141 <br>
+__TOI-2141 <br>
+____TOI-2141 b <br>
 __Tau Ceti <br>
 JADES-GS-Z14-0 <br>
 Crab Nebula <br>
