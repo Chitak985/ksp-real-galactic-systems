@@ -26,6 +26,9 @@ Galaxy <br>
 __Star <br>
 ____Planet <br>
 ______Moon <br>
+__BinaryStar1 and BinaryStar2 <br>
+____Planet <br>
+______Moon <br>
 __Star System <br>
 ____Star <br>
 ______Planet <br>
@@ -33,8 +36,9 @@ ________Moon <br>
 
 <h4>Tree:</h4>
 Milky Way <br>
-__Home System (stock but modified by other mods) <br>
+__<strong>Home System</strong> (stock but modified by other mods) <br>
 __<strong>Galactic Center</strong> (Sagittarius A*) <br>
+__2S1553-542 and VVVJ15574828-5424535
 __Alpha Centauri <br>
 ____Tolliman <br>
 ____Rigil Kentaurus <br>
@@ -43,12 +47,15 @@ ______Proxima Centauri D <br>
 __Chara <br>
 __HD 10180 <br>
 __HD 127334 <br>
+__HD 207129 <br>
 __S 55 <br>
 __SPECULOOS-3 <br>
 __SWEEPS-11 <br>
+__Tau Ceti <br>
 __TOI-2141 <br>
 ____TOI-2141 b <br>
-__Tau Ceti <br>
 JADES-GS-Z14-0 <br>
 Crab Nebula <br>
 __<strong>Galactic Center</strong> (Crab Pulsar) <br>
+GN-Z11 <br>
+__<strong>Galactic Center</strong> (GN-z11 Blackhole)
