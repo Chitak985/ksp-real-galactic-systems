@@ -49,7 +49,7 @@ for i in stars:
 			icon = ALL
 			cameraSmaRatioBounds = 0.03 25
 	    	referenceBody = unknown
-		    semiMajorAxis = 10000
+		    semiMajorAxis = 10000000000000000
 	    }}
 		ScaledVersion
 		{{
