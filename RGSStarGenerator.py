@@ -23,16 +23,22 @@ class Star:
   def __init__(self, name, logGSurfaceGravity, luminositySun, tempK, massSuns, radiusSuns, rotationDays):
     self.name = name
     self.name2 = name.replace(" ","_")  # KSP-friendly name
-    self.gravity = (10**logGSurfaceGravity)/100  # gravity in G
+    if(logGSurfaceGravity is None):
+      self.gravity = None
+    else:
+      self.gravity = (10**logGSurfaceGravity)/100  # gravity in G
     self.luminosity = luminositySun*1360  # Using Kerbol luminosity as base
     self.ambientTemp = tempK  # HazardousBody ambientTemp value
     self.mass = massSuns*2e30
     self.radius = radiusSuns*6.957e8
-    self.rotationPeriod = rotationDays*3600
+    if(type(rotationDays) is type([])):
+      self.rotationPeriod = 25.4 * ((rotationDays[0] / 1e9) / 4.603) ** 0.5 * 86400
+    else:
+      self.rotationPeriod = rotationDays*86400
 
 stars = []
 
-print('Enter data for stars below. Type "stop" when prompted for star name to stop adding stars.')
+print('Enter data for stars below. Type "stop" when prompted for star name to stop adding stars. Gravity is optional, use "na" when unknown. Type "age" for rotation period if it is unknown to calculate it from age instead.')
 
 counter = 0
 while True:
@@ -40,17 +46,26 @@ while True:
   q1 = input("[STAR "+str(counter)+"] Enter star name: ")
   if(q1 == "stop"):
     break
-  q2 = float(input("[STAR "+str(counter)+"] Enter gravity in log g: "))
   q3 = float(input("[STAR "+str(counter)+"] Enter luminosity in Lsun: "))
   q4 = float(input("[STAR "+str(counter)+"] Enter temperature in K: "))
   q5 = float(input("[STAR "+str(counter)+"] Enter mass in Msun: "))
   q6 = float(input("[STAR "+str(counter)+"] Enter radius in Rsun: "))
-  q7 = float(input("[STAR "+str(counter)+"] Enter rotation period in days: "))
+  q7 = input("[STAR "+str(counter)+"] Enter rotation period in days: ")
+  if(q7 == "age"):
+    q7 = float(input("[STAR "+str(counter)+"] Enter age in years: "))
+    q7 = [q7]
+  q2 = input("[STAR "+str(counter)+"] Enter gravity in log g: ")
+  if(q2 == "na"):
+    q2 = None
   stars.append(Star(q1,q2,q3,q4,q5,q6,q7))
 
 for i in stars:
   orbit = AstroToKSP.makeKoprnicusOrbit(AstroToKSP.skycoord_to_ksp_orbit(AstroToKSP.getSimbadStar(i.name)))
   os.makedirs("RealGalacticSystems/Systems/MilkyWay/Systems/"+i.name2+"/Configs", exist_ok=True)
+  if(i.gravity is None):
+    gravityThing = ""
+  else:
+    gravityThing = "\n      geeASL = "+str(i.gravity)
   with open("RealGalacticSystems/Systems/MilkyWay/Systems/"+i.name2+"/Configs/"+i.name2+".cfg", "w") as f:
     f.write(f'''@Kopernicus:FOR[RealGalacticSystems]
 {{
@@ -74,8 +89,7 @@ for i in stars:
       radius = {i.radius}
       mass = {i.mass}
       rotates = true
-      rotationPeriod = {i.rotationPeriod}
-      geeASL = {i.gravity}
+      rotationPeriod = {i.rotationPeriod}{gravityThing}
       tidallyLocked = False
       useTheInName = False
       selectable = True
