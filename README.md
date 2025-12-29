@@ -1,6 +1,6 @@
 # Real Galacitc Systems
 
-This is a KSP planet pack that adds systems found in the Milky Way galaxy and even adds other galaxies too! It functions using Kopernicus. This mod does not modify the stock system, instead replacing the real-life Sol system, so feel free to add Kerbol system-modifying mods or use homeswitches from other mods! <br>
+This is a KSP planet pack that adds systems found in the Milky Way galaxy and many other galaxies too! It functions using Kopernicus. Join my modding server for updates about this and my other mods: [https://discord.gg/qgdEU2X6Xj](https://discord.gg/qgdEU2X6Xj)
 
 <h2>Dependencies:</h2>
 Kopernicus Expansion Continued-er <br>
@@ -10,52 +10,18 @@ Sigma Loading Screens <br>
 Scaled Decorator <br>
 
 <h2>Supported mods:</h2>
-Extraplantary Launchpads <br>
+None for now <br>
 
 <h2>Compatible mods:</h2>
-All Almajara Packs as of 11/01/2025 <br>
 Chitak's Weird Planet Pack <br>
-Outer Planets <br>
-Outer Planets Expansion <br>
-True Outer Planets <br>
-Sol <br>
 
-<h2>Current Universe Tree:</h2>
-<h4>Format:</h4>
-Galaxy <br>
-__Star <br>
-____Planet <br>
-______Moon <br>
-__BinaryStar1 and BinaryStar2 <br>
-____Planet <br>
-______Moon <br>
-__Star System <br>
-____Star <br>
-______Planet <br>
-________Moon <br>
+<h2>Incompatible mods:</h2>
+All interstellar mods. <br>
+All system modifiers/replacers.
 
-<h4>Tree:</h4>
-Milky Way <br>
-__<strong>Home System</strong> (stock but modified by other mods) <br>
-__<strong>Galactic Center</strong> (Sagittarius A*) <br>
-__2S1553-542 and VVVJ15574828-5424535
-__Alpha Centauri <br>
-____Tolliman <br>
-____Rigil Kentaurus <br>
-____Proxima Centauri <br>
-______Proxima Centauri D <br>
-__Chara <br>
-__HD 10180 <br>
-__HD 127334 <br>
-__HD 207129 <br>
-__S 55 <br>
-__SPECULOOS-3 <br>
-__SWEEPS-11 <br>
-__Tau Ceti <br>
-__TOI-2141 <br>
-____TOI-2141 b <br>
-JADES-GS-Z14-0 <br>
-Crab Nebula <br>
-__<strong>Galactic Center</strong> (Crab Pulsar) <br>
-GN-Z11 <br>
-__<strong>Galactic Center</strong> (GN-z11 Blackhole)
+<h2>Important info:</h2>
+All celestial objects are snakecase lowercase internally, for example 82_g_eridani, however this does not apply to galactic centers and galaxies. <br>
+RSS support will be added soon.<br>
+The Sun, the game's internal center, is replaced with the universe center, and the Kerbol system is moved to Sol in the Milky Way galaxy, which is why real-scale Sol will work the best with this mod.<br>
+Interstellar mods are not working right now because they position the star around the universe center. Same goes for system replacers and modifiers, such as KSS2 and RSS.<br>
+Some mods **do** work correctly, however they need to be tested first. Please open an issue or tell me in my modding server if you find a mod that is compatible or incompatible. (link above)
