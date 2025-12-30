@@ -20,7 +20,7 @@ from astropy.constants import G, M_sun
 from astropy.coordinates import Galactocentric, SkyCoord
 from astroquery.simbad import Simbad
 
-def getSimbadStar(object):
+def getSimbadStar(objectName):
     custom_simbad = Simbad()
 
     custom_simbad.add_votable_fields(
@@ -29,17 +29,17 @@ def getSimbadStar(object):
         'pmra',
         'pmdec',
         'plx',
-        'rv_value'
+        'radvel'
     )
     
-    result = custom_simbad.query_object("Tau Ceti")
+    result = custom_simbad.query_object(objectName)
     
-    ra = float(result['RA_d'][0])
-    dec = float(result['DEC_d'][0])
-    pmra = float(result['PMRA'][0])
-    pmdec = float(result['PMDEC'][0])
-    distance = 1000.0 / float(result['PLX_VALUE'][0])
-    rv = float(result['RV_VALUE'][0])
+    ra = float(result['ra'][0])
+    dec = float(result['dec'][0])
+    pmra = float(result['pmra'][0])
+    pmdec = float(result['pmdec'][0])
+    distance = 1000.0 / float(result['plx_value'][0])
+    rv = float(result['rvz_radvel'][0])
     
     return SkyCoord(
         ra=ra * u.deg,
@@ -56,7 +56,7 @@ M_ENC = 1.1e11 * M_sun  # enclosed galactic mass
 MU = (G * M_ENC).to(u.m**3 / u.s**2).value
 
 # ---- MAIN FUNCTION ----
-def skycoord_to_ksp_orbit(sc: object):
+def skycoord_to_ksp_orbit(sc):
     # Convert to Galactocentric frame
     gal = sc.transform_to(Galactocentric())
 
