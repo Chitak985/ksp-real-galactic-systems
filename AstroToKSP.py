@@ -31,7 +31,7 @@ def getSimbadStar(objectName):
         'plx',
         'radvel'
     )
-    
+
     result = custom_simbad.query_object(objectName)
     
     ra = float(result['ra'][0])
