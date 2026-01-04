@@ -20,7 +20,7 @@ from astropy.constants import G, M_sun
 from astropy.coordinates import Galactocentric, SkyCoord
 from astroquery.simbad import Simbad
 
-def getSimbadStar(objectName):
+def getSimbadStar(objectName,starName):
     custom_simbad = Simbad()
 
     custom_simbad.add_votable_fields(
@@ -32,7 +32,15 @@ def getSimbadStar(objectName):
         'radvel'
     )
 
-    result = custom_simbad.query_object(objectName)
+    while True:
+        try:
+            result = custom_simbad.query_object(objectName)
+            result['ra'][0]
+        except IndexError:
+            print("Unable to fetch SIMBAD data for "+str(objectName)+", star "+starName+"!")
+            objectName = input("Please enter a different identifier to use for fetching data: ")
+        else:
+            break
     
     ra = float(result['ra'][0])
     dec = float(result['dec'][0])
