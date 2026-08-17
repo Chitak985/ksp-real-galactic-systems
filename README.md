@@ -11,6 +11,7 @@ Singularity (Black hole rendering)<br>
 Sigma Loading Screens (Awesome loading screens)<br>
 Scaled Decorator (Pulsar jets)<br>
 GalacticDisk (Disks around galaxies and a few other things) <br>
+Scatterer (Sunflares and reduced brightness in intergalactic space) <br>
 
 <h2>Supported mods:</h2>
 None for now <br>
