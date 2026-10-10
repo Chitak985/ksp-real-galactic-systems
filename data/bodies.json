@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "templates": {
+    "sun_like": "templates/sun_like_star.cfg.template"
+  },
+  "settings": {
+    "epoch_seconds": 0,
+    "frozen_period_seconds": 3e+300,
+    "sun_luminosity": 1360
+  },
+  "bodies": [
+    {
+      "id": "tau_ceti",
+      "name": "Tau Ceti",
+      "galaxy": "MilkyWay",
+      "template": "sun_like",
+      "system_type": "single",
+      "description": "Tau Ceti is a nearby G8V star, 11.91 light-years from Sol.",
+      "radius_m": 551690100.0,
+      "mass_kg": 1.3720443e+30,
+      "temperature_k": 5320,
+      "luminosity_solar": 0.45,
+      "rotation_period_days": 46,
+      "main_color": [
+        1,
+        0.976999998,
+        0.896000028,
+        1
+      ],
+      "position": {
+        "frame": "ICRS",
+        "epoch": "J2000",
+        "ra_deg": 26.017013071634167,
+        "dec_deg": -15.93747989102139,
+        "distance_pc": 3.652171562950472
+      },
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2307.10394v1",
+          "reference": "Korolik et al. (2023), AJ 166, 123, Tables 3 and 4",
+          "fields": [
+            "radius_m",
+            "mass_kg",
+            "temperature_k",
+            "luminosity_solar",
+            "rotation_period_days"
+          ],
+          "reported_values": {
+            "radius_solar": 0.793,
+            "mass_solar": 0.69,
+            "temperature_k": 5320,
+            "luminosity_solar": 0.45,
+            "rotation_period_days": 46
+          },
+          "uncertainties": {
+            "radius_solar": 0.004,
+            "mass_solar": 0.09,
+            "temperature_k": 40,
+            "luminosity_solar": 0.02,
+            "rotation_period_days": 4
+          },
+          "conversion_constants": {
+            "solar_radius_m": 695700000,
+            "solar_mass_kg": 1.98847e+30
+          }
+        },
+        {
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=tau+Cet",
+          "reference": "SIMBAD ICRS J2000 coordinates; Gaia EDR3 parallax (2020yCat.1350....0G)",
+          "fields": [
+            "position",
+            "description"
+          ],
+          "parallax_mas": 273.8097,
+          "parallax_error_mas": 0.1701,
+          "distance_method": "1000 / parallax_mas, appropriate here for a nearby high signal-to-noise parallax"
+        },
+        {
+          "reference": "User-provided Sun-like template",
+          "fields": [
+            "main_color"
+          ],
+          "note": "Author-chosen rendering color, not an independently measured stellar RGB value."
+        }
+      ]
+    }
+  ]
+}
