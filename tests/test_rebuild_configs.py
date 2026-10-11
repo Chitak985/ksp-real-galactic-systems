@@ -17,6 +17,9 @@ class RebuildTests(unittest.TestCase):
         self.addCleanup(self.temporary.cleanup)
         self.root = Path(self.temporary.name)
         self.catalog = generator.load_catalog(ROOT / "data/bodies.json")
+        # Keep the compiler's small editable fixture independent of catalog growth.
+        self.catalog["bodies"] = [body for body in self.catalog["bodies"]
+                                  if body["id"] == "tau_ceti"]
         for relative in self.catalog["templates"].values():
             target = self.root / relative
             target.parent.mkdir(parents=True, exist_ok=True)
@@ -168,6 +171,94 @@ class RebuildTests(unittest.TestCase):
             path.write_text(text)
             with self.assertRaises(generator.CatalogError):
                 generator.load_catalog(path)
+
+
+class SavedCatalogTests(unittest.TestCase):
+    def setUp(self):
+        self.catalog = generator.load_catalog(ROOT / "data/bodies.json")
+
+    def test_catalog_has_complete_provenance_and_distance_order(self):
+        bodies = self.catalog["bodies"]
+        original = {"tau_ceti", "82_g_eridani", "beta_canum_venaticorum", "61_virginis",
+                    "beta_comae_berenices", "kappa1_ceti", "61_ursae_majoris",
+                    "iota_persei", "lambda_serpentis", "lambda_aurigae"}
+        self.assertLessEqual(original, {body["id"] for body in bodies})
+        self.assertEqual(bodies[0]["id"], "tau_ceti")
+        distances = [body["position"]["distance_pc"] for body in bodies]
+        self.assertEqual(distances, sorted(distances))
+        required = {"radius_m", "mass_kg", "temperature_k", "luminosity_solar",
+                    "rotation_period_days", "position", "main_color"}
+        for body in bodies:
+            with self.subTest(body=body["id"]):
+                self.assertEqual(body["system_type"], "single")
+                self.assertEqual(body["galaxy"], "MilkyWay")
+                covered = {field for source in body["sources"] for field in source["fields"]}
+                self.assertLessEqual(required, covered)
+                for field in required - {"position", "main_color"}:
+                    self.assertTrue(math.isfinite(body[field]) and body[field] > 0)
+                if body["id"] != "tau_ceti":
+                    self.assertIn(body["rotation_period_kind"],
+                                  {"observed_modulation", "activity_calibration"})
+                    source = next(source for source in body["sources"]
+                                  if "rotation_period_days" in source["fields"])
+                    self.assertTrue(source.get("method"))
+        estimated = {body["id"] for body in bodies
+                     if body.get("rotation_period_kind") == "activity_calibration"}
+        self.assertLessEqual({"beta_canum_venaticorum", "iota_persei", "lambda_aurigae"}, estimated)
+
+    def test_physical_units_match_the_saved_published_values(self):
+        for body in self.catalog["bodies"]:
+            with self.subTest(body=body["id"]):
+                source = next(source for source in body["sources"] if "mass_kg" in source["fields"])
+                reported = source["reported_values"]
+                constants = source["conversion_constants"]
+                self.assertAlmostEqual(body["radius_m"] / constants["solar_radius_m"],
+                                       reported["radius_solar"], places=12)
+                self.assertAlmostEqual(body["mass_kg"] / constants["solar_mass_kg"],
+                                       reported["mass_solar"], places=12)
+                luminosity = reported.get("luminosity_solar")
+                if luminosity is None:
+                    luminosity = 10 ** reported["log10_luminosity_solar"]
+                self.assertAlmostEqual(body["luminosity_solar"], luminosity, places=12)
+                self.assertEqual(body["temperature_k"], reported["temperature_k"])
+                rotation = next(source for source in body["sources"]
+                                if "rotation_period_days" in source["fields"])
+                self.assertEqual(body["rotation_period_days"],
+                                 rotation["reported_values"]["rotation_period_days"])
+
+    def test_saved_config_orbits_recover_catalog_directions_and_distances(self):
+        configs = generator.build_configs(self.catalog, ROOT)
+        self.assertEqual(len(configs), len(self.catalog["bodies"]))
+        for body in self.catalog["bodies"]:
+            with self.subTest(body=body["id"]):
+                filename = generator.body_name(body["name"]).lower() + ".cfg"
+                path = ROOT / "RealGalacticSystems/Systems/MilkyWay/Systems" / filename
+                text = configs[path]
+                self.assertEqual(path.read_text(encoding="utf-8"), text)
+                orbit = {}
+                for line in generator.node_contents(text, "Orbit").splitlines():
+                    if "=" in line:
+                        key, value = (part.strip() for part in line.split("=", 1))
+                        orbit[key] = value if key in {"referenceBody", "mode"} else float(value)
+                self.assertEqual(orbit["referenceBody"], "Sun")
+                self.assertEqual(orbit["mode"], "OFF")
+                self.assertEqual(orbit["period"], 3e300)
+                point = generator.orbit_position(orbit)
+                # Invert the Galactic transform to independently check the encoded sky direction.
+                matrix = generator.ICRS_TO_GALACTIC
+                x, y, z = [math.fsum(matrix[row][column] * point[row] for row in range(3))
+                           for column in range(3)]
+                ra = math.degrees(math.atan2(y, x)) % 360
+                dec = math.degrees(math.atan2(z, math.hypot(x, y)))
+                self.assertAlmostEqual(ra, body["position"]["ra_deg"], places=9)
+                self.assertAlmostEqual(dec, body["position"]["dec_deg"], places=9)
+                distance = math.hypot(x, y, z) / generator.PARSEC_M
+                self.assertAlmostEqual(distance, body["position"]["distance_pc"], places=11)
+                self.assertEqual(generator.orbit_position(orbit, 1e12), point)
+                recovery = next(line.split("=", 1)[1].split("//", 1)[0].strip()
+                                for line in text.splitlines() if "recoveryValue =" in line)
+                distance_ly = body["position"]["distance_pc"] * generator.PARSEC_M / generator.LIGHT_YEAR_M
+                self.assertEqual(int(recovery), math.ceil(50 + distance_ly))
 
 
 if __name__ == "__main__":

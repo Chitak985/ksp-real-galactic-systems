@@ -1,7 +1,11 @@
 # Rebuilding stars
 
 `data/bodies.json` is the saved catalog for generated bodies. It currently contains
-Tau Ceti. This first version supports **single Sun-like stars in MilkyWay only**;
+40 stars including Tau Ceti, ordered by distance from Sol.
+[NearbyStars.md](NearbyStars.md) documents the first nine additions;
+[AdditionalNearbyStars.md](AdditionalNearbyStars.md) lists the next 30 stars,
+their measurements, references, rotation methods, and selection decisions.
+This version supports **single Sun-like stars in MilkyWay only**;
 galaxies, binaries, and other existing configs are outside this catalog.
 
 From the repository directory, run:
@@ -74,6 +78,10 @@ Positions use ICRS right ascension and declination **in degrees**, a distance
 measurements; rebuilding does not look up data or propagate proper motion.
 The `sources` array records references, uncertainties, conversions, and whether a
 value is an author-chosen visual setting. It is documentation, not template text.
+The new entries also record HD identifiers, adopted spectral types, and
+`rotation_period_kind`: `observed_modulation` means a period fitted to a time
+series; `activity_calibration` means a published estimate from average stellar
+activity. These metadata fields do not change the generator's input requirements.
 
 The template registry and catalog structure leave room for additional star
 templates later, but unsupported types and binaries currently fail explicitly.
