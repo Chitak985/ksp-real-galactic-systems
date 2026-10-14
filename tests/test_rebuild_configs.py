@@ -198,7 +198,7 @@ class SavedCatalogTests(unittest.TestCase):
                     self.assertTrue(math.isfinite(body[field]) and body[field] > 0)
                 if body["id"] != "tau_ceti":
                     self.assertIn(body["rotation_period_kind"],
-                                  {"observed_modulation", "activity_calibration"})
+                                  {"observed_modulation", "activity_calibration", "gyrochronology_estimate"})
                     source = next(source for source in body["sources"]
                                   if "rotation_period_days" in source["fields"])
                     self.assertTrue(source.get("method"))
@@ -210,7 +210,7 @@ class SavedCatalogTests(unittest.TestCase):
         for body in self.catalog["bodies"]:
             with self.subTest(body=body["id"]):
                 source = next(source for source in body["sources"] if "mass_kg" in source["fields"])
-                reported = source["reported_values"]
+                reported = {**source["reported_values"], **source.get("derived_values", {})}
                 constants = source["conversion_constants"]
                 self.assertAlmostEqual(body["radius_m"] / constants["solar_radius_m"],
                                        reported["radius_solar"], places=12)
@@ -224,7 +224,51 @@ class SavedCatalogTests(unittest.TestCase):
                 rotation = next(source for source in body["sources"]
                                 if "rotation_period_days" in source["fields"])
                 self.assertEqual(body["rotation_period_days"],
-                                 rotation["reported_values"]["rotation_period_days"])
+                                 {**rotation.get("reported_values", {}),
+                                  **rotation.get("derived_values", {})}["rotation_period_days"])
+
+    def test_outer_disk_candidates_preserve_uncertainty_and_model_provenance(self):
+        candidates = [body for body in self.catalog["bodies"]
+                      if body.get("data_status") == "estimated_candidate"]
+        self.assertTrue(candidates)
+        for body in candidates:
+            with self.subTest(body=body["id"]):
+                self.assertEqual(body["multiplicity_status"], "no_known_stellar_companion")
+                self.assertLess(len(body["description"]), 100)
+                self.assertIn("estimated", body["description"])
+                self.assertIn("single status unconfirmed", body["description"])
+                self.assertEqual(body["rotation_period_kind"], "gyrochronology_estimate")
+                self.assertIsInstance(body["identifiers"]["gaia_dr3"], str)
+                physical = body["sources"][0]
+                values = physical["reported_values"]
+                constants = physical["conversion_constants"]
+                # Independently verify the model gravity/radius and bolometric relation.
+                gravity_si = 10 ** values["logg_cgs"] / 100
+                radius = math.sqrt(constants["gravitational_constant_si"] * body["mass_kg"]
+                                   / gravity_si) / constants["solar_radius_m"]
+                self.assertEqual(round(radius, 4), physical["derived_values"]["radius_solar"])
+                luminosity = (body["radius_m"] / constants["solar_radius_m"]) ** 2
+                luminosity *= (body["temperature_k"] / constants["solar_temperature_k"]) ** 4
+                self.assertEqual(round(luminosity, 4), body["luminosity_solar"])
+                self.assertEqual(body["temperature_k"], round(values["temperature_k"]))
+                distance = physical["reported_percentiles"]["distance_kpc"]
+                self.assertLessEqual(distance["5"], distance["50"])
+                self.assertLessEqual(distance["50"], distance["95"])
+                self.assertEqual(body["position"]["distance_pc"], distance["50"] * 1000)
+                region = body["galactic_region"]
+                self.assertGreaterEqual(region["cylindrical_radius_kpc"], 12)
+                self.assertGreaterEqual(region["radius_over_distance_90_percent_posterior_kpc"]["lower"], 11.5)
+                self.assertLess(abs(region["height_kpc"]), 2)
+                screening = next(source["screening_values"] for source in body["sources"]
+                                 if "screening_values" in source)
+                self.assertEqual(screening["non_single_star"], 0)
+                self.assertLess(screening["ruwe"], 1.2)
+                self.assertFalse(screening["duplicated_source"])
+                self.assertEqual(screening["ipd_frac_multi_peak"], 0)
+                spin = next(source for source in body["sources"]
+                            if "rotation_period_days" in source["fields"])
+                self.assertIn("not a calibrated 90% prediction interval", spin["note"])
+                self.assertTrue(spin["limitation_reference"])
 
     def test_saved_config_orbits_recover_catalog_directions_and_distances(self):
         configs = generator.build_configs(self.catalog, ROOT)
@@ -253,7 +297,8 @@ class SavedCatalogTests(unittest.TestCase):
                 self.assertAlmostEqual(ra, body["position"]["ra_deg"], places=9)
                 self.assertAlmostEqual(dec, body["position"]["dec_deg"], places=9)
                 distance = math.hypot(x, y, z) / generator.PARSEC_M
-                self.assertAlmostEqual(distance, body["position"]["distance_pc"], places=11)
+                self.assertTrue(math.isclose(distance, body["position"]["distance_pc"],
+                                             rel_tol=1e-14, abs_tol=1e-11))
                 self.assertEqual(generator.orbit_position(orbit, 1e12), point)
                 recovery = next(line.split("=", 1)[1].split("//", 1)[0].strip()
                                 for line in text.splitlines() if "recoveryValue =" in line)

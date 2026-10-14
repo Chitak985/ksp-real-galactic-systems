@@ -48,7 +48,7 @@
 				IVASunColor = {{main_color}}  // Main color
         sunlightColor = {{main_color}}  // Main color
 				scaledSunlightColor = {{main_color}}  // Main color
-				sunLensFlareColor = {{main_color}}  // Main color
+				sunLensFlareColor = 0,0,0,0  // kill sunflares and the ORB, used to be this: {{main_color}}  // Main color
 				ambientLightColor = {{ambient_color}}  // Main color / 10
         brightnessCurve
         {

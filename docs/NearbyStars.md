@@ -2,7 +2,9 @@
 
 This document describes the first nine additions to Tau Ceti, researched on
 2026-10-10. [AdditionalNearbyStars.md](AdditionalNearbyStars.md) documents the
-next 30 additions, bringing the catalog to 40 stars. The first additions are
+next 30 additions, which brought the catalog to 40 stars.
+[OuterDiskStars.md](OuterDiskStars.md) adds 50 distant candidates for a total of 90.
+The first additions are
 ordered by distance from Sol and use the shared Sun-like
 template. Every entry has a sourced radius, mass, effective temperature,
 bolometric luminosity, rotation period, and ICRS J2000 position.

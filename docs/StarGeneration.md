@@ -1,10 +1,12 @@
 # Rebuilding stars
 
 `data/bodies.json` is the saved catalog for generated bodies. It currently contains
-40 stars including Tau Ceti, ordered by distance from Sol.
+90 stars including Tau Ceti, ordered by distance from Sol.
 [NearbyStars.md](NearbyStars.md) documents the first nine additions;
 [AdditionalNearbyStars.md](AdditionalNearbyStars.md) lists the next 30 stars,
 their measurements, references, rotation methods, and selection decisions.
+[OuterDiskStars.md](OuterDiskStars.md) documents the 50 more distant Sun-like
+candidates, their estimates, uncertainty notes and companion screening.
 This version supports **single Sun-like stars in MilkyWay only**;
 galaxies, binaries, and other existing configs are outside this catalog.
 
@@ -81,7 +83,15 @@ value is an author-chosen visual setting. It is documentation, not template text
 The new entries also record HD identifiers, adopted spectral types, and
 `rotation_period_kind`: `observed_modulation` means a period fitted to a time
 series; `activity_calibration` means a published estimate from average stellar
-activity. These metadata fields do not change the generator's input requirements.
+activity. `gyrochronology_estimate` means a modeled spin from inferred age and
+temperature rather than a measured period. The outer-disk entries carry
+`data_status = estimated_candidate` and
+`multiplicity_status = no_known_stellar_companion`: their single-star configs
+do not certify the absence of hidden stellar companions. Each of their game
+descriptions briefly states this uncertainty and the use of estimated values.
+Published source values and calculations are kept separate as `reported_values`
+and `derived_values`; posterior percentiles retain their original meaning.
+These metadata fields do not change the generator's input requirements.
 
 The template registry and catalog structure leave room for additional star
 templates later, but unsupported types and binaries currently fail explicitly.

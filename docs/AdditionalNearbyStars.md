@@ -1,6 +1,6 @@
 # Additional nearby single Sun-like stars
 
-The second batch adds **30 stars**, bringing `data/bodies.json` to **40 generated stars** including Tau Ceti. Researched on 2026-10-10, it extends the nearby-star search to **25 parsecs (81.54 light-years)** and orders the additions by distance from Sol.
+The second batch added **30 stars**, bringing `data/bodies.json` to **40 generated stars** including Tau Ceti. Researched on 2026-10-10, it extends the nearby-star search to **25 parsecs (81.54 light-years)** and orders the additions by distance from Sol. [OuterDiskStars.md](OuterDiskStars.md) documents 50 later distant candidates, bringing the catalog to 90.
 
 Every addition has a published radius, mass, effective temperature, bolometric luminosity, rotation value and ICRS J2000 position. Eight use observed rotation periods; 22 use explicitly labeled published activity-calibrated estimates. The existing ten catalog entries and their config contents are preserved.
 
@@ -71,6 +71,6 @@ Examples skipped pending further review include 18 Scorpii, which has a current 
 
 ## Rebuild and placement
 
-Run `python rebuild_configs.py` to rebuild all 40 generated stars from the shared template. `python rebuild_configs.py --check` verifies that the saved files match the catalog and template. All generated files are directly inside `RealGalacticSystems/Systems/MilkyWay/Systems`. They use hidden, frozen Sun-parented positioning orbits (`period = 3E300`, `mode = OFF`) and integer recovery values rounded up. No galaxies, binaries, planets or stock-Sun changes are added by this batch.
+Run `python rebuild_configs.py` to rebuild all catalogued stars from the shared template. `python rebuild_configs.py --check` verifies that the saved files match the catalog and template. All generated files are directly inside `RealGalacticSystems/Systems/MilkyWay/Systems`. They use hidden, frozen Sun-parented positioning orbits (`period = 3E300`, `mode = OFF`) and integer recovery values rounded up. No galaxies, binaries, planets or stock-Sun changes are added by this batch.
 
 See [StarGeneration.md](StarGeneration.md) for the rebuild workflow and [NearbyStars.md](NearbyStars.md) for the first nine additions.
