@@ -1,6 +1,6 @@
 # Outer-disk Sun-like candidates
 
-This batch adds **50 real catalogued stars**, bringing the saved catalog to **90** bodies. These entries use single-star configurations for candidates with no known stellar companion, model estimates and saved uncertainty ranges. Each game description briefly states the uncertainty; the objects are not certified isolated stars. Researched on 2026-10-14.
+This batch added **50 real catalogued stars**, bringing the saved catalog to **90** bodies at the time. [DiskGapStars.md](DiskGapStars.md) documents 60 later additions between the nearby and outer-disk samples, bringing the current catalog to 150. These entries use single-star configurations for candidates with no known stellar companion, model estimates and saved uncertainty ranges. Each game description briefly states the uncertainty; the objects are not certified isolated stars. Researched on 2026-10-14.
 
 Each new configuration contains this description (fewer than 100 characters):
 
@@ -89,7 +89,7 @@ Units: distances in kiloparsecs, radius/mass/luminosity in solar units, temperat
 
 ## Rebuilding and preservation
 
-Run `python rebuild_configs.py` to rebuild all 90 stars. `python rebuild_configs.py --check` verifies that the saved configurations match the data and template. New files are directly under `RealGalacticSystems/Systems/MilkyWay/Systems`, with names `gaia_dr3_[source_id].cfg`. Positions use the existing Galactic-axis adapter and frozen Sun-parented orbits (period=3E300, mode=OFF); recoveryValue is rounded up.
+Run `python rebuild_configs.py` to rebuild all catalogued stars. `python rebuild_configs.py --check` verifies that the saved configurations match the data and template. Files in this batch are directly under `RealGalacticSystems/Systems/MilkyWay/Systems`, with names `gaia_dr3_[source_id].cfg`. Positions use the existing Galactic-axis adapter and frozen Sun-parented orbits (period=3E300, mode=OFF); recoveryValue is rounded up.
 
 Gaia directions are propagated from J2016 to J2000 using tangent-plane proper motions before conversion. Perspective acceleration is neglected; the angular correction is tiny relative to the distance uncertainty. The 8.2-kpc Solar Galactocentric radius is used only to document/select the physical region and does not modify the existing SagittariusA orbit or GalacticDisk. The first 40 catalog records, shared template and earlier config contents are preserved; README is untouched. Existing curves are retained.
 

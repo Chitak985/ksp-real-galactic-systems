@@ -1,12 +1,14 @@
 # Rebuilding stars
 
 `data/bodies.json` is the saved catalog for generated bodies. It currently contains
-90 stars including Tau Ceti, ordered by distance from Sol.
+150 stars including Tau Ceti, ordered by distance from Sol.
 [NearbyStars.md](NearbyStars.md) documents the first nine additions;
 [AdditionalNearbyStars.md](AdditionalNearbyStars.md) lists the next 30 stars,
 their measurements, references, rotation methods, and selection decisions.
 [OuterDiskStars.md](OuterDiskStars.md) documents the 50 more distant Sun-like
 candidates, their estimates, uncertainty notes and companion screening.
+[DiskGapStars.md](DiskGapStars.md) documents 60 candidates selected across the
+distance gap between those samples, using the same estimate policy.
 This version supports **single Sun-like stars in MilkyWay only**;
 galaxies, binaries, and other existing configs are outside this catalog.
 

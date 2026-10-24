@@ -227,7 +227,7 @@ class SavedCatalogTests(unittest.TestCase):
                                  {**rotation.get("reported_values", {}),
                                   **rotation.get("derived_values", {})}["rotation_period_days"])
 
-    def test_outer_disk_candidates_preserve_uncertainty_and_model_provenance(self):
+    def test_estimated_candidates_preserve_uncertainty_and_model_provenance(self):
         candidates = [body for body in self.catalog["bodies"]
                       if body.get("data_status") == "estimated_candidate"]
         self.assertTrue(candidates)
@@ -237,7 +237,7 @@ class SavedCatalogTests(unittest.TestCase):
                 self.assertLess(len(body["description"]), 100)
                 self.assertIn("estimated", body["description"])
                 self.assertIn("single status unconfirmed", body["description"])
-                self.assertEqual(body["rotation_period_kind"], "gyrochronology_estimate")
+                self.assertIn(body["rotation_period_kind"], {"gyrochronology_estimate", "observed_modulation"})
                 self.assertIsInstance(body["identifiers"]["gaia_dr3"], str)
                 physical = body["sources"][0]
                 values = physical["reported_values"]
@@ -256,8 +256,17 @@ class SavedCatalogTests(unittest.TestCase):
                 self.assertLessEqual(distance["50"], distance["95"])
                 self.assertEqual(body["position"]["distance_pc"], distance["50"] * 1000)
                 region = body["galactic_region"]
-                self.assertGreaterEqual(region["cylindrical_radius_kpc"], 12)
-                self.assertGreaterEqual(region["radius_over_distance_90_percent_posterior_kpc"]["lower"], 11.5)
+                if region["kind"] == "outer_disk_candidate":
+                    self.assertGreaterEqual(region["cylindrical_radius_kpc"], 12)
+                    self.assertGreaterEqual(region["radius_over_distance_90_percent_posterior_kpc"]["lower"], 11.5)
+                elif region["kind"] == "disk_gap_candidate":
+                    self.assertGreaterEqual(region["cylindrical_radius_kpc"], 8.2)
+                    self.assertLess(region["cylindrical_radius_kpc"], 12.2)
+                    lower, upper = region["gap_band_distance_kpc"]
+                    self.assertGreaterEqual(body["position"]["distance_pc"] / 1000, lower)
+                    self.assertLess(body["position"]["distance_pc"] / 1000, upper)
+                else:
+                    self.fail("Estimated candidate has an undocumented Galactic region.")
                 self.assertLess(abs(region["height_kpc"]), 2)
                 screening = next(source["screening_values"] for source in body["sources"]
                                  if "screening_values" in source)
@@ -267,8 +276,30 @@ class SavedCatalogTests(unittest.TestCase):
                 self.assertEqual(screening["ipd_frac_multi_peak"], 0)
                 spin = next(source for source in body["sources"]
                             if "rotation_period_days" in source["fields"])
-                self.assertIn("not a calibrated 90% prediction interval", spin["note"])
-                self.assertTrue(spin["limitation_reference"])
+                if body["rotation_period_kind"] == "gyrochronology_estimate":
+                    self.assertIn("not a calibrated 90% prediction interval", spin["note"])
+                    self.assertTrue(spin["limitation_reference"])
+                else:
+                    self.assertGreater(spin["uncertainties"]["rotation_period_days"], 0)
+                    self.assertIn("observed photometric", spin["method"])
+
+    def test_disk_gap_batch_fills_six_bands_with_distinct_sourced_stars(self):
+        bodies = [body for body in self.catalog["bodies"]
+                  if body.get("catalog_batch") == "disk_gap_2026_10_24"]
+        self.assertEqual(len(bodies), 60)
+        self.assertEqual(len({body["identifiers"]["gaia_dr3"] for body in bodies}), 60)
+        for band in range(1, 7):
+            group = [body for body in bodies if body["galactic_region"]["gap_band_index"] == band]
+            self.assertEqual(len(group), 10)
+            expected = "gaiarvs" if band <= 3 else "lamostl7"
+            for body in group:
+                self.assertEqual(body["sources"][0]["catalog_table"], f"J/A+A/673/A155/{expected}")
+                self.assertFalse(body["sources"][0]["quality_flags"]["OutputFlag"])
+                self.assertFalse(body["sources"][0]["quality_flags"]["AgeInOut"])
+        measured = [body for body in bodies if body["rotation_period_kind"] == "observed_modulation"]
+        self.assertEqual(len(measured), 1)
+        self.assertEqual(measured[0]["identifiers"]["gaia_dr3"], "2993520260320097152")
+        self.assertEqual(measured[0]["rotation_period_days"], 5.44)
 
     def test_saved_config_orbits_recover_catalog_directions_and_distances(self):
         configs = generator.build_configs(self.catalog, ROOT)
