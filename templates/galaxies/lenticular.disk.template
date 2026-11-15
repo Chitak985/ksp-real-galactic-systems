@@ -1,0 +1,17 @@
+{{common_parameters}}
+// SA0/S0 and S0/a: smooth disk and prominent bulge, with no invented arms.
+diskThickness = 10
+armCount = 0
+interarmFraction = 1
+bulgeFraction = 0.45
+bulgeScaleX = 14
+bulgeScaleY = 9
+bulgeScaleZ = 14
+enableBar = false
+barFraction = 0
+armHighlightChance = 0
+enableDustClouds = false
+dustCloudCount = 0
+enableStarFormation = false
+starFormingRegionCount = 0
+youngStarFraction = 0

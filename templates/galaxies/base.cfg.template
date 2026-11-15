@@ -1,0 +1,40 @@
+// A galaxy is represented by one invisible barycenter, not a black-hole body.
+@Kopernicus:FOR[RealGalacticSystems]
+{
+  Body
+  {
+    name = {{galaxy_name}}
+    cacheFile = RealGalacticSystems/Cache/{{galaxy_name}}.bin
+    Template
+    {
+      name = Jool
+      removeAtmosphere = true
+    }
+    Properties
+    {
+      displayName = {{display_name}}
+      description = {{description}} Do not go too close to it or else you would get spaghettified. (barycenter)
+      radius = 1
+      mass = {{mass_kg}}
+      sphereOfInfluence = {{soi}}
+      geeASL = {{gravity_g}}
+    }
+    ScaledVersion
+    {
+      invisible = true
+    }
+    {{orbit}}
+  }
+}
+
+GalacticDiskDefinition
+{
+    planet = {{galaxy_name}}
+    renderMode = Volumetric
+    renderScale = 1e8
+
+    {{disk_parameters}}
+
+    alignRotationToOrbit = false
+    rotationPeriod = 0
+}

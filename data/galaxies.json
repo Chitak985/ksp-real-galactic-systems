@@ -1,0 +1,425 @@
+{
+  "schema_version": 1,
+  "templates": {
+    "base": "templates/galaxies/base.cfg.template",
+    "common": "templates/galaxies/common.disk.template",
+    "types": {
+      "elliptical": "templates/galaxies/elliptical.disk.template",
+      "compact_elliptical": "templates/galaxies/compact_elliptical.disk.template",
+      "dwarf_elliptical": "templates/galaxies/dwarf_elliptical.disk.template",
+      "dwarf_spheroidal": "templates/galaxies/dwarf_spheroidal.disk.template",
+      "lenticular": "templates/galaxies/lenticular.disk.template",
+      "barred_lenticular": "templates/galaxies/barred_lenticular.disk.template",
+      "spiral": "templates/galaxies/spiral.disk.template",
+      "weakly_barred_spiral": "templates/galaxies/weakly_barred_spiral.disk.template",
+      "barred_spiral": "templates/galaxies/barred_spiral.disk.template"
+    }
+  },
+  "settings": {
+    "epoch_seconds": 0,
+    "frozen_period_seconds": 3e+300,
+    "scaled_space_factor": 6000,
+    "soi_radius_fraction": 0.02,
+    "min_soi_pc": 5,
+    "max_soi_pc": 100,
+    "cosmology": {
+      "h0_km_s_mpc": 67.4,
+      "omega_m": 0.315,
+      "omega_r": 9.2e-05
+    }
+  },
+  "galaxies": [
+    {
+      "id": "ngc_185",
+      "body_name": "NGC185",
+      "name": "NGC 185",
+      "ra_deg": 9.741416677510001,
+      "dec_deg": 48.337509965180004,
+      "redshift": -0.000605,
+      "distance": {
+        "kind": "redshift_independent",
+        "mpc": 0.61,
+        "method": "TRGB",
+        "source": "2013AJ....145..101K"
+      },
+      "angular_major_arcmin": 12.3,
+      "axis_ratio": 0.85,
+      "position_angle_deg": 35.0,
+      "morphology": "dGspD...",
+      "hubble_t": -3.0,
+      "b_magnitude": 9.99,
+      "template": "dwarf_elliptical",
+      "mass_solar": 138038426.46028867,
+      "mass_kind": "indicative mass within Holmberg radius; point-mass game approximation",
+      "uncertainty_note": "Distances have catalog uncertainties; 3D depth, colors and core gravity are approximate.",
+      "sources": [
+        {
+          "database": "SIMBAD",
+          "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+185%27",
+          "retrieved_utc": "2026-11-15T20:22:32.703360+00:00",
+          "bibcodes": {
+            "morph_bibcode": "2012MNRAS.426.1808T",
+            "galdim_bibcode": "2003A&A...412...45P",
+            "rvz_bibcode": "2016ApJS..226...11S"
+          },
+          "fields": [
+            "ra_deg",
+            "dec_deg",
+            "morphology",
+            "position_angle_deg",
+            "redshift"
+          ]
+        },
+        {
+          "database": "VizieR Updated Nearby Galaxy Catalog",
+          "catalog": "J/AJ/145/101/catalog",
+          "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F145%2F101%2Fcatalog&-c=9.7414166775+48.3375099652&-c.rs=60&-out.all=1&-out.max=20",
+          "bibcode": "2013AJ....145..101K",
+          "fields": [
+            "distance",
+            "angular_major_arcmin",
+            "axis_ratio",
+            "mass_solar",
+            "b_magnitude"
+          ],
+          "matched_name": "NGC0185"
+        }
+      ],
+      "raw_record": "data/galaxy_sources/ngc_185.json",
+      "adoption_notes": {
+        "geometry": "Observed angular Holmberg diameter and axial ratio; SIMBAD PA; disk inclination assumes intrinsic flattening.",
+        "lookback": "Observed morphology is already retarded; no additional rewinding/evolution is applied.",
+        "color": "Template blackbody-equivalent palettes shifted by observed redshift; approximate, not measured spectra.",
+        "gravity": "indicative mass within Holmberg radius; point-mass game approximation",
+        "overrides": {}
+      }
+    },
+    {
+      "id": "ngc_147",
+      "body_name": "NGC147",
+      "name": "NGC 147",
+      "ra_deg": 8.300500000000001,
+      "dec_deg": 48.508738888888885,
+      "redshift": -0.00064390496107114,
+      "distance": {
+        "kind": "redshift_independent",
+        "mpc": 0.76,
+        "method": "TRGB",
+        "source": "2013AJ....145..101K"
+      },
+      "angular_major_arcmin": 13.49,
+      "axis_ratio": 0.61,
+      "position_angle_deg": 25.0,
+      "morphology": "dGspD...",
+      "hubble_t": -3.0,
+      "b_magnitude": 10.36,
+      "template": "dwarf_spheroidal",
+      "mass_solar": 162181009.7358933,
+      "mass_kind": "estimated stellar mass: Ks mass-to-light ratio 1 solar; excludes dark halo",
+      "uncertainty_note": "Stellar mass is estimated from Ks light; distance, 3D depth, colors and core gravity are uncertain.",
+      "sources": [
+        {
+          "database": "SIMBAD",
+          "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+147%27",
+          "retrieved_utc": "2026-11-15T20:22:31.316373+00:00",
+          "bibcodes": {
+            "morph_bibcode": "2012MNRAS.426.1808T",
+            "galdim_bibcode": "2003A&A...412...45P",
+            "rvz_bibcode": "2012AJ....144....4M"
+          },
+          "fields": [
+            "ra_deg",
+            "dec_deg",
+            "morphology",
+            "position_angle_deg",
+            "redshift"
+          ]
+        },
+        {
+          "database": "VizieR Updated Nearby Galaxy Catalog",
+          "catalog": "J/AJ/145/101/catalog",
+          "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F145%2F101%2Fcatalog&-c=8.3005000000+48.5087388889&-c.rs=60&-out.all=1&-out.max=20",
+          "bibcode": "2013AJ....145..101K",
+          "fields": [
+            "distance",
+            "angular_major_arcmin",
+            "axis_ratio",
+            "mass_solar",
+            "b_magnitude"
+          ],
+          "matched_name": "NGC0147"
+        }
+      ],
+      "raw_record": "data/galaxy_sources/ngc_147.json",
+      "adoption_notes": {
+        "geometry": "Observed angular Holmberg diameter and axial ratio; SIMBAD PA; disk inclination assumes intrinsic flattening.",
+        "lookback": "Observed morphology is already retarded; no additional rewinding/evolution is applied.",
+        "color": "Template blackbody-equivalent palettes shifted by observed redshift; approximate, not measured spectra.",
+        "gravity": "estimated stellar mass: Ks mass-to-light ratio 1 solar; excludes dark halo",
+        "overrides": {}
+      }
+    },
+    {
+      "id": "ngc_300",
+      "body_name": "NGC300",
+      "name": "NGC 300",
+      "ra_deg": 13.722694015959998,
+      "dec_deg": -37.68421344511,
+      "redshift": 0.0004871222230051764,
+      "distance": {
+        "kind": "redshift_independent",
+        "mpc": 2.15,
+        "method": "Cep",
+        "source": "2013AJ....145..101K"
+      },
+      "angular_major_arcmin": 25.7,
+      "axis_ratio": 0.71,
+      "position_angle_deg": 114.0,
+      "morphology": "Sc",
+      "hubble_t": 7.0,
+      "b_magnitude": 8.95,
+      "template": "spiral",
+      "mass_solar": 15135612484.362072,
+      "mass_kind": "indicative mass within Holmberg radius; point-mass game approximation",
+      "uncertainty_note": "Distances have catalog uncertainties; 3D depth, colors and core gravity are approximate.",
+      "sources": [
+        {
+          "database": "SIMBAD",
+          "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+300%27",
+          "retrieved_utc": "2026-11-15T20:22:34.000256+00:00",
+          "bibcodes": {
+            "morph_bibcode": "2012AJ....144....4M",
+            "galdim_bibcode": "2003A&A...412...45P",
+            "rvz_bibcode": "2012AJ....144....4M"
+          },
+          "fields": [
+            "ra_deg",
+            "dec_deg",
+            "morphology",
+            "position_angle_deg",
+            "redshift"
+          ]
+        },
+        {
+          "database": "VizieR Updated Nearby Galaxy Catalog",
+          "catalog": "J/AJ/145/101/catalog",
+          "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F145%2F101%2Fcatalog&-c=13.7226940160+-37.6842134451&-c.rs=60&-out.all=1&-out.max=20",
+          "bibcode": "2013AJ....145..101K",
+          "fields": [
+            "distance",
+            "angular_major_arcmin",
+            "axis_ratio",
+            "mass_solar",
+            "b_magnitude"
+          ],
+          "matched_name": "NGC0300"
+        }
+      ],
+      "raw_record": "data/galaxy_sources/ngc_300.json",
+      "adoption_notes": {
+        "geometry": "Observed angular Holmberg diameter and axial ratio; SIMBAD PA; disk inclination assumes intrinsic flattening.",
+        "lookback": "Observed morphology is already retarded; no additional rewinding/evolution is applied.",
+        "color": "Template blackbody-equivalent palettes shifted by observed redshift; approximate, not measured spectra.",
+        "gravity": "indicative mass within Holmberg radius; point-mass game approximation",
+        "overrides": {}
+      }
+    },
+    {
+      "id": "ngc_404",
+      "body_name": "NGC404",
+      "name": "NGC 404",
+      "ra_deg": 17.36259,
+      "dec_deg": 35.71813,
+      "redshift": -0.000107,
+      "distance": {
+        "kind": "redshift_independent",
+        "mpc": 3.05,
+        "method": "TRGB",
+        "source": "2013AJ....145..101K"
+      },
+      "angular_major_arcmin": 3.47,
+      "axis_ratio": 0.95,
+      "position_angle_deg": 90.0,
+      "morphology": "-1",
+      "hubble_t": -1.0,
+      "b_magnitude": 11.21,
+      "template": "lenticular",
+      "mass_solar": 3801893963.2056127,
+      "mass_kind": "indicative mass within Holmberg radius; point-mass game approximation",
+      "uncertainty_note": "Distances have catalog uncertainties; 3D depth, colors and core gravity are approximate.",
+      "sources": [
+        {
+          "database": "SIMBAD",
+          "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+404%27",
+          "retrieved_utc": "2026-11-15T20:22:35.290687+00:00",
+          "bibcodes": {
+            "morph_bibcode": "2018MNRAS.479.4136K",
+            "galdim_bibcode": "1999ApJS..121..287H",
+            "rvz_bibcode": "2002LEDA.........0P"
+          },
+          "fields": [
+            "ra_deg",
+            "dec_deg",
+            "morphology",
+            "position_angle_deg",
+            "redshift"
+          ]
+        },
+        {
+          "database": "VizieR Updated Nearby Galaxy Catalog",
+          "catalog": "J/AJ/145/101/catalog",
+          "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F145%2F101%2Fcatalog&-c=17.3625900000+35.7181300000&-c.rs=60&-out.all=1&-out.max=20",
+          "bibcode": "2013AJ....145..101K",
+          "fields": [
+            "distance",
+            "angular_major_arcmin",
+            "axis_ratio",
+            "mass_solar",
+            "b_magnitude"
+          ],
+          "matched_name": "NGC0404"
+        }
+      ],
+      "raw_record": "data/galaxy_sources/ngc_404.json",
+      "adoption_notes": {
+        "geometry": "Observed angular Holmberg diameter and axial ratio; SIMBAD PA; disk inclination assumes intrinsic flattening.",
+        "lookback": "Observed morphology is already retarded; no additional rewinding/evolution is applied.",
+        "color": "Template blackbody-equivalent palettes shifted by observed redshift; approximate, not measured spectra.",
+        "gravity": "indicative mass within Holmberg radius; point-mass game approximation",
+        "overrides": {}
+      }
+    },
+    {
+      "id": "ngc_2403",
+      "body_name": "NGC2403",
+      "name": "NGC 2403",
+      "ra_deg": 114.21390893095,
+      "dec_deg": 65.6026807849,
+      "redshift": 0.0004337273834702504,
+      "distance": {
+        "kind": "redshift_independent",
+        "mpc": 3.18,
+        "method": "Cep",
+        "source": "2013AJ....145..101K"
+      },
+      "angular_major_arcmin": 28.18,
+      "axis_ratio": 0.56,
+      "position_angle_deg": 123.0,
+      "morphology": "SAcd",
+      "hubble_t": 6.0,
+      "b_magnitude": 8.8,
+      "template": "spiral",
+      "mass_solar": 51286138399.13659,
+      "mass_kind": "indicative mass within Holmberg radius; point-mass game approximation",
+      "uncertainty_note": "Distances have catalog uncertainties; 3D depth, colors and core gravity are approximate.",
+      "sources": [
+        {
+          "database": "SIMBAD",
+          "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+2403%27",
+          "retrieved_utc": "2026-11-15T20:22:36.631811+00:00",
+          "bibcodes": {
+            "morph_bibcode": "2015ApJS..217...27A",
+            "galdim_bibcode": "2023ApJS..269....3M",
+            "rvz_bibcode": "2020ApJ...902..145K"
+          },
+          "fields": [
+            "ra_deg",
+            "dec_deg",
+            "morphology",
+            "position_angle_deg",
+            "redshift"
+          ]
+        },
+        {
+          "database": "VizieR Updated Nearby Galaxy Catalog",
+          "catalog": "J/AJ/145/101/catalog",
+          "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F145%2F101%2Fcatalog&-c=114.2139089309+65.6026807849&-c.rs=60&-out.all=1&-out.max=20",
+          "bibcode": "2013AJ....145..101K",
+          "fields": [
+            "distance",
+            "angular_major_arcmin",
+            "axis_ratio",
+            "mass_solar",
+            "b_magnitude"
+          ],
+          "matched_name": "NGC2403"
+        }
+      ],
+      "raw_record": "data/galaxy_sources/ngc_2403.json",
+      "adoption_notes": {
+        "geometry": "Observed angular Holmberg diameter and axial ratio; SIMBAD PA; disk inclination assumes intrinsic flattening.",
+        "lookback": "Observed morphology is already retarded; no additional rewinding/evolution is applied.",
+        "color": "Template blackbody-equivalent palettes shifted by observed redshift; approximate, not measured spectra.",
+        "gravity": "indicative mass within Holmberg radius; point-mass game approximation",
+        "overrides": {}
+      }
+    }
+  ],
+  "rendering_overrides": {
+    "ngc_300": {
+      "inclination_deg": 42,
+      "parameters": {
+        "dustOpacity": 5,
+        "dustCloudCount": 35,
+        "minDustCloudSize": 0.5,
+        "maxDustCloudSize": 2.5,
+        "dustLaneStrength": 0.35,
+        "dustLaneWidth": 0.6,
+        "bulgeFraction": 0.015,
+        "armCount": 2,
+        "interarmFraction": 0.5,
+        "armWidth": 0.65,
+        "armConcentration": 0.15,
+        "armPitchAngle": 22,
+        "starFormingRegionCount": 45,
+        "minStarFormingRegionSize": 0.5,
+        "maxStarFormingRegionSize": 1.5,
+        "starFormationInnerRadius": 0.12,
+        "starFormingRegionIntensity": 0.4,
+        "youngStarGlowIntensity": 0.4
+      },
+      "notes": "Measured inclination adopted; weak bulge supported by published work. Dust, arm details, colors, and display exposure are renderer estimates, not a resolved image reconstruction.",
+      "sources": [
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6544524/",
+          "reference": "Kruijssen et al. (2019), Nature 569, 519, Methods",
+          "fields": [
+            "inclination_deg"
+          ],
+          "reported_inclination_deg": 42,
+          "reported_uncertainty_deg": 0.5
+        },
+        {
+          "url": "https://doi.org/10.1088/0004-637X/697/1/361",
+          "reference": "Vlajic et al. (2009), extremely faint outer disk of NGC 300",
+          "fields": [
+            "weak_bulge"
+          ],
+          "note": "Published bulge light fraction below 2%; rendering bulgeFraction is an approximation."
+        },
+        {
+          "url": "https://www.eso.org/public/images/eso1037a/",
+          "fields": [
+            "qualitative_spiral_appearance"
+          ],
+          "note": "Optical broadband plus emission-line composite; about 50 hours exposure, not a naked-eye color standard."
+        }
+      ]
+    },
+    "ngc_404": {
+      "parameters": {},
+      "notes": "Old-population warm palette and lower lenticular exposure preserve color without shrinking the measured optical size. The nuclear star cluster is not separately resolved by the generic template.",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/1003.0680",
+          "reference": "Seth et al. (2010), ApJ 714, 713",
+          "fields": [
+            "old_bulge_population",
+            "nuclear_structure"
+          ],
+          "note": "Old bulge plus a distinct nuclear star cluster; palette temperatures remain visual estimates."
+        }
+      ]
+    }
+  }
+}

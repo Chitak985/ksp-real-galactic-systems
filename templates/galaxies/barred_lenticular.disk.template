@@ -1,0 +1,17 @@
+{{common_parameters}}
+// SB0/SAB0: smooth lens and central bar.
+diskThickness = 10
+armCount = 0
+interarmFraction = 1
+bulgeFraction = 0.5
+bulgeScaleX = 14
+bulgeScaleY = 9
+bulgeScaleZ = 14
+enableBar = true
+barFraction = 0.4
+armHighlightChance = 0
+enableDustClouds = false
+dustCloudCount = 0
+enableStarFormation = false
+starFormingRegionCount = 0
+youngStarFraction = 0

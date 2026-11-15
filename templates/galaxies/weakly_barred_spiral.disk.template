@@ -1,0 +1,17 @@
+{{common_parameters}}
+// SABa-SABd: intermediate/weakly barred spiral.
+diskThickness = 6
+armCount = {{spiral_arm_count}}
+interarmFraction = {{spiral_interarm_fraction}}
+bulgeFraction = {{spiral_bulge_fraction}}
+bulgeScaleX = 10
+bulgeScaleY = 5
+bulgeScaleZ = 10
+enableBar = true
+barFraction = 0.3
+armHighlightChance = 0.025
+enableDustClouds = true
+dustCloudCount = 60
+enableStarFormation = true
+starFormingRegionCount = 35
+youngStarFraction = 0.08

@@ -1,0 +1,79 @@
+{
+  "requested_name": "NGC 147",
+  "retrieved_utc": "2026-11-15T20:22:31.316373+00:00",
+  "simbad": {
+    "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+147%27",
+    "text": "{\"metadata\":[{\"name\":\"main_id\",\"description\":\"Main identifier for an object\",\"datatype\":\"CHAR\",\"arraysize\":\"*\",\"ucd\":\"meta.id;meta.main\",\"utype\":\"mango:MangoObject.identifier\"},{\"name\":\"ra\",\"description\":\"Right ascension\",\"datatype\":\"DOUBLE\",\"unit\":\"deg\",\"ucd\":\"pos.eq.ra;meta.main\",\"utype\":\"mango:EpochPosition.longitude[CS.spaceSys=ICRS CT.epoch=J2000]\"},{\"name\":\"dec\",\"description\":\"Declination\",\"datatype\":\"DOUBLE\",\"unit\":\"deg\",\"ucd\":\"pos.eq.dec;meta.main\",\"utype\":\"mango:EpochPosition.latitude[CS.spaceSys=ICRS CT.epoch=J2000]\"},{\"name\":\"otype\",\"description\":\"Object type\",\"datatype\":\"CHAR\",\"arraysize\":\"*\",\"ucd\":\"src.class\",\"utype\":\"mango:Label.text[CT.vocabulary=https://www.ivoa.net/rdf/uat#classification]\"},{\"name\":\"morph_type\",\"description\":\"Morphological type\",\"datatype\":\"CHAR\",\"arraysize\":\"*\",\"ucd\":\"src.morph.type\"},{\"name\":\"morph_bibcode\",\"description\":\"morphological type reference\",\"datatype\":\"CHAR\",\"arraysize\":\"19\",\"ucd\":\"meta.bib.bibcode;src.morph.type\"},{\"name\":\"galdim_majaxis\",\"description\":\"Angular size major axis\",\"datatype\":\"FLOAT\",\"unit\":\"arcmin\",\"ucd\":\"phys.angSize.smajAxis\"},{\"name\":\"galdim_minaxis\",\"description\":\"Angular size minor axis\",\"datatype\":\"FLOAT\",\"unit\":\"arcmin\",\"ucd\":\"phys.angSize.sminAxis\"},{\"name\":\"galdim_angle\",\"description\":\"Galaxy ellipse angle\",\"datatype\":\"SHORT\",\"unit\":\"deg\",\"ucd\":\"pos.posAng\"},{\"name\":\"galdim_bibcode\",\"description\":\"Galaxy dimension reference\",\"datatype\":\"CHAR\",\"arraysize\":\"19\",\"ucd\":\"meta.bib.bibcode;phys.angSize\"},{\"name\":\"rvz_redshift\",\"description\":\"redshift\",\"datatype\":\"DOUBLE\",\"ucd\":\"src.redshift\"},{\"name\":\"rvz_radvel\",\"description\":\"Radial Velocity\",\"datatype\":\"DOUBLE\",\"unit\":\"km.s-1\",\"ucd\":\"spect.dopplerVeloc.opt\",\"utype\":\"mango:EpochPosition.radialVelocity[CS.spaceSys=ICRS CT.epoch=J2000]\"},{\"name\":\"rvz_bibcode\",\"description\":\"Radial velocity / redshift reference\",\"datatype\":\"CHAR\",\"arraysize\":\"19\",\"ucd\":\"meta.bib.bibcode;spect.dopplerVeloc\"},{\"name\":\"B\",\"description\":\"B magnitude\",\"datatype\":\"DOUBLE\",\"ucd\":\"phot.mag;em.opt.B\",\"utype\":\"mango:Brightness.value[CS.photCal=B]\"},{\"name\":\"V\",\"description\":\"V magnitude\",\"datatype\":\"DOUBLE\",\"ucd\":\"phot.mag;em.opt.V\",\"utype\":\"mango:Brightness.value[CS.photCal=V]\"},{\"name\":\"K\",\"description\":\"K magnitude\",\"datatype\":\"DOUBLE\",\"ucd\":\"phot.mag;em.IR.K\",\"utype\":\"mango:Brightness.value[CS.photCal=K]\"}],\"data\":[[\"NGC   147\",8.300500000000001,48.508738888888885,\"GiG\",\"dGspD...\",\"2012MNRAS.426.1808T\",12.59,7.08,25,\"2003A&A...412...45P\",-6.4390496107114E-4,-193.1,\"2012AJ....144....4M\",12,9.5,7.201]]}",
+    "rows": [
+      {
+        "main_id": "NGC   147",
+        "ra": 8.300500000000001,
+        "dec": 48.508738888888885,
+        "otype": "GiG",
+        "morph_type": "dGspD...",
+        "morph_bibcode": "2012MNRAS.426.1808T",
+        "galdim_majaxis": 12.59,
+        "galdim_minaxis": 7.08,
+        "galdim_angle": 25,
+        "galdim_bibcode": "2003A&A...412...45P",
+        "rvz_redshift": -0.00064390496107114,
+        "rvz_radvel": -193.1,
+        "rvz_bibcode": "2012AJ....144....4M",
+        "B": 12,
+        "V": 9.5,
+        "K": 7.201
+      }
+    ]
+  },
+  "nearby": {
+    "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F145%2F101%2Fcatalog&-c=8.3005000000+48.5087388889&-c.rs=60&-out.all=1&-out.max=20",
+    "text": "#\n#   VizieR Astronomical Server vizier.cfa.harvard.edu\n#    Date: 2026-11-15T20:22:31 [V7.6.1]\n#   In case of problem, please report to:\tcds-question@unistra.fr\n#\n#\n#Coosys\tJ2000:\teq_FK5 J2000\n#INFO\tservice_protocol=ASU\t  IVOID of the protocol through which the data was retrieved\n#INFO\trequest_date=2026-11-15T20:22:31\t  Query execution date\n#INFO\trequest=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F145%2F101%2Fcatalog&-c=8.3005000000+48.5087388889&-c.rs=60&-out.all=1&-out.max=20\t  Full request URL\n#INFO\tcontact=cds-question@unistra.fr\t  Email or URL to contact publisher\n#INFO\tserver_software=VizieR/7.6.1\t  Software version\n#INFO\tpublisher=CDS\t  Data centre that produced the VOTable\n#INFO\t-c=008.300500+48.508739,rs=60.\t\n#Constraint -out.max=20\n\n#RESOURCE=yCat_51450101\n#Name: J/AJ/145/101\n#Title: Updated nearby galaxy catalog (Karachentsev+, 2013)\n#INFO\tivoid=ivo://cds.vizier/j/aj/145/101\t    IVOID of underlying data collection\n#INFO\tdata_ivoid=ivo://cds.vizier/j/aj/145/101\t    IVOID of underlying data collection\n#INFO\tcreator=Karachentsev I.D.\t    First author or institution\n#INFO\tcites=bibcode:2013AJ....145..101K\t    Article or Data origin sources\n#INFO\tjournal=AJ\t    Journal name\n#INFO\toriginal_date=2013\t    Year of the article publication\n#INFO\treference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AJ/145/101\t    Dataset landing page\n#INFO\tcitation=doi:10.26093/cds/vizier.51450101\t    Dataset identifier that can be used for citation\n#INFO\tpublication_date=2017-06-12\t    Date of first publication in the data centre\n#INFO\trights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html\t    Licence URI\n#Table\tJ_AJ_145_101_catalog:\n#Name: J/AJ/145/101/catalog\n#Title: Catalog of galaxies in the  the Local Volume\n#Column\t_r\t(F4.1)\tDistance from center (00 33 12.1+48 30 31)[FK5/J2000]\t[ucd=pos.angDistance]\n#Column\trecno\t(I8)\tRecord number assigned by the VizieR team. Should Not be used for identification.\t[ucd=meta.record]\n#Column\tName\t(a18)\tGalaxy name in well-known catalogs\t[ucd=meta.id;meta.main]\n#Column\tNd\t(I3)\tNumber of data available for this galaxy (apparent magnitudes + velocities + kinematics + distances, in tables 3--6)\t[ucd=meta.number]\n#Column\tRAJ2000\t(A10)\tHour of Right Ascension (J2000)\t[ucd=pos.eq.ra;meta.main]\n#Column\tDEJ2000\t(A9)\tDegree of Declination (J2000)\t[ucd=pos.eq.dec;meta.main]\n#Column\ta26\t(F6.2)\t[0.1/645.65]? Major angular diameter (1)\t[ucd=phys.angSize]\n#Column\tb/a\t(F5.2)\t[0/1]? Apparent axial ratio (1)\t[ucd=phys.angSize;arith.ratio]\n#Column\tAB\t(F5.2)\t[0.01/7.88]? Galactic extinction in B band (2)\t[ucd=phys.absorption.gal]\n#Column\tl_FUV\t(A1)\t[>] Lower limit flag on FUV\t[ucd=meta.code.error]\n#Column\tFUV\t(F5.2)\t[8.21/24.56]? GALEX/FUV band magnitude (3)\t[ucd=phot.mag;em.UV]\n#Column\tBmag\t(F5.2)\t[-4.6/21.4]? Apparent integral B band magnitude (4)\t[ucd=phot.mag;em.opt.B]\n#Column\tl_Hamag\t(A1)\t[>] Lower limit flag on Hamag\t[ucd=meta.code.error]\n#Column\tHamag\t(F5.2)\t[3.79/27.87]? Integral H{alpha} line emission magnitude (5)\t[ucd=phot.flux;em.line.Halpha]\n#Column\tKmag\t(F5.2)\t[-1.75/17.54]? 2MASS Ks band magnitude (6)\t[ucd=phot.mag;em.IR.K]\n#Column\tf_Kmag\t(A1)\t[*] Estimated Kmag (7)\t[ucd=meta.code]\n#Column\tl_HImag\t(A1)\t[>] Lower limit flag on HImag\t[ucd=meta.code.error]\n#Column\tHImag\t(F6.2)\t[-3.35/21.5]? HI 21cm line magnitude (8)\t[ucd=phot.mag;em.radio.750-1500MHz]\n#Column\tW50\t(I3)\t? HI line width at 50% level from maximum (9)\t[ucd=spect.line.width;em.line.HI]\n#Column\tTT\t(I2)\t[-3/11]? Morphology T-type code (10)\t[ucd=src.morph]\n#Column\tMcl\t(a5)\tDwarf galaxy morphology (BCD, HIcld, Im, Ir, S0em, Sm, Sph, Tr, dE, dEem, or dS0em) (11)\t[ucd=src.morph.type]\n#Column\tTdw\t(A1)\tDwarf galaxy surface brightness morphology (H=high, N=normal, L=low, X=extremely low) (11)\t[ucd=meta.code;src.morph]\n#Column\tHRV\t(I4)\t[-556/2219]? Heliocentric radial velocity (12)\t[ucd=spect.dopplerVeloc;pos.heliocentric]\n#Column\tDist\t(F5.2)\t[0.01/26.2] Distance to galaxy\t[ucd=pos.distance;pos.heliocentric]\n#Column\tf_Dist\t(A4)\tMethod used to obtain Dist (G1)\t[ucd=meta.code]\n#Column\tA26\t(F5.2)\t? Major linear diameter (13)\t[ucd=phys.size.diameter]\n#Column\ti\t(I2)\t[0/90]? Inclination of galaxy from the face-on (i=0) position\t[ucd=src]\n#Column\tvAmp\t(I3)\t? Amplitude of rotational velocity (14)\t[ucd=phys.veloc.rotat]\n#Column\tABi\t(F5.2)\t[0/1.25]? Internal B band extinction (15)\t[ucd=phys.absorption;em.opt.B]\n#Column\tBMag\t(F5.1)\t[-21.8/-0.6]? Absolute B band magnitude (16)\t[ucd=phys.magAbs;em.opt.B]\n#Column\t<Bmu>\t(F4.1)\t? Average B band surface brightness (17)\t[ucd=phot.mag.sb;em.opt.B]\n#Column\tKLum\t(F5.2)\t[3.19/11.3]? log(luminosity) in Ks band (18)\t[ucd=phys.luminosity;em.IR.K]\n#Column\tM26\t(F5.2)\t? log(mass) within Holmberg radius (19)\t[ucd=phys.mass]\n#Column\tl_MHI\t(A1)\t[<] Upper limit flag on MHI\t[ucd=meta.code.error]\n#Column\tMHI\t(F5.2)\t[1.12/10.19]? log(Hydrogen mass) (20)\t[ucd=arith.zp]\n#Column\tVlg\t(I4)\t[-303/2094]? Local group radial velocity (21)\t[ucd=phys.veloc;pos.lg]\n#Column\tTi1\t(F4.1)\t[-3/6.5]? Tidal index {Theta}_1_ (22)\t[ucd=src.class.struct]\n#Column\tMD\t(a15)\tMain disturber name (23)\t[ucd=meta.id.assoc]\n#Column\tTi5\t(F4.1)\t[-2.5/6.5]? Tidal index {Theta}_5_ (24)\t[ucd=src.class.struct]\n#Column\tTij\t(F5.2)\t[-2.7/2.4]? Ks-density index {Theta}_j_ (25)\t[ucd=src.class.struct]\n#Column\tK+04\t(I3)\tCross-match with the Catalog of neighboring galaxies of Karachentsev et al. (2004, cat. J/AJ/127/2031) within 30\"\t[ucd=meta.ref.url]\n#Column\tSimbadName\t(f)\tSimbad column added by the CDS\t[ucd=meta.id]\n#Column\tNEDname\t(f)\tSimbad column added by the CDS\t[ucd=meta.id]\n_r\trecno\tName\tNd\tRAJ2000\tDEJ2000\ta26\tb/a\tAB\tl_FUV\tFUV\tBmag\tl_Hamag\tHamag\tKmag\tf_Kmag\tl_HImag\tHImag\tW50\tTT\tMcl\tTdw\tHRV\tDist\tf_Dist\tA26\ti\tvAmp\tABi\tBMag\t<Bmu>\tKLum\tM26\tl_MHI\tMHI\tVlg\tTi1\tMD\tTi5\tTij\tK+04\tSimbadName\tNEDname\narcsec\t \t \t \t\"h:m:s\"\t\"d:m:s\"\tarcmin\t \tmag\t \tmag\tmag\t \tmag\tmag\t \t \tmag\tkm/s\t \t \t \tkm/s\tMpc\t \tkpc\tdeg\tkm/s\tmag\tmag\tmag/arcsec2\t[Lsun]\t[Msun]\t \t[Msun]\tkm/s\t \t \t \t[-]\t \t \t\n----\t--------\t------------------\t---\t----------\t---------\t------\t-----\t-----\t-\t-----\t-----\t-\t-----\t-----\t-\t-\t------\t---\t--\t-----\t-\t----\t-----\t----\t-----\t--\t---\t-----\t-----\t----\t-----\t-----\t-\t-----\t----\t----\t---------------\t----\t-----\t---\t-----------------------------\t-----------------------------\n 6.2\t      23\tNGC0147           \t  7\t00 33 11.6\t+48 30 28\t 13.49\t 0.61\t 0.75\t>\t23.00\t10.36\t \t24.43\t 7.20\t \t>\t 20.87\t   \t-3\tSph  \tN\t-193\t 0.76\tTRGB\t 3.63\t70\t   \t 0.00\t-14.8\t24.3\t 8.21\t     \t<\t 3.74\t  85\t 2.8\tMESSIER031     \t 2.8\t 1.74\t  1\tNGC0147                      \tNGC0147\n\n",
+    "rows": [
+      {
+        "_r": "6.2",
+        "recno": "23",
+        "Name": "NGC0147",
+        "Nd": "7",
+        "RAJ2000": "00 33 11.6",
+        "DEJ2000": "+48 30 28",
+        "a26": "13.49",
+        "b/a": "0.61",
+        "AB": "0.75",
+        "l_FUV": ">",
+        "FUV": "23.00",
+        "Bmag": "10.36",
+        "l_Hamag": "",
+        "Hamag": "24.43",
+        "Kmag": "7.20",
+        "f_Kmag": "",
+        "l_HImag": ">",
+        "HImag": "20.87",
+        "W50": "",
+        "TT": "-3",
+        "Mcl": "Sph",
+        "Tdw": "N",
+        "HRV": "-193",
+        "Dist": "0.76",
+        "f_Dist": "TRGB",
+        "A26": "3.63",
+        "i": "70",
+        "vAmp": "",
+        "ABi": "0.00",
+        "BMag": "-14.8",
+        "<Bmu>": "24.3",
+        "KLum": "8.21",
+        "M26": "",
+        "l_MHI": "<",
+        "MHI": "3.74",
+        "Vlg": "85",
+        "Ti1": "2.8",
+        "MD": "MESSIER031",
+        "Ti5": "2.8",
+        "Tij": "1.74",
+        "K+04": "1",
+        "SimbadName": "NGC0147",
+        "NEDname": "NGC0147"
+      }
+    ]
+  }
+}

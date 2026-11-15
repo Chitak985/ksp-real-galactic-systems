@@ -1,0 +1,17 @@
+{{common_parameters}}
+// SA/Sa-Sd: regular spiral; pitch and bulge can be tuned for each Hubble stage.
+diskThickness = 6
+armCount = {{spiral_arm_count}}
+interarmFraction = {{spiral_interarm_fraction}}
+bulgeFraction = {{spiral_bulge_fraction}}
+bulgeScaleX = 9
+bulgeScaleY = 5
+bulgeScaleZ = 9
+enableBar = false
+barFraction = 0
+armHighlightChance = 0.025
+enableDustClouds = true
+dustCloudCount = 60
+enableStarFormation = true
+starFormingRegionCount = 35
+youngStarFraction = 0.08

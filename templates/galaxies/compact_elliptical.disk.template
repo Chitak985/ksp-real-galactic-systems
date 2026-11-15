@@ -1,0 +1,17 @@
+{{common_parameters}}
+// cE/UCD: angular size supplies compactness; no young disk or dust lanes.
+diskThickness = 0
+armCount = 0
+interarmFraction = 1
+bulgeFraction = 1
+bulgeScaleX = {{spheroid_sigma}}
+bulgeScaleY = {{spheroid_sigma}}
+bulgeScaleZ = {{spheroid_minor_sigma}}
+enableBar = false
+barFraction = 0
+armHighlightChance = 0
+enableDustClouds = false
+dustCloudCount = 0
+enableStarFormation = false
+starFormingRegionCount = 0
+youngStarFraction = 0
