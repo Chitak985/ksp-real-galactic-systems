@@ -62,6 +62,14 @@ def parse_tsv(text):
     if "#Table" not in text:
         raise CatalogError("VizieR returned no table.")
     lines=[line for line in text.splitlines() if line and not line.startswith("#")]
+    # VizieR omits even the data header when a valid cone query has no matches.
+    # Require the expected table and column declarations; do not treat a server
+    # error or an unrelated response as an empty nearby-galaxy catalog.
+    if not lines:
+        columns=set(re.findall(r"(?m)^#Column\t([^\t]+)\t",text))
+        failed=re.search(r"(?im)^#(?:ERROR|INFO\s+(?:Error|QUERY_STATUS\s*=\s*ERROR))",text)
+        if f"#Name: {NEARBY_TABLE}" in text and {"Name","Dist"} <= columns and not failed:
+            return []
     if len(lines)<3:
         raise CatalogError("VizieR table header is incomplete.")
     rows=list(csv.reader(lines,delimiter="\t"))
@@ -178,7 +186,7 @@ def normalize(raw, settings, overrides=None):
          "fields":["ra_deg","dec_deg","morphology","position_angle_deg","redshift"]},
         {"database":"VizieR Updated Nearby Galaxy Catalog","catalog":NEARBY_TABLE,
          "url":raw["nearby"]["url"],"bibcode":"2013AJ....145..101K",
-         "fields":["distance","angular_major_arcmin","axis_ratio","mass_solar","b_magnitude"],
+         "fields":["distance","angular_major_arcmin","axis_ratio","mass_solar","b_magnitude"] if nearby else [],
          "matched_name":nearby.get("Name")},
     ]
     galaxy["raw_record"]=f"data/galaxy_sources/{slug(raw['requested_name'])}.json"
@@ -189,6 +197,10 @@ def normalize(raw, settings, overrides=None):
         "gravity":galaxy["mass_kind"],
         "overrides":override,
     }
+    if not nearby:
+        galaxy["sources"][0]["fields"] += ["angular_major_arcmin","axis_ratio","b_magnitude"]
+        galaxy["sources"][1]["note"]="No nearby-catalog match; no measurements adopted from this query."
+        galaxy["adoption_notes"]["geometry"]="SIMBAD isophotal dimensions or reviewed deep-starlight extent; bandpass and depth vary."
     builder.replacements(galaxy,settings)
     return galaxy
 

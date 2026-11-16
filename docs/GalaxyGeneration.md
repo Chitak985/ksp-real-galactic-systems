@@ -245,6 +245,10 @@ optical diameter to mimic a differently framed photograph.
 
 ## Initial five additions
 
+The catalog also includes [five very large galaxies](GiantGalaxies.md), added
+using SIMBAD and reviewed stellar-size/mass measurements. Their documentation
+distinguishes deep stellar extents from ordinary catalog isophotes.
+
 | Galaxy | Adopted family | Distance (Mpc) | Approximate lookback (Myr) | Core SOI radius (pc) |
 | --- | --- | ---: | ---: | ---: |
 | NGC 185 | Dwarf elliptical | 0.61 | 1.99 | 21.8 |

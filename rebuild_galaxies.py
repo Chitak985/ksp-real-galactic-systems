@@ -34,6 +34,7 @@ RENDER_LIMITS = {
     "armPitchAngle": (float,5,35), "armStartRadius": (float,0.05,0.5),
     "armIrregularity": (float,0,0.5), "interarmFraction": (float,0,1),
     "bulgeFraction": (float,0,1), "dustOpacity": (float,0,80),
+    "bulgeScaleX": (float,0,100), "bulgeScaleY": (float,0,100), "bulgeScaleZ": (float,0,100),
     "dustCloudCount": (int,0,2000), "minDustCloudSize": (float,0.05,100),
     "maxDustCloudSize": (float,0.05,100), "dustLaneStrength": (float,0,4),
     "dustLaneWidth": (float,0.1,2), "dustCloudClumpiness": (float,0,1),

@@ -353,6 +353,343 @@
         "gravity": "indicative mass within Holmberg radius; point-mass game approximation",
         "overrides": {}
       }
+    },
+    {
+      "id": "ugc_1382",
+      "body_name": "UGC1382",
+      "name": "UGC 1382",
+      "ra_deg": 28.670996071730006,
+      "dec_deg": -0.14334427743000006,
+      "redshift": 0.019427318173887542,
+      "distance": {
+        "kind": "cosmological_redshift",
+        "cosmological_redshift": 0.019427318173887542,
+        "method": "flat FLRW; assumes observed redshift is cosmological"
+      },
+      "angular_major_arcmin": 7.0,
+      "axis_ratio": 0.7029885283464109,
+      "position_angle_deg": 51.0,
+      "morphology": "SAB_a",
+      "hubble_t": null,
+      "b_magnitude": 14.4,
+      "template": "spiral",
+      "mass_solar": 80000000000.0,
+      "mass_kind": "published stellar-mass estimate, Hagen et al. 2016 (arXiv:1607.02147); excludes dark halo",
+      "uncertainty_note": "Very faint outer stellar disk; extent, color and three-component profile are approximate. Stellar mass excludes the dark halo.",
+      "sources": [
+        {
+          "database": "SIMBAD",
+          "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27UGC+1382%27",
+          "retrieved_utc": "2026-11-16T11:11:12.154228+00:00",
+          "bibcodes": {
+            "morph_bibcode": "2019MNRAS.488..590B",
+            "galdim_bibcode": "2023ApJS..269....3M",
+            "rvz_bibcode": "2004MNRAS.350.1195M"
+          },
+          "fields": [
+            "ra_deg",
+            "dec_deg",
+            "morphology",
+            "position_angle_deg",
+            "redshift",
+            "angular_major_arcmin",
+            "axis_ratio",
+            "b_magnitude"
+          ]
+        },
+        {
+          "database": "VizieR Updated Nearby Galaxy Catalog",
+          "catalog": "J/AJ/145/101/catalog",
+          "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F145%2F101%2Fcatalog&-c=28.6709960717+-0.1433442774&-c.rs=60&-out.all=1&-out.max=20",
+          "bibcode": "2013AJ....145..101K",
+          "fields": [],
+          "matched_name": null,
+          "note": "No nearby-catalog match; no measurements adopted from this query."
+        }
+      ],
+      "raw_record": "data/galaxy_sources/ugc_1382.json",
+      "adoption_notes": {
+        "geometry": "SIMBAD isophotal dimensions or reviewed deep-starlight extent; bandpass and depth vary.",
+        "lookback": "Observed morphology is already retarded; no additional rewinding/evolution is applied.",
+        "color": "Template blackbody-equivalent palettes shifted by observed redshift; approximate, not measured spectra.",
+        "gravity": "published stellar-mass estimate, Hagen et al. 2016 (arXiv:1607.02147); excludes dark halo",
+        "overrides": {
+          "body_name": "UGC1382",
+          "name": "UGC 1382",
+          "template": "spiral",
+          "angular_major_arcmin": 7.0,
+          "axis_ratio": 0.7029885283464109,
+          "mass_solar": 80000000000.0,
+          "mass_kind": "published stellar-mass estimate, Hagen et al. 2016 (arXiv:1607.02147); excludes dark halo",
+          "uncertainty_note": "Very faint outer stellar disk; extent, color and three-component profile are approximate. Stellar mass excludes the dark halo."
+        }
+      }
+    },
+    {
+      "id": "ugc_2885",
+      "body_name": "UGC2885",
+      "name": "UGC 2885",
+      "ra_deg": 58.26024547597,
+      "dec_deg": 35.58949281571,
+      "redshift": 0.01976367264049051,
+      "distance": {
+        "kind": "cosmological_redshift",
+        "cosmological_redshift": 0.01976367264049051,
+        "method": "flat FLRW; assumes observed redshift is cosmological"
+      },
+      "angular_major_arcmin": 5.5,
+      "axis_ratio": 0.45454545454545453,
+      "position_angle_deg": 90.0,
+      "morphology": "Sc",
+      "hubble_t": null,
+      "b_magnitude": 14.4,
+      "template": "spiral",
+      "mass_solar": 158000000000.0,
+      "mass_kind": "published stellar-mass estimate, Di Teodoro et al. 2023 as tabulated in arXiv:2410.16467 Table 1; excludes dark halo",
+      "uncertainty_note": "Stellar-mass estimates differ; colors, dust and weak pseudoring are approximate. The ordinary spiral pattern is modeled.",
+      "sources": [
+        {
+          "database": "SIMBAD",
+          "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27UGC+2885%27",
+          "retrieved_utc": "2026-11-16T11:11:12.153539+00:00",
+          "bibcodes": {
+            "morph_bibcode": "2003A&A...412...45P",
+            "galdim_bibcode": "1999ApJS..121..287H",
+            "rvz_bibcode": "2006AJ....132..197W"
+          },
+          "fields": [
+            "ra_deg",
+            "dec_deg",
+            "morphology",
+            "position_angle_deg",
+            "redshift",
+            "angular_major_arcmin",
+            "axis_ratio",
+            "b_magnitude"
+          ]
+        },
+        {
+          "database": "VizieR Updated Nearby Galaxy Catalog",
+          "catalog": "J/AJ/145/101/catalog",
+          "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F145%2F101%2Fcatalog&-c=58.2602454760+35.5894928157&-c.rs=60&-out.all=1&-out.max=20",
+          "bibcode": "2013AJ....145..101K",
+          "fields": [],
+          "matched_name": null,
+          "note": "No nearby-catalog match; no measurements adopted from this query."
+        }
+      ],
+      "raw_record": "data/galaxy_sources/ugc_2885.json",
+      "adoption_notes": {
+        "geometry": "SIMBAD isophotal dimensions or reviewed deep-starlight extent; bandpass and depth vary.",
+        "lookback": "Observed morphology is already retarded; no additional rewinding/evolution is applied.",
+        "color": "Template blackbody-equivalent palettes shifted by observed redshift; approximate, not measured spectra.",
+        "gravity": "published stellar-mass estimate, Di Teodoro et al. 2023 as tabulated in arXiv:2410.16467 Table 1; excludes dark halo",
+        "overrides": {
+          "body_name": "UGC2885",
+          "name": "UGC 2885",
+          "template": "spiral",
+          "mass_solar": 158000000000.0,
+          "mass_kind": "published stellar-mass estimate, Di Teodoro et al. 2023 as tabulated in arXiv:2410.16467 Table 1; excludes dark halo",
+          "uncertainty_note": "Stellar-mass estimates differ; colors, dust and weak pseudoring are approximate. The ordinary spiral pattern is modeled."
+        }
+      }
+    },
+    {
+      "id": "ngc_4889",
+      "body_name": "NGC4889",
+      "name": "NGC 4889",
+      "ra_deg": 195.0337375,
+      "dec_deg": 27.977024999999998,
+      "redshift": 0.0215,
+      "distance": {
+        "kind": "cosmological_redshift",
+        "cosmological_redshift": 0.0215,
+        "method": "flat FLRW; assumes observed redshift is cosmological"
+      },
+      "angular_major_arcmin": 2.92341,
+      "axis_ratio": 0.6215002343154056,
+      "position_angle_deg": 75.0,
+      "morphology": "E3",
+      "hubble_t": null,
+      "b_magnitude": 13.0,
+      "uncertainty_note": "Redshift distance and Ks-based stellar mass are estimates; catalog size omits the faint halo. Smooth profile is approximate.",
+      "template": "elliptical",
+      "mass_solar": 840296279126.0232,
+      "mass_kind": "estimated stellar mass: Ks mass-to-light ratio 1 solar; excludes dark halo",
+      "sources": [
+        {
+          "database": "SIMBAD",
+          "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+4889%27",
+          "retrieved_utc": "2026-11-16T11:11:13.547375+00:00",
+          "bibcodes": {
+            "morph_bibcode": "2022MNRAS.514.3410H",
+            "galdim_bibcode": "2023ApJS..269....3M",
+            "rvz_bibcode": "2012ApJS..203...21A"
+          },
+          "fields": [
+            "ra_deg",
+            "dec_deg",
+            "morphology",
+            "position_angle_deg",
+            "redshift",
+            "angular_major_arcmin",
+            "axis_ratio",
+            "b_magnitude"
+          ]
+        },
+        {
+          "database": "VizieR Updated Nearby Galaxy Catalog",
+          "catalog": "J/AJ/145/101/catalog",
+          "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F145%2F101%2Fcatalog&-c=195.0337375000+27.9770250000&-c.rs=60&-out.all=1&-out.max=20",
+          "bibcode": "2013AJ....145..101K",
+          "fields": [],
+          "matched_name": null,
+          "note": "No nearby-catalog match; no measurements adopted from this query."
+        }
+      ],
+      "raw_record": "data/galaxy_sources/ngc_4889.json",
+      "adoption_notes": {
+        "geometry": "SIMBAD isophotal dimensions or reviewed deep-starlight extent; bandpass and depth vary.",
+        "lookback": "Observed morphology is already retarded; no additional rewinding/evolution is applied.",
+        "color": "Template blackbody-equivalent palettes shifted by observed redshift; approximate, not measured spectra.",
+        "gravity": "estimated stellar mass: Ks mass-to-light ratio 1 solar; excludes dark halo",
+        "overrides": {
+          "uncertainty_note": "Redshift distance and Ks-based stellar mass are estimates; catalog size omits the faint halo. Smooth profile is approximate."
+        }
+      }
+    },
+    {
+      "id": "ngc_6166",
+      "body_name": "NGC6166",
+      "name": "NGC 6166",
+      "ra_deg": 247.15935291929162,
+      "dec_deg": 39.551175981083325,
+      "redshift": 0.03119,
+      "distance": {
+        "kind": "cosmological_redshift",
+        "cosmological_redshift": 0.03119,
+        "method": "flat FLRW; assumes observed redshift is cosmological"
+      },
+      "angular_major_arcmin": 2.33639,
+      "axis_ratio": 0.6584987951497823,
+      "position_angle_deg": 34.0,
+      "morphology": "EA4",
+      "hubble_t": null,
+      "b_magnitude": 12.78,
+      "uncertainty_note": "Redshift distance and Ks-based mass are estimates; the larger cluster-bound halo is omitted. Smooth profile is approximate.",
+      "template": "elliptical",
+      "mass_solar": 889950428588.4562,
+      "mass_kind": "estimated stellar mass: Ks mass-to-light ratio 1 solar; excludes dark halo",
+      "sources": [
+        {
+          "database": "SIMBAD",
+          "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+6166%27",
+          "retrieved_utc": "2026-11-16T11:11:13.527855+00:00",
+          "bibcodes": {
+            "morph_bibcode": "2015A&A...573A..59G",
+            "galdim_bibcode": "2023ApJS..269....3M",
+            "rvz_bibcode": "2020ApJS..249....3A"
+          },
+          "fields": [
+            "ra_deg",
+            "dec_deg",
+            "morphology",
+            "position_angle_deg",
+            "redshift",
+            "angular_major_arcmin",
+            "axis_ratio",
+            "b_magnitude"
+          ]
+        },
+        {
+          "database": "VizieR Updated Nearby Galaxy Catalog",
+          "catalog": "J/AJ/145/101/catalog",
+          "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F145%2F101%2Fcatalog&-c=247.1593529193+39.5511759811&-c.rs=60&-out.all=1&-out.max=20",
+          "bibcode": "2013AJ....145..101K",
+          "fields": [],
+          "matched_name": null,
+          "note": "No nearby-catalog match; no measurements adopted from this query."
+        }
+      ],
+      "raw_record": "data/galaxy_sources/ngc_6166.json",
+      "adoption_notes": {
+        "geometry": "SIMBAD isophotal dimensions or reviewed deep-starlight extent; bandpass and depth vary.",
+        "lookback": "Observed morphology is already retarded; no additional rewinding/evolution is applied.",
+        "color": "Template blackbody-equivalent palettes shifted by observed redshift; approximate, not measured spectra.",
+        "gravity": "estimated stellar mass: Ks mass-to-light ratio 1 solar; excludes dark halo",
+        "overrides": {
+          "uncertainty_note": "Redshift distance and Ks-based mass are estimates; the larger cluster-bound halo is omitted. Smooth profile is approximate."
+        }
+      }
+    },
+    {
+      "id": "ic_1101",
+      "body_name": "IC1101",
+      "name": "IC 1101",
+      "ra_deg": 227.73375099999998,
+      "dec_deg": 5.744775,
+      "redshift": 0.0778,
+      "distance": {
+        "kind": "cosmological_redshift",
+        "cosmological_redshift": 0.0778,
+        "method": "flat FLRW; assumes observed redshift is cosmological"
+      },
+      "angular_major_arcmin": 6.0,
+      "axis_ratio": 0.38,
+      "position_angle_deg": 22.0,
+      "morphology": "E-SO",
+      "hubble_t": null,
+      "b_magnitude": 15.1,
+      "template": "elliptical",
+      "mass_solar": 3400000000000.0,
+      "mass_kind": "published stellar mass within the approximate 260-kpc main-body edge (arXiv:2607.15340); game point-mass proxy",
+      "uncertainty_note": "Deep stellar edge and mass are uncertain; outer intracluster light is omitted. Smooth profile and core gravity are estimates.",
+      "sources": [
+        {
+          "database": "SIMBAD",
+          "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27IC+1101%27",
+          "retrieved_utc": "2026-11-16T11:11:12.153932+00:00",
+          "bibcodes": {
+            "morph_bibcode": "2003A&A...412...45P",
+            "galdim_bibcode": "2023ApJS..269....3M",
+            "rvz_bibcode": "2019ApJ...871..129S"
+          },
+          "fields": [
+            "ra_deg",
+            "dec_deg",
+            "morphology",
+            "position_angle_deg",
+            "redshift",
+            "angular_major_arcmin",
+            "axis_ratio",
+            "b_magnitude"
+          ]
+        },
+        {
+          "database": "VizieR Updated Nearby Galaxy Catalog",
+          "catalog": "J/AJ/145/101/catalog",
+          "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F145%2F101%2Fcatalog&-c=227.7337510000+5.7447750000&-c.rs=60&-out.all=1&-out.max=20",
+          "bibcode": "2013AJ....145..101K",
+          "fields": [],
+          "matched_name": null,
+          "note": "No nearby-catalog match; no measurements adopted from this query."
+        }
+      ],
+      "raw_record": "data/galaxy_sources/ic_1101.json",
+      "adoption_notes": {
+        "geometry": "SIMBAD isophotal dimensions or reviewed deep-starlight extent; bandpass and depth vary.",
+        "lookback": "Observed morphology is already retarded; no additional rewinding/evolution is applied.",
+        "color": "Template blackbody-equivalent palettes shifted by observed redshift; approximate, not measured spectra.",
+        "gravity": "published stellar mass within the approximate 260-kpc main-body edge (arXiv:2607.15340); game point-mass proxy",
+        "overrides": {
+          "template": "elliptical",
+          "angular_major_arcmin": 6.0,
+          "axis_ratio": 0.38,
+          "mass_solar": 3400000000000.0,
+          "mass_kind": "published stellar mass within the approximate 260-kpc main-body edge (arXiv:2607.15340); game point-mass proxy",
+          "uncertainty_note": "Deep stellar edge and mass are uncertain; outer intracluster light is omitted. Smooth profile and core gravity are estimates."
+        }
+      }
     }
   ],
   "rendering_overrides": {
@@ -420,6 +757,96 @@
           "note": "Old bulge plus a distinct nuclear star cluster; palette temperatures remain visual estimates."
         }
       ]
+    },
+    "ugc_1382": {
+      "inclination_deg": 46,
+      "parameters": {
+        "bulgeFraction": 0.8,
+        "bulgeScaleX": 6,
+        "bulgeScaleY": 3,
+        "bulgeScaleZ": 6,
+        "armCount": 2,
+        "interarmFraction": 0.8,
+        "armWidth": 0.65,
+        "armConcentration": 0.15,
+        "dustOpacity": 2,
+        "dustCloudCount": 10,
+        "dustLaneStrength": 0.2,
+        "starFormingRegionCount": 18,
+        "starFormingRegionIntensity": 0.06,
+        "youngStarGlowIntensity": 0.04,
+        "youngStarFraction": 0.01,
+        "volumeIntensity": 1.2,
+        "starBrightness": 0.12
+      },
+      "notes": "Approximate bright lenticular center and much fainter outer stellar disk; one volume is not a three-Sersic fit. Optical/UV stellar extent only, no HI halo.",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/1607.02147v1",
+          "reference": "Hagen et al. (2016), ApJ 826, 210, Section III and Tables 1-2",
+          "reported_values": {
+            "outer_starlight_radius_arcmin": 3.5,
+            "outer_starlight_radius_kpc": 80,
+            "stellar_mass_solar": 80000000000.0,
+            "inner_effective_radius_kpc": 6,
+            "outer_effective_radius_kpc": 38
+          },
+          "adoption": "Use 7 arcmin optical/UV diameter, not 220-kpc HI diameter. Intrinsic flattening and single-profile rendering are estimates."
+        },
+        {
+          "url": "https://academic.oup.com/mnras/article/503/1/830/6132255",
+          "reference": "Saburova et al. (2021), MNRAS 503, 830, compiled properties",
+          "reported_values": {
+            "inclination_deg": 46
+          },
+          "adoption": "Use this inclination; derive axis ratio with assumed intrinsic flattening 0.15."
+        }
+      ]
+    },
+    "ugc_2885": {
+      "inclination_deg": 65,
+      "parameters": {
+        "armCount": 2,
+        "interarmFraction": 0.65,
+        "dustOpacity": 5,
+        "dustCloudCount": 35,
+        "dustLaneStrength": 0.35,
+        "starFormingRegionCount": 25,
+        "youngStarFraction": 0.025
+      },
+      "notes": "Regular giant spiral approximation with sparse young regions; weak resonance pseudoring and foreground-star contamination are not modeled. All rendering values except inclination are estimates.",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2410.16467v1",
+          "reference": "A multiwavelength overview of the giant spiral UGC 2885, Table 1",
+          "reported_values": {
+            "inclination_deg": 65,
+            "stellar_mass_solar": 158000000000.0,
+            "stellar_mass_uncertainty_solar": 73000000000.0
+          },
+          "adoption": "Use Table 1 mass rather than inventing missing Ks photometry. Size and sky angle remain SIMBAD. Weak resonance pseudoring is not separately modeled."
+        }
+      ]
+    },
+    "ic_1101": {
+      "parameters": {},
+      "notes": "Smooth main stellar body out to the published approximately 180-arcsecond edge; diffuse intracluster emission beyond it is excluded. Isophote twists and depleted nucleus are not resolved.",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2607.15340v1",
+          "reference": "How large can galaxies be? Ultra-deep imaging of IC 1101 (2026), Sections 4-6",
+          "reported_values": {
+            "edge_radius_kpc": 260,
+            "edge_radius_uncertainty_kpc": 38,
+            "edge_radius_arcsec": 180,
+            "stellar_mass_within_edge_solar": 3400000000000.0,
+            "edge_axis_ratio": 0.38,
+            "edge_axis_ratio_uncertainty": 0.02
+          },
+          "adoption": "Use 360-arcsec main stellar diameter, not the approximately 475-kpc-radius diffuse ICL region. Sky position angle remains SIMBAD; a single ellipsoid cannot reproduce the measured isophote twists."
+        }
+      ]
     }
-  }
+  },
+  "reviewed_adoptions_file": "data/giant_galaxy_adoptions.json"
 }

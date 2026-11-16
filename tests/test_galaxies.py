@@ -40,7 +40,13 @@ class GalaxyTests(unittest.TestCase):
         self.temp=tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.root=Path(self.temp.name)
-        self.catalog=load_catalog(ROOT/"data/galaxies.json")
+        self.full_catalog=load_catalog(ROOT/"data/galaxies.json")
+        # Keep the original nearby sample as the local-distance regression fixture.
+        # The complete, growing catalog is checked separately below.
+        self.catalog=copy.deepcopy(self.full_catalog)
+        nearby_ids={"ngc_147","ngc_185","ngc_300","ngc_404","ngc_2403"}
+        self.catalog["galaxies"]=[b for b in self.catalog["galaxies"] if b["id"] in nearby_ids]
+        self.catalog["rendering_overrides"]={k:v for k,v in self.catalog.get("rendering_overrides",{}).items() if k in nearby_ids}
         shutil.copytree(ROOT/"templates/galaxies",self.root/"templates/galaxies")
 
     def test_five_galaxies_flat_layout_barycenters_and_core_soi(self):
@@ -65,6 +71,39 @@ class GalaxyTests(unittest.TestCase):
             self.assertLessEqual(float(values["soi"])/PARSEC_M,100.0000001)
             mass=float(values["mass_kg"])
             self.assertAlmostEqual(float(values["gravity_g"])*galaxy.STANDARD_GRAVITY/(galaxy.G*mass),1,places=13)
+
+    def test_complete_saved_catalog_includes_giants_with_frozen_placement(self):
+        configs=galaxy.build_configs(self.full_catalog,self.root)
+        self.assertEqual(len(configs),len(self.full_catalog["galaxies"]))
+        giant_ids={"ic_1101","ugc_1382","ugc_2885","ngc_4889","ngc_6166"}
+        self.assertTrue(giant_ids <= {b["id"] for b in self.full_catalog["galaxies"]})
+        for b in self.full_catalog["galaxies"]:
+            text=configs[self.root/f"RealGalacticSystems/Systems/{b['id']}.cfg"]
+            d=galaxy.distance_measures(b,self.full_catalog["settings"])
+            self.assertGreater(d["lookback_years"],0)
+            self.assertIn("referenceBody = Sun",text)
+            self.assertIn("period = 3E300",text)
+            self.assertIn("invisible = true",text)
+            if b["id"] in giant_ids:
+                diameter=2*d["angular_diameter_mpc"]*1000*math.tan(math.radians(b["angular_major_arcmin"]/120))
+                self.assertGreater(diameter,70)  # kpc: genuinely large stellar bodies
+                self.assertLess(d["lookback_years"],2e9)
+                self.assertIn("estimate",b["uncertainty_note"].lower()+" "+b["mass_kind"].lower())
+
+    def test_full_catalog_raw_records_and_reviewed_adoptions_replay(self):
+        for b in self.full_catalog["galaxies"]:
+            raw=load_catalog(ROOT/b["raw_record"])
+            with mock.patch.object(fetch.urllib.request,"urlopen",side_effect=AssertionError("network used")):
+                adopted=fetch.normalize(raw,self.full_catalog["settings"],b["adoption_notes"]["overrides"])
+            self.assertEqual(adopted,b)
+
+    def test_empty_nearby_catalog_is_valid_but_server_errors_are_not(self):
+        raw=load_catalog(ROOT/"data/galaxy_sources/ic_1101.json")
+        self.assertEqual(fetch.parse_tsv(raw["nearby"]["text"]),[])
+        with self.assertRaises(CatalogError):
+            fetch.parse_tsv(raw["nearby"]["text"]+"\n#INFO\tError\tquery failed\n")
+        with self.assertRaises(CatalogError):
+            fetch.parse_tsv("#Table\tunknown\n#Name: wrong/catalog\n")
 
     def test_epoch_position_recovers_observed_sky_coordinates(self):
         for body in self.catalog["galaxies"]:

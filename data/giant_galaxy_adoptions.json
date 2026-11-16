@@ -1,0 +1,100 @@
+{
+  "IC 1101": {
+    "template": "elliptical",
+    "angular_major_arcmin": 6.0,
+    "axis_ratio": 0.38,
+    "mass_solar": 3400000000000.0,
+    "mass_kind": "published stellar mass within the approximate 260-kpc main-body edge (arXiv:2607.15340); game point-mass proxy",
+    "uncertainty_note": "Deep stellar edge and mass are uncertain; outer intracluster light is omitted. Smooth profile and core gravity are estimates."
+  },
+  "UGC 1382": {
+    "body_name": "UGC1382",
+    "name": "UGC 1382",
+    "template": "spiral",
+    "angular_major_arcmin": 7.0,
+    "axis_ratio": 0.7029885283464109,
+    "mass_solar": 80000000000.0,
+    "mass_kind": "published stellar-mass estimate, Hagen et al. 2016 (arXiv:1607.02147); excludes dark halo",
+    "uncertainty_note": "Very faint outer stellar disk; extent, color and three-component profile are approximate. Stellar mass excludes the dark halo."
+  },
+  "UGC 2885": {
+    "body_name": "UGC2885",
+    "name": "UGC 2885",
+    "template": "spiral",
+    "mass_solar": 158000000000.0,
+    "mass_kind": "published stellar-mass estimate, Di Teodoro et al. 2023 as tabulated in arXiv:2410.16467 Table 1; excludes dark halo",
+    "uncertainty_note": "Stellar-mass estimates differ; colors, dust and weak pseudoring are approximate. The ordinary spiral pattern is modeled."
+  },
+  "NGC 4889": {
+    "uncertainty_note": "Redshift distance and Ks-based stellar mass are estimates; catalog size omits the faint halo. Smooth profile is approximate."
+  },
+  "NGC 6166": {
+    "uncertainty_note": "Redshift distance and Ks-based mass are estimates; the larger cluster-bound halo is omitted. Smooth profile is approximate."
+  },
+  "_references": {
+    "selection": "Five very large regular galaxies, using starlight extents rather than gas disks or radio lobes; not a uniform top-five ranking.",
+    "IC 1101": [
+      {
+        "url": "https://arxiv.org/html/2607.15340v1",
+        "reference": "How large can galaxies be? Ultra-deep imaging of IC 1101 (2026), Sections 4-6",
+        "reported_values": {
+          "edge_radius_kpc": 260,
+          "edge_radius_uncertainty_kpc": 38,
+          "edge_radius_arcsec": 180,
+          "stellar_mass_within_edge_solar": 3400000000000.0,
+          "edge_axis_ratio": 0.38,
+          "edge_axis_ratio_uncertainty": 0.02
+        },
+        "adoption": "Use 360-arcsec main stellar diameter, not the approximately 475-kpc-radius diffuse ICL region. Sky position angle remains SIMBAD; a single ellipsoid cannot reproduce the measured isophote twists."
+      }
+    ],
+    "UGC 1382": [
+      {
+        "url": "https://arxiv.org/html/1607.02147v1",
+        "reference": "Hagen et al. (2016), ApJ 826, 210, Section III and Tables 1-2",
+        "reported_values": {
+          "outer_starlight_radius_arcmin": 3.5,
+          "outer_starlight_radius_kpc": 80,
+          "stellar_mass_solar": 80000000000.0,
+          "inner_effective_radius_kpc": 6,
+          "outer_effective_radius_kpc": 38
+        },
+        "adoption": "Use 7 arcmin optical/UV diameter, not 220-kpc HI diameter. Intrinsic flattening and single-profile rendering are estimates."
+      },
+      {
+        "url": "https://academic.oup.com/mnras/article/503/1/830/6132255",
+        "reference": "Saburova et al. (2021), MNRAS 503, 830, compiled properties",
+        "reported_values": {
+          "inclination_deg": 46
+        },
+        "adoption": "Use this inclination; derive axis ratio with assumed intrinsic flattening 0.15."
+      }
+    ],
+    "UGC 2885": [
+      {
+        "url": "https://arxiv.org/html/2410.16467v1",
+        "reference": "A multiwavelength overview of the giant spiral UGC 2885, Table 1",
+        "reported_values": {
+          "inclination_deg": 65,
+          "stellar_mass_solar": 158000000000.0,
+          "stellar_mass_uncertainty_solar": 73000000000.0
+        },
+        "adoption": "Use Table 1 mass rather than inventing missing Ks photometry. Size and sky angle remain SIMBAD. Weak resonance pseudoring is not separately modeled."
+      }
+    ],
+    "NGC 4889": [
+      {
+        "url": "https://arxiv.org/abs/1112.1078",
+        "reference": "McConnell et al. (2011), giant elliptical classification",
+        "adoption": "Use SIMBAD main-body isophote; no radio/cluster halo substitution. Mass is the importer Ks mass-to-light estimate, not the black-hole mass."
+      }
+    ],
+    "NGC 6166": [
+      {
+        "url": "https://doi.org/10.1088/0004-637X/807/1/56",
+        "reference": "Bender et al. (2015), structure and formation of cD galaxy NGC 6166",
+        "adoption": "Smooth elliptical approximation to main body; do not include the entire cluster-controlled cD halo as a hard galaxy boundary."
+      }
+    ]
+  }
+}
