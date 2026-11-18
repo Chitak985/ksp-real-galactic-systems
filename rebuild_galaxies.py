@@ -200,7 +200,7 @@ def temperature_rgb(temperature, alpha):
     return ", ".join(format_number(v) for v in [*(max(0, min(1, c/255)) for c in (red,green,blue)), alpha])
 
 
-def replacements(galaxy, settings, inclination_deg=None):
+def replacements(galaxy, settings, inclination_deg=None, position_angle_deg=None):
     family = galaxy["template"]
     if family not in FAMILIES:
         raise CatalogError(f"Unsupported galaxy template: {family}")
@@ -220,6 +220,8 @@ def replacements(galaxy, settings, inclination_deg=None):
     if major >= 600 or q > 1:
         raise CatalogError("Angular diameter must be below 10 degrees; 0 < axis ratio <= 1.")
     pa = number(galaxy["position_angle_deg"], "position angle") % 180
+    if position_angle_deg is not None:
+        pa = number(position_angle_deg, "rendering position angle") % 180
     distances = distance_measures(galaxy, settings)
     tangent = math.tan(math.radians(major / 120))
     render_radius_pc = distances["placement_mpc"] * 1e6 * tangent
@@ -253,6 +255,10 @@ def replacements(galaxy, settings, inclination_deg=None):
     config_text(galaxy["morphology"], "morphology")
     description = (f"{display}: {FAMILY_LABELS[family]}. "
                    f"Seen approximately {lookback_myr:.2f} million years ago (z={z:.6g}). {notes}")
+    if family in SPHEROIDS:
+        description += " Apparent elongation follows sky measurements; three-dimensional shape and rotation axis are uncertain."
+    else:
+        description += " A single plane approximates the disk; near-side choice, spiral phase, and any warp remain uncertain."
     # Integrated observed B magnitude already includes redshift and propagation
     # losses. Do not apply Tolman dimming to this photometry a second time.
     bmag = galaxy.get("b_magnitude")
@@ -396,9 +402,9 @@ def build_configs(catalog, root=ROOT, selected=None):
             raise CatalogError("Duplicate galaxy identifier or body name.")
         identifiers.add(identifier); names.add(name.casefold())
         refinement=rendering.get(identifier,{})
-        if not isinstance(refinement,dict) or set(refinement)-{"parameters","inclination_deg","notes","sources"}:
+        if not isinstance(refinement,dict) or set(refinement)-{"parameters","inclination_deg","position_angle_deg","notes","sources"}:
             raise CatalogError(f"Invalid rendering refinement for {identifier}.")
-        values = replacements(galaxy,settings,refinement.get("inclination_deg"))
+        values = replacements(galaxy,settings,refinement.get("inclination_deg"),refinement.get("position_angle_deg"))
         common = _fragment(_template(root,registry["common"]), values).strip()
         values["common_parameters"] = common
         disk = _fragment(_template(root,registry["types"][galaxy["template"]]), values).strip()

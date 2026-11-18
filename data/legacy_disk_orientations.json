@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "frame": "ICRS J2000 to the existing Galactic-axis adapter; Unity world (Galactic X,Z,Y)",
+  "spin_policy": "Static observed-epoch snapshots; rotationPeriod=0, alignRotationToOrbit=false, spinAroundDiskAxis=true. No rigid-body rotation period or spiral phase is inferred.",
+  "galaxies": [
+    {
+      "body_name": "SagittariusA",
+      "path": "RealGalacticSystems/Systems/MilkyWay/Configs/SagittariusA.cfg",
+      "orientation_kind": "galactic_plane",
+      "euler_deg": [
+        0,
+        55,
+        0
+      ],
+      "bar_angle_local_deg": 25,
+      "bar_angle_to_sun_center_line_deg": 30,
+      "note": "The existing plane is correct. Local bar angle 25 minus world yaw 55 gives a world XZ bar angle of -30 degrees, with its near end at positive Galactic longitude. A 30-degree long-bar angle is within the published 28-33-degree range. Spiral phase and detailed warp are estimates.",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/1504.01401",
+          "reference": "Wegg, Gerhard & Portail (2015), structure of the Milky Way long bar",
+          "reported_values": {
+            "bar_angle_range_deg": [
+              28,
+              33
+            ]
+          },
+          "adoption": "Choose 30 degrees for the long bar; preserve the Galactic XZ plane."
+        }
+      ]
+    },
+    {
+      "body_name": "AndromedaA",
+      "path": "RealGalacticSystems/Systems/Andromeda/Configs/AndromedaA.cfg",
+      "orientation_kind": "sky_disk",
+      "ra_deg": 10.6847083,
+      "dec_deg": 41.26875,
+      "position_angle_deg": 38,
+      "inclination_deg": 77,
+      "distance_m": 2.4e+22,
+      "note": "Representative main stellar disk plane; outer warps and the near-side ambiguity are not resolved by this PA/inclination pair. Preserve the existing placement distance, but use the correct heliocentric sky direction and the Sun parent. The old 3e22-m SOI enclosed Sol; use a 100-pc game core boundary, matching the generator maximum, not a measured black-hole influence radius.",
+      "sources": [
+        {
+          "url": "https://academic.oup.com/mnras/article/528/2/2653/7512223",
+          "reference": "Zhang et al. (2024), rotation curve and mass distribution of M31, adopted geometry",
+          "reported_values": {
+            "ra_deg": 10.6847083,
+            "dec_deg": 41.26875,
+            "position_angle_deg": 38,
+            "inclination_deg": 77
+          },
+          "adoption": "Use the adopted main disk geometry and center; retain the mod distance."
+        }
+      ],
+      "core_soi_pc": 100
+    },
+    {
+      "body_name": "TriangulumBarycenter",
+      "path": "RealGalacticSystems/Systems/Triangulum/Configs/TriangulumBarycenter.cfg",
+      "orientation_kind": "sky_disk",
+      "ra_deg": 23.4621,
+      "dec_deg": 30.6602,
+      "position_angle_deg": 23,
+      "inclination_deg": 54,
+      "distance_m": 2.58e+22,
+      "note": "Representative inner stellar disk plane, not the warped outer gas disk. PA uncertainty is about 2 degrees; tilt, near side, and spiral phase have additional modeling uncertainty. Preserve the existing placement distance.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.1051/0004-6361/201834437",
+          "reference": "Corbelli et al. (2019), Rise and fall of molecular clouds across the M33 disk",
+          "reported_values": {
+            "position_angle_deg": 23,
+            "position_angle_uncertainty_deg": 2,
+            "inclination_deg": 54
+          },
+          "adoption": "Use the inner disk geometry; a single plane cannot reproduce the outer warp."
+        },
+        {
+          "url": "https://simbad.u-strasbg.fr/simbad/sim-basic?Ident=M33",
+          "reference": "SIMBAD M33 J2000 center",
+          "fields": [
+            "ra_deg",
+            "dec_deg"
+          ]
+        }
+      ]
+    }
+  ]
+}

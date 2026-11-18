@@ -126,11 +126,17 @@ attached directly to its one invisible Jool-derived barycenter. Disk rotation
 is static: `alignRotationToOrbit = false` and `rotationPeriod = 0`.
 
 The observed position angle is measured east of celestial north. Disk
-inclination is inferred from the observed axial ratio assuming intrinsic
+inclination uses reviewed measurements where available, otherwise it is
+inferred from the observed axial ratio assuming intrinsic
 flattening 0.15 for spirals and 0.25 for lenticulars. This has the usual near-side
 ambiguity. Spheroids reproduce the measured sky ellipticity while assuming an
 unmeasured depth. The tool converts the complete sky basis to Unity Euler
 rotations, accounting for KSP's orbital-to-Unity Y/Z swap.
+
+Reviewed `inclination_deg` and `position_angle_deg` values can be saved alongside
+`parameters`, `notes`, and `sources` in `rendering_overrides`. They survive data
+refreshes and template rebuilds. See [disk orientations](DiskOrientations.md)
+for all current adoptions, legacy galaxy corrections, and remaining ambiguities.
 
 The normalized `galaxyRadius = 100` and computed `objectScale` reproduce the
 observed angular major diameter from Sol. Volumetric rendering cancels the
@@ -263,8 +269,10 @@ for example, NGC 147 is commonly called a dwarf elliptical, while this catalog
 labels its dwarf morphology Sph. The saved data retains both source records.
 
 Milky Way, Andromeda, Triangulum, NGC5866, GN-z11, and JADES-GS-Z14-0 and their
-common catalog aliases are excluded from this importer. Their existing files,
-the star catalog, SagittariusA, Sun, and README are untouched.
+common catalog aliases are excluded from this importer. The importer does not
+modify their hand-authored files. A subsequent [orientation review](DiskOrientations.md)
+corrected the Milky Way, Andromeda, and Triangulum disks separately. The star
+catalog, Sun, and README remain untouched.
 
 ## Verification
 

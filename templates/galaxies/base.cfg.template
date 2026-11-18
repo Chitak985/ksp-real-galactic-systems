@@ -37,4 +37,5 @@ GalacticDiskDefinition
 
     alignRotationToOrbit = false
     rotationPeriod = 0
+    spinAroundDiskAxis = true
 }

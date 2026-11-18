@@ -740,12 +740,22 @@
             "qualitative_spiral_appearance"
           ],
           "note": "Optical broadband plus emission-line composite; about 50 hours exposure, not a naked-eye color standard."
+        },
+        {
+          "url": "https://doi.org/10.1088/0004-637X/712/2/858",
+          "reference": "Gogarten et al. (2010), radial star formation history of NGC 300, galaxy geometry",
+          "reported_values": {
+            "inclination_deg": 42,
+            "position_angle_deg": 111
+          },
+          "adoption": "Use the optical stellar disk geometry instead of the SIMBAD summary PA of 114 degrees."
         }
-      ]
+      ],
+      "position_angle_deg": 111
     },
     "ngc_404": {
       "parameters": {},
-      "notes": "Old-population warm palette and lower lenticular exposure preserve color without shrinking the measured optical size. The nuclear star cluster is not separately resolved by the generic template.",
+      "notes": "Old-population warm palette and lower lenticular exposure preserve color without shrinking the measured optical size. The nuclear star cluster is not separately resolved by the generic template. Nearly face-on: adopt an 11-degree large-scale HI inclination as a proxy for the stellar disk and the approximately 80-degree optical stellar PA. The stellar inclination is uncertain; the warped outer HI and misaligned nuclear disk are not modeled.",
       "sources": [
         {
           "url": "https://arxiv.org/abs/1003.0680",
@@ -755,8 +765,28 @@
             "nuclear_structure"
           ],
           "note": "Old bulge plus a distinct nuclear star cluster; palette temperatures remain visual estimates."
+        },
+        {
+          "url": "https://arxiv.org/abs/astro-ph/0403467",
+          "reference": "del Rio, Brinks & Cepa (2004), Table 1 and tilted-ring analysis",
+          "reported_values": {
+            "inclination_deg": 11,
+            "hi_inner_position_angle_deg": 100
+          },
+          "adoption": "Use only the large-scale near-face-on inclination as a stellar-disk proxy, not the HI position angle. Gas geometry varies with radius."
+        },
+        {
+          "url": "https://arxiv.org/abs/1003.0680",
+          "reference": "Seth et al. (2010), Section 3.1, ACS F814W isophotes at 10-80 arcsec",
+          "reported_values": {
+            "position_angle_deg": 80,
+            "ellipticity": 0.08
+          },
+          "adoption": "Use the optical stellar position angle. Different gas and nuclear components have different axes."
         }
-      ]
+      ],
+      "inclination_deg": 11,
+      "position_angle_deg": 80
     },
     "ugc_1382": {
       "inclination_deg": 46,
@@ -779,7 +809,7 @@
         "volumeIntensity": 1.2,
         "starBrightness": 0.12
       },
-      "notes": "Approximate bright lenticular center and much fainter outer stellar disk; one volume is not a three-Sersic fit. Optical/UV stellar extent only, no HI halo.",
+      "notes": "Approximate bright lenticular center and much fainter outer stellar disk; one volume is not a three-Sersic fit. Optical/UV stellar extent only, no HI halo. Use the optical/UV stellar profile PA of 45 degrees; the gas disk and other catalog isophotes have somewhat different angles.",
       "sources": [
         {
           "url": "https://arxiv.org/html/1607.02147v1",
@@ -800,8 +830,18 @@
             "inclination_deg": 46
           },
           "adoption": "Use this inclination; derive axis ratio with assumed intrinsic flattening 0.15."
+        },
+        {
+          "url": "https://arxiv.org/abs/1607.02147",
+          "reference": "Hagen et al. (2016), Section III.1, optical surface brightness fitting",
+          "reported_values": {
+            "position_angle_deg": 45,
+            "axis_ratio": 0.69
+          },
+          "adoption": "Adopt the stellar-profile PA, retaining the reviewed 46-degree approximate inclination. This is not a model of the larger HI disk."
         }
-      ]
+      ],
+      "position_angle_deg": 45
     },
     "ugc_2885": {
       "inclination_deg": 65,
@@ -844,6 +884,23 @@
             "edge_axis_ratio_uncertainty": 0.02
           },
           "adoption": "Use 360-arcsec main stellar diameter, not the approximately 475-kpc-radius diffuse ICL region. Sky position angle remains SIMBAD; a single ellipsoid cannot reproduce the measured isophote twists."
+        }
+      ]
+    },
+    "ngc_2403": {
+      "inclination_deg": 63,
+      "position_angle_deg": 124,
+      "parameters": {},
+      "notes": "Adopt the published THINGS/CHAOS disk geometry instead of a generic axial-ratio inclination. A single plane does not reproduce outer warps or arm phase.",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2105.03437",
+          "reference": "Rogers et al. (2021), CHAOS VI, Table 1; geometry from de Blok et al. (2008)",
+          "reported_values": {
+            "inclination_deg": 63,
+            "position_angle_deg": 124
+          },
+          "adoption": "Use the adopted disk geometry."
         }
       ]
     }

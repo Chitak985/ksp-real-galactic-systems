@@ -5,6 +5,7 @@ import io
 import json
 import math
 from pathlib import Path
+import re
 import shutil
 import tempfile
 import unittest
@@ -13,7 +14,7 @@ import urllib.error
 
 import fetch_galaxies as fetch
 import rebuild_galaxies as galaxy
-from rebuild_configs import CatalogError, PARSEC_M, load_catalog, orbit_position, strip_comments, write_configs
+from rebuild_configs import CatalogError, PARSEC_M, load_catalog, node_contents, orbit_position, strip_comments, write_configs
 
 ROOT=Path(__file__).resolve().parents[1]
 
@@ -286,6 +287,87 @@ class GalaxyTests(unittest.TestCase):
             self.assertEqual(fetch.main(["NGC 300","--offline","--refresh","--dry-run","--catalog",str(catalog)]),0)
         after={p.relative_to(self.root):p.read_bytes() for p in self.root.rglob("*") if p.is_file()}
         self.assertEqual(before,after)
+
+
+class InstalledDiskOrientationTests(unittest.TestCase):
+    """Check the shipped disk planes against independent sky projections."""
+
+    def test_every_disk_has_reviewed_orientation_and_frozen_world_axes(self):
+        catalog=load_catalog(ROOT/"data/galaxies.json")
+        legacy=load_catalog(ROOT/"data/legacy_disk_orientations.json")["galaxies"]
+        reviewed={b["body_name"] for b in catalog["galaxies"]+legacy}
+        installed=[]
+        for path in (ROOT/"RealGalacticSystems").rglob("*.cfg"):
+            text=strip_comments(path.read_text(encoding="utf-8-sig"))
+            for match in re.finditer(r"(?m)^\s*GalacticDiskDefinition\s*\n",text):
+                node=node_contents(text[match.start():],"GalacticDiskDefinition")
+                values=dict(re.findall(r"(?m)^\s*(\w+)\s*=\s*([^\r\n]+)",node))
+                installed.append(values["planet"].strip())
+                self.assertEqual(values["alignRotationToOrbit"].strip(),"false")
+                self.assertEqual(float(values["rotationPeriod"]),0)
+                self.assertEqual(values["spinAroundDiskAxis"].strip(),"true")
+        self.assertEqual(set(installed),reviewed)
+        self.assertEqual(len(installed),len(reviewed))
+
+    def test_measured_planes_project_to_adopted_inclination_and_position_angle(self):
+        catalog=load_catalog(ROOT/"data/galaxies.json")
+        legacy=load_catalog(ROOT/"data/legacy_disk_orientations.json")["galaxies"]
+        for body in catalog["galaxies"]+legacy:
+            if body.get("orientation_kind")=="galactic_plane":continue
+            identifier=body.get("id")
+            refinement=catalog["rendering_overrides"].get(identifier,{})
+            pa=refinement.get("position_angle_deg",body["position_angle_deg"])
+            if "inclination_deg" in body:inc=body["inclination_deg"]
+            elif body["template"] in galaxy.SPHEROIDS:inc=0
+            else:
+                q0=.25 if "lenticular" in body["template"] else .15
+                inc=refinement.get("inclination_deg",math.degrees(math.acos(math.sqrt(
+                    max(0,(body["axis_ratio"]**2-q0*q0)/(1-q0*q0))))))
+            path=ROOT/(body.get("path") or f"RealGalacticSystems/Systems/{identifier}.cfg")
+            node=node_contents(strip_comments(path.read_text(encoding="utf-8-sig")),"GalacticDiskDefinition")
+            values=dict(re.findall(r"(?m)^\s*(rotation[X-Z])\s*=\s*([^\r\n]+)",node))
+            matrix=unity_matrix([float(values[k]) for k in ["rotationX","rotationY","rotationZ"]])
+            normal=tuple(matrix[i][1] for i in range(3));major=tuple(matrix[i][0] for i in range(3))
+            radial,east,north=map(galaxy.icrs_to_unity,galaxy.sky_basis(body["ra_deg"],body["dec_deg"]))
+            with self.subTest(body=body["body_name"]):
+                self.assertAlmostEqual(abs(dot(normal,radial)),math.cos(math.radians(inc)),places=10)
+                observed_pa=math.degrees(math.atan2(dot(major,east),dot(major,north)))
+                self.assertAlmostEqual(math.sin(math.radians(observed_pa-pa)),0,places=10)
+
+    def test_legacy_external_galaxies_are_placed_on_the_observed_sightline(self):
+        for body in load_catalog(ROOT/"data/legacy_disk_orientations.json")["galaxies"]:
+            if body["orientation_kind"]!="sky_disk":continue
+            text=strip_comments((ROOT/body["path"]).read_text(encoding="utf-8-sig"))
+            node=node_contents(text,"Orbit")
+            values=dict(re.findall(r"(?m)^\s*(\w+)\s*=\s*([^\r\n]+)",node))
+            orbit={k:v.strip() if k in {"referenceBody","mode"} else float(v) for k,v in values.items()}
+            self.assertEqual(orbit["referenceBody"],"Sun")
+            self.assertEqual(orbit["period"],3e300)
+            self.assertEqual(orbit["mode"],"OFF")
+            self.assertAlmostEqual(orbit["semiMajorAxis"]/body["distance_m"],1,places=14)
+            properties=node_contents(text,"Properties")
+            soi=float(re.search(r"(?m)^\s*sphereOfInfluence\s*=\s*(\S+)",properties)[1])
+            self.assertLess(soi/body["distance_m"],0.001)
+            if "core_soi_pc" in body:
+                self.assertAlmostEqual(soi/(body["core_soi_pc"]*PARSEC_M),1,places=14)
+            p=orbit_position(orbit);direction=tuple(v/math.hypot(*p) for v in p)
+            expected=galaxy.icrs_to_unity(galaxy.sky_basis(body["ra_deg"],body["dec_deg"])[0])
+            self.assertLess(math.dist((direction[0],direction[2],direction[1]),expected),1e-14)
+            self.assertEqual(orbit_position(orbit,1e15),p)
+
+    def test_milky_way_plane_and_near_bar_end(self):
+        record=next(b for b in load_catalog(ROOT/"data/legacy_disk_orientations.json")["galaxies"]
+                    if b["body_name"]=="SagittariusA")
+        node=node_contents(strip_comments((ROOT/record["path"]).read_text()),"GalacticDiskDefinition")
+        v=dict(re.findall(r"(?m)^\s*(\w+)\s*=\s*([^\r\n]+)",node))
+        matrix=unity_matrix([float(v[k]) for k in ["rotationX","rotationY","rotationZ"]])
+        self.assertLess(math.dist(tuple(matrix[i][1] for i in range(3)),(0,1,0)),1e-14)
+        # GalacticDisk's local bar axis is (cos(a),0,sin(a)), opposite Unity yaw.
+        a=math.radians(float(v["barAngle"]))
+        bar=tuple(matrix[i][0]*math.cos(a)+matrix[i][2]*math.sin(a) for i in range(3))
+        near=bar if bar[0]<0 else tuple(-x for x in bar)
+        self.assertGreater(near[2],0)  # Galactic longitude > 0 at the near bar end.
+        self.assertAlmostEqual(math.degrees(math.acos(-near[0])),30,places=10)
 
 
 if __name__=="__main__":unittest.main()
