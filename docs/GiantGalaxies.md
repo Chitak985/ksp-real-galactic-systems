@@ -1,7 +1,7 @@
 # Five very large galaxies
 
-Added on 2026-11-16 using the galaxy importer. The saved galaxy catalog now has
-**10 entries**. The new configs are files directly in
+Added on 2026-11-16 using the galaxy importer. The catalog contained **10 entries** after this addition;
+[ten further large ellipticals](LargeEllipticalGalaxies.md) bring it to 20. The new configs are files directly in
 `RealGalacticSystems/Systems`, alongside the first five generated galaxies.
 
 The selection prioritizes large **stellar bodies**, adequate data, and regular
@@ -92,7 +92,7 @@ The previous five galaxy records, their rendering refinements, all star data and
 configs, Sun, SagittariusA, and README are preserved. See
 [GalaxyGeneration.md](GalaxyGeneration.md) for the shared workflow.
 
-Verification: all 37 Python tests pass; all 10 galaxy configurations and all 150
+Verification when this first batch was added: all 37 Python tests passed; all 10 galaxy configurations and all 150
 star configurations match their saved inputs. The five new galaxies were also
 visually inspected using the actual GalacticDisk renderer and packaged shaders
 in an isolated Unity preview from the Sol viewing direction. This uses KSP API

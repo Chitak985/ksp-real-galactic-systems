@@ -106,6 +106,56 @@ class GalaxyTests(unittest.TestCase):
         with self.assertRaises(CatalogError):
             fetch.parse_tsv("#Table\tunknown\n#Name: wrong/catalog\n")
 
+    def test_explicit_simbad_only_import_keeps_provenance_and_requires_distance(self):
+        original=load_catalog(ROOT/"data/galaxy_sources/ngc_300.json")
+        with mock.patch.object(fetch,"tap",return_value=original["simbad"]), \
+             mock.patch.object(fetch,"request",side_effect=AssertionError("nearby query made")):
+            raw=fetch.fetch_records("NGC 300",simbad_only=True)
+        self.assertTrue(raw["nearby"]["skipped"])
+        self.assertEqual(raw["nearby"]["rows"],[])
+        with self.assertRaises(CatalogError):
+            fetch.normalize(raw,self.catalog["settings"])
+        adopted=fetch.normalize(raw,self.catalog["settings"],{
+            "distance":{"kind":"adopted_local","mpc":2.15,"method":"reviewed local compilation"}})
+        self.assertEqual(len(adopted["sources"]),1)
+        self.assertEqual(adopted["sources"][0]["database"],"SIMBAD")
+        self.assertIn("Explicitly not queried",adopted["adoption_notes"]["nearby_catalog"])
+
+    def test_simbad_only_marker_cannot_hide_nearby_measurements(self):
+        raw=load_catalog(ROOT/"data/galaxy_sources/ngc_300.json")
+        raw["nearby"]["skipped"]=True
+        with self.assertRaises(CatalogError):fetch.normalize(raw,self.catalog["settings"])
+
+    def test_adopted_local_distance_is_not_a_cosmological_redshift_clock(self):
+        body=copy.deepcopy(self.catalog["galaxies"][0])
+        body["distance"]={"kind":"adopted_local","mpc":12.3,"method":"group/flow compilation"}
+        body["redshift"]=-0.001
+        actual=galaxy.distance_measures(body,self.catalog["settings"])
+        self.assertEqual(actual["placement_mpc"],12.3)
+        self.assertEqual(actual["angular_diameter_mpc"],12.3)
+        self.assertAlmostEqual(actual["lookback_years"]/(12.3e6*3.261563777),1,places=8)
+        for value in [None,0,-1,float("nan")]:
+            body["distance"]["mpc"]=value
+            with self.assertRaises(CatalogError):galaxy.distance_measures(body,self.catalog["settings"])
+
+    def test_spiral_batch_replays_survey_angles_and_mass_units(self):
+        adopted=load_catalog(ROOT/"data/spiral_galaxy_adoptions.json")
+        ids={fetch.slug(name) for name in adopted if not name.startswith("_")}
+        bodies={b["id"]:b for b in self.full_catalog["galaxies"] if b["id"] in ids}
+        self.assertEqual(len(bodies),30)
+        self.assertTrue(all(b["template"] in {"spiral","weakly_barred_spiral","barred_spiral"} for b in bodies.values()))
+        for identifier,body in bodies.items():
+            refinement=self.full_catalog["rendering_overrides"][identifier]
+            for source in refinement["sources"]:
+                measured=source.get("reported_values",{})
+                if "inclination_deg" in measured:
+                    self.assertEqual(refinement["inclination_deg"],measured["inclination_deg"])
+                if "position_angle_deg" in measured:
+                    self.assertAlmostEqual(refinement["position_angle_deg"],measured["position_angle_deg"]%180)
+        sparc=load_catalog(ROOT/"data/galaxy_sources/spiral_batch_sparc.json")
+        row=next(row for row in sparc["rows"] if row["name"]=="UGC00128")
+        self.assertEqual(bodies["ugc_128"]["mass_solar"],.5*row["luminosity_3_6_solar"])
+
     def test_epoch_position_recovers_observed_sky_coordinates(self):
         for body in self.catalog["galaxies"]:
             v=galaxy.replacements(body,self.catalog["settings"])

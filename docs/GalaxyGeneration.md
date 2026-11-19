@@ -33,11 +33,16 @@ available:
 python fetch_galaxies.py "NGC 300" --refresh --dry-run
 python fetch_galaxies.py "NGC 300" --offline --refresh --dry-run
 python fetch_galaxies.py "NGC 300" --catalog-only
+python fetch_galaxies.py "NGC 1365" --simbad-only --overrides data/spiral_galaxy_adoptions.json
 ```
 
 `--offline` uses saved raw responses and makes no requests. `--dry-run` writes
 nothing, including caches. `--catalog-only` saves the data but leaves game configs
-for the separate rebuild command. `--catalog PATH` chooses another adopted JSON
+for the separate rebuild command. `--simbad-only` explicitly omits the nearby query, records this in provenance,
+and requires alternate reviewed inputs where needed. It does not convert query
+errors into empty matches.
+
+`--catalog PATH` chooses another adopted JSON
 file; templates and game output paths still resolve against the script directory.
 Every selected galaxy is validated before the importer starts writing. Each file
 is replaced atomically; the multi-file operation is not a database transaction.
@@ -150,6 +155,12 @@ an approximate lookback time. Local redshift-independent distances use D/c;
 peculiar velocities and negative redshifts never become negative distances or
 negative ages.
 
+`distance.kind = adopted_local` also accepts published local compilations that
+may mix direct measurements, group membership, and flow models. The method and
+uncertainties are saved rather than labeling every estimate redshift-independent.
+It uses the same approximate D/c lookback; cosmological redshift remains a
+separate distance kind.
+
 For a source without a nearby-catalog distance and with z >= 0.01, an explicitly
 assumed cosmological redshift can supply flat-FLRW distances and lookback time.
 The defaults are H0=67.4 km/s/Mpc, Omega_m=0.315, Omega_r=0.000092, with the
@@ -251,8 +262,12 @@ optical diameter to mimic a differently framed photograph.
 
 ## Initial five additions
 
+The catalog now also includes [thirty spiral galaxies](SpiralGalaxies.md).
+
 The catalog also includes [five very large galaxies](GiantGalaxies.md), added
-using SIMBAD and reviewed stellar-size/mass measurements. Their documentation
+using SIMBAD and reviewed stellar-size/mass measurements. It now also includes
+[ten further large elliptical galaxies](LargeEllipticalGalaxies.md), with reviewed
+optical diameters and photometric corrections. Their documentation
 distinguishes deep stellar extents from ordinary catalog isophotes.
 
 | Galaxy | Adopted family | Distance (Mpc) | Approximate lookback (Myr) | Core SOI radius (pc) |
@@ -294,3 +309,22 @@ reproduced the near-invisible spiral and the pale lenticular core, and confirmed
 visible spiral structure and a subdued warm bulge after correction. All five
 generated galaxies were inspected. These checks use KSP API substitutes and no
 Milky Way foreground, bloom, or user save; they are not a live KSP play test.
+
+
+## Nearby spheroidal galaxies
+
+[Fifty nearby galaxies](NearbyGalaxies.md) adds a pinned, checksum-verified Local
+Volume Database importer: `fetch_nearby_galaxies.py`. It selects nearest new,
+confirmed spheroidal systems with enough measured data, preserves raw records
+and a selection audit, and supports `--offline` and `--dry-run`. Its documented
+scope complements `fetch_galaxies.py`; neither importer accepts irregular, ring,
+or merging morphologies. See the batch document for the list, source definitions,
+uncertainties and commands.
+
+The compiler accepts measured `v_magnitude` when `b_magnitude` is unavailable.
+It keeps B as the first choice for existing records. Nearby V magnitudes are
+explicitly marked extinction-corrected; foreground reddening is not recreated.
+`spheroid_extent_sigma` optionally sets the Gaussian model boundary (2-6 sigma,
+spheroid families only). Its default is 3.5, preserving existing output. The
+nearby importer adopts 3 and converts measured half-light semi-major radii so
+their projected sizes and axis ratios are preserved.

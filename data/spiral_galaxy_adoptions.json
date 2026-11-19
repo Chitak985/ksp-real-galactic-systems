@@ -1,0 +1,1091 @@
+{
+  "IC 5332": {
+    "distance": {
+      "kind": "adopted_local",
+      "mpc": 9.01,
+      "uncertainty_mpc": 0.4,
+      "method": "PHANGS-ALMA Table 3 adopted local distance; compiled primary methods, see reference codes",
+      "source": "2021ApJS..257...43L",
+      "reference_codes": "(5)"
+    },
+    "position_angle_deg": 74.4,
+    "mass_solar": 4786300923.22638,
+    "mass_kind": "published photometric stellar-mass estimate, PHANGS-ALMA Table 4; galaxy point-mass proxy, excludes dark halo",
+    "uncertainty_note": "Sky PA supplied by the disk survey. Distance and stellar mass have measurement or modeling uncertainty; the outer extent, colors, dust and arm pattern are approximate."
+  },
+  "NGC 1300": {
+    "distance": {
+      "kind": "adopted_local",
+      "mpc": 18.99,
+      "uncertainty_mpc": 2.86,
+      "method": "PHANGS-ALMA Table 3 adopted local distance; compiled primary methods, see reference codes",
+      "source": "2021ApJS..257...43L",
+      "reference_codes": "(3,4)"
+    },
+    "position_angle_deg": 98.0,
+    "mass_solar": 41686938347.03346,
+    "mass_kind": "published photometric stellar-mass estimate, PHANGS-ALMA Table 4; galaxy point-mass proxy, excludes dark halo",
+    "template": "barred_spiral",
+    "hubble_t": 4,
+    "uncertainty_note": "Nuclear spiral and pseudoring detail are omitted. Distance and stellar mass have measurement or modeling uncertainty; the outer extent, colors, dust and arm pattern are approximate."
+  },
+  "NGC 1365": {
+    "distance": {
+      "kind": "adopted_local",
+      "mpc": 19.57,
+      "uncertainty_mpc": 0.78,
+      "method": "PHANGS-ALMA Table 3 adopted local distance; compiled primary methods, see reference codes",
+      "source": "2021ApJS..257...43L",
+      "reference_codes": "(6)"
+    },
+    "position_angle_deg": 21.099999999999994,
+    "mass_solar": 100000000000.0,
+    "mass_kind": "published photometric stellar-mass estimate, PHANGS-ALMA Table 4; galaxy point-mass proxy, excludes dark halo",
+    "uncertainty_note": "Distance and stellar mass have measurement or modeling uncertainty; the outer extent, colors, dust and arm pattern are approximate."
+  },
+  "NGC 1559": {
+    "distance": {
+      "kind": "adopted_local",
+      "mpc": 19.44,
+      "uncertainty_mpc": 0.45,
+      "method": "PHANGS-ALMA Table 3 adopted local distance; compiled primary methods, see reference codes",
+      "source": "2021ApJS..257...43L",
+      "reference_codes": "(9)"
+    },
+    "position_angle_deg": 64.5,
+    "mass_solar": 23442288153.19918,
+    "mass_kind": "published photometric stellar-mass estimate, PHANGS-ALMA Table 4; galaxy point-mass proxy, excludes dark halo",
+    "uncertainty_note": "Distance and stellar mass have measurement or modeling uncertainty; the outer extent, colors, dust and arm pattern are approximate."
+  },
+  "NGC 1566": {
+    "distance": {
+      "kind": "adopted_local",
+      "mpc": 17.69,
+      "uncertainty_mpc": 2.02,
+      "method": "PHANGS-ALMA Table 3 adopted local distance; compiled primary methods, see reference codes",
+      "source": "2021ApJS..257...43L",
+      "reference_codes": "(7)"
+    },
+    "position_angle_deg": 34.69999999999999,
+    "mass_solar": 61659500186.148094,
+    "mass_kind": "published photometric stellar-mass estimate, PHANGS-ALMA Table 4; galaxy point-mass proxy, excludes dark halo",
+    "uncertainty_note": "Disk inclination is poorly constrained. Distance and stellar mass have measurement or modeling uncertainty; the outer extent, colors, dust and arm pattern are approximate."
+  },
+  "NGC 1672": {
+    "distance": {
+      "kind": "adopted_local",
+      "mpc": 19.4,
+      "uncertainty_mpc": 2.93,
+      "method": "PHANGS-ALMA Table 3 adopted local distance; compiled primary methods, see reference codes",
+      "source": "2021ApJS..257...43L",
+      "reference_codes": "(3,4)"
+    },
+    "position_angle_deg": 134.3,
+    "mass_solar": 53703179637.02533,
+    "mass_kind": "published photometric stellar-mass estimate, PHANGS-ALMA Table 4; galaxy point-mass proxy, excludes dark halo",
+    "template": "barred_spiral",
+    "hubble_t": 4,
+    "uncertainty_note": "Disk inclination is poorly constrained. Distance and stellar mass have measurement or modeling uncertainty; the outer extent, colors, dust and arm pattern are approximate."
+  },
+  "NGC 247": {
+    "distance": {
+      "kind": "adopted_local",
+      "mpc": 3.71,
+      "uncertainty_mpc": 0.13,
+      "method": "PHANGS-ALMA Table 3 adopted local distance; compiled primary methods, see reference codes",
+      "source": "2021ApJS..257...43L",
+      "reference_codes": "(6)"
+    },
+    "position_angle_deg": 167.4,
+    "mass_solar": 3388441561.3920207,
+    "mass_kind": "published photometric stellar-mass estimate, PHANGS-ALMA Table 4; galaxy point-mass proxy, excludes dark halo",
+    "uncertainty_note": "Distance and stellar mass have measurement or modeling uncertainty; the outer extent, colors, dust and arm pattern are approximate."
+  },
+  "NGC 253": {
+    "distance": {
+      "kind": "adopted_local",
+      "mpc": 3.7,
+      "uncertainty_mpc": 0.12,
+      "method": "PHANGS-ALMA Table 3 adopted local distance; compiled primary methods, see reference codes",
+      "source": "2021ApJS..257...43L",
+      "reference_codes": "(6)"
+    },
+    "position_angle_deg": 52.5,
+    "mass_solar": 43651583224.016655,
+    "mass_kind": "published photometric stellar-mass estimate, PHANGS-ALMA Table 4; galaxy point-mass proxy, excludes dark halo",
+    "uncertainty_note": "Nuclear starburst and outflow are not separately resolved. Distance and stellar mass have measurement or modeling uncertainty; the outer extent, colors, dust and arm pattern are approximate."
+  },
+  "NGC 2997": {
+    "distance": {
+      "kind": "adopted_local",
+      "mpc": 14.06,
+      "uncertainty_mpc": 2.8,
+      "method": "PHANGS-ALMA Table 3 adopted local distance; compiled primary methods, see reference codes",
+      "source": "2021ApJS..257...43L",
+      "reference_codes": "(7)"
+    },
+    "position_angle_deg": 108.1,
+    "mass_solar": 53703179637.02533,
+    "mass_kind": "published photometric stellar-mass estimate, PHANGS-ALMA Table 4; galaxy point-mass proxy, excludes dark halo",
+    "template": "weakly_barred_spiral",
+    "hubble_t": 5,
+    "uncertainty_note": "Weak pseudoring detail is omitted. Distance and stellar mass have measurement or modeling uncertainty; the outer extent, colors, dust and arm pattern are approximate."
+  },
+  "NGC 3511": {
+    "distance": {
+      "kind": "adopted_local",
+      "mpc": 13.94,
+      "uncertainty_mpc": 2.1,
+      "method": "PHANGS-ALMA Table 3 adopted local distance; compiled primary methods, see reference codes",
+      "source": "2021ApJS..257...43L",
+      "reference_codes": "(3,4)"
+    },
+    "position_angle_deg": 76.80000000000001,
+    "mass_solar": 10715193052.376049,
+    "mass_kind": "published photometric stellar-mass estimate, PHANGS-ALMA Table 4; galaxy point-mass proxy, excludes dark halo",
+    "uncertainty_note": "Distance and stellar mass have measurement or modeling uncertainty; the outer extent, colors, dust and arm pattern are approximate."
+  },
+  "NGC 3621": {
+    "distance": {
+      "kind": "adopted_local",
+      "mpc": 7.06,
+      "uncertainty_mpc": 0.28,
+      "method": "PHANGS-ALMA Table 3 adopted local distance; compiled primary methods, see reference codes",
+      "source": "2021ApJS..257...43L",
+      "reference_codes": "(5)"
+    },
+    "position_angle_deg": 163.8,
+    "mass_solar": 11481536214.968842,
+    "mass_kind": "published photometric stellar-mass estimate, PHANGS-ALMA Table 4; galaxy point-mass proxy, excludes dark halo",
+    "uncertainty_note": "Distance and stellar mass have measurement or modeling uncertainty; the outer extent, colors, dust and arm pattern are approximate."
+  },
+  "NGC 3917": {
+    "hubble_t": 6,
+    "distance": {
+      "kind": "adopted_local",
+      "mpc": 18.0,
+      "uncertainty_mpc": 2.5,
+      "method": "SPARC Table 1 adopted distance; distance-method flag retained",
+      "source": "2016AJ....152..157L",
+      "method_flag": 4
+    },
+    "uncertainty_note": "Distance and stellar mass have measurement or modeling uncertainty; the outer extent, colors, dust and arm pattern are approximate."
+  },
+  "NGC 3949": {
+    "hubble_t": 4,
+    "distance": {
+      "kind": "adopted_local",
+      "mpc": 18.0,
+      "uncertainty_mpc": 2.5,
+      "method": "SPARC Table 1 adopted distance; distance-method flag retained",
+      "source": "2016AJ....152..157L",
+      "method_flag": 4
+    },
+    "uncertainty_note": "Distance and stellar mass have measurement or modeling uncertainty; the outer extent, colors, dust and arm pattern are approximate."
+  },
+  "NGC 4217": {
+    "hubble_t": 3,
+    "distance": {
+      "kind": "adopted_local",
+      "mpc": 18.0,
+      "uncertainty_mpc": 2.5,
+      "method": "SPARC Table 1 adopted distance; distance-method flag retained",
+      "source": "2016AJ....152..157L",
+      "method_flag": 4
+    },
+    "template": "spiral",
+    "uncertainty_note": "Distance and stellar mass have measurement or modeling uncertainty; the outer extent, colors, dust and arm pattern are approximate."
+  },
+  "NGC 4321": {
+    "distance": {
+      "kind": "adopted_local",
+      "mpc": 15.21,
+      "uncertainty_mpc": 0.5,
+      "method": "PHANGS-ALMA Table 3 adopted local distance; compiled primary methods, see reference codes",
+      "source": "2021ApJS..257...43L",
+      "reference_codes": "(11)"
+    },
+    "position_angle_deg": 156.2,
+    "mass_solar": 56234132519.034904,
+    "mass_kind": "published photometric stellar-mass estimate, PHANGS-ALMA Table 4; galaxy point-mass proxy, excludes dark halo",
+    "uncertainty_note": "Distance and stellar mass have measurement or modeling uncertainty; the outer extent, colors, dust and arm pattern are approximate.",
+    "body_name": "NGC4321",
+    "name": "M 100 (NGC 4321)"
+  },
+  "NGC 4535": {
+    "distance": {
+      "kind": "adopted_local",
+      "mpc": 15.77,
+      "uncertainty_mpc": 0.37,
+      "method": "PHANGS-ALMA Table 3 adopted local distance; compiled primary methods, see reference codes",
+      "source": "2021ApJS..257...43L",
+      "reference_codes": "(11)"
+    },
+    "position_angle_deg": 179.7,
+    "mass_solar": 34673685045.2531,
+    "mass_kind": "published photometric stellar-mass estimate, PHANGS-ALMA Table 4; galaxy point-mass proxy, excludes dark halo",
+    "uncertainty_note": "Disk inclination is poorly constrained. Distance and stellar mass have measurement or modeling uncertainty; the outer extent, colors, dust and arm pattern are approximate."
+  },
+  "NGC 4945": {
+    "distance": {
+      "kind": "adopted_local",
+      "mpc": 3.47,
+      "uncertainty_mpc": 0.12,
+      "method": "PHANGS-ALMA Table 3 adopted local distance; compiled primary methods, see reference codes",
+      "source": "2021ApJS..257...43L",
+      "reference_codes": "(6)"
+    },
+    "position_angle_deg": 43.8,
+    "mass_solar": 22908676527.6777,
+    "mass_kind": "published photometric stellar-mass estimate, PHANGS-ALMA Table 4; galaxy point-mass proxy, excludes dark halo",
+    "uncertainty_note": "Nuclear starburst and outflow are not separately resolved. Distance and stellar mass have measurement or modeling uncertainty; the outer extent, colors, dust and arm pattern are approximate."
+  },
+  "NGC 5033": {
+    "hubble_t": 5,
+    "distance": {
+      "kind": "adopted_local",
+      "mpc": 15.7,
+      "uncertainty_mpc": 4.7,
+      "method": "SPARC Table 1 adopted distance; distance-method flag retained",
+      "source": "2016AJ....152..157L",
+      "method_flag": 1
+    },
+    "uncertainty_note": "Distance and stellar mass have measurement or modeling uncertainty; the outer extent, colors, dust and arm pattern are approximate."
+  },
+  "NGC 5236": {
+    "distance": {
+      "kind": "adopted_local",
+      "mpc": 4.89,
+      "uncertainty_mpc": 0.18,
+      "method": "PHANGS-ALMA Table 3 adopted local distance; compiled primary methods, see reference codes",
+      "source": "2021ApJS..257...43L",
+      "reference_codes": "(6)"
+    },
+    "position_angle_deg": 45.0,
+    "mass_solar": 33884415613.920204,
+    "mass_kind": "published photometric stellar-mass estimate, PHANGS-ALMA Table 4; galaxy point-mass proxy, excludes dark halo",
+    "uncertainty_note": "Sky PA supplied by the disk survey. Distance and stellar mass have measurement or modeling uncertainty; the outer extent, colors, dust and arm pattern are approximate.",
+    "body_name": "NGC5236",
+    "name": "M 83 (NGC 5236)"
+  },
+  "NGC 5907": {
+    "hubble_t": 5,
+    "distance": {
+      "kind": "adopted_local",
+      "mpc": 17.3,
+      "uncertainty_mpc": 0.9,
+      "method": "SPARC Table 1 adopted distance; distance-method flag retained",
+      "source": "2016AJ....152..157L",
+      "method_flag": 2
+    },
+    "template": "spiral",
+    "uncertainty_note": "Faint halo streams are omitted. Distance and stellar mass have measurement or modeling uncertainty; the outer extent, colors, dust and arm pattern are approximate.",
+    "body_name": "NGC5907",
+    "name": "NGC 5907"
+  },
+  "NGC 5908": {
+    "uncertainty_note": "Inclination is estimated from the apparent axial ratio. Distance and stellar mass have measurement or modeling uncertainty; the outer extent, colors, dust and arm pattern are approximate."
+  },
+  "NGC 5965": {
+    "uncertainty_note": "Inclination is estimated from the apparent axial ratio. Distance and stellar mass have measurement or modeling uncertainty; the outer extent, colors, dust and arm pattern are approximate."
+  },
+  "NGC 628": {
+    "distance": {
+      "kind": "adopted_local",
+      "mpc": 9.84,
+      "uncertainty_mpc": 0.63,
+      "method": "PHANGS-ALMA Table 3 adopted local distance; compiled primary methods, see reference codes",
+      "source": "2021ApJS..257...43L",
+      "reference_codes": "(6)"
+    },
+    "position_angle_deg": 20.7,
+    "mass_solar": 21877616239.495518,
+    "mass_kind": "published photometric stellar-mass estimate, PHANGS-ALMA Table 4; galaxy point-mass proxy, excludes dark halo",
+    "uncertainty_note": "Disk inclination is poorly constrained. Distance and stellar mass have measurement or modeling uncertainty; the outer extent, colors, dust and arm pattern are approximate.",
+    "body_name": "NGC628",
+    "name": "M 74 (NGC 628)"
+  },
+  "NGC 6503": {
+    "hubble_t": 6,
+    "distance": {
+      "kind": "adopted_local",
+      "mpc": 6.26,
+      "uncertainty_mpc": 0.31,
+      "method": "SPARC Table 1 adopted distance; distance-method flag retained",
+      "source": "2016AJ....152..157L",
+      "method_flag": 2
+    },
+    "uncertainty_note": "Distance and stellar mass have measurement or modeling uncertainty; the outer extent, colors, dust and arm pattern are approximate."
+  },
+  "NGC 7331": {
+    "hubble_t": 3,
+    "distance": {
+      "kind": "adopted_local",
+      "mpc": 14.7,
+      "uncertainty_mpc": 1.5,
+      "method": "SPARC Table 1 adopted distance; distance-method flag retained",
+      "source": "2016AJ....152..157L",
+      "method_flag": 3
+    },
+    "uncertainty_note": "Distance and stellar mass have measurement or modeling uncertainty; the outer extent, colors, dust and arm pattern are approximate."
+  },
+  "NGC 7793": {
+    "distance": {
+      "kind": "adopted_local",
+      "mpc": 3.62,
+      "uncertainty_mpc": 0.15,
+      "method": "PHANGS-ALMA Table 3 adopted local distance; compiled primary methods, see reference codes",
+      "source": "2021ApJS..257...43L",
+      "reference_codes": "(6)"
+    },
+    "position_angle_deg": 110.0,
+    "mass_solar": 2290867652.76777,
+    "mass_kind": "published photometric stellar-mass estimate, PHANGS-ALMA Table 4; galaxy point-mass proxy, excludes dark halo",
+    "uncertainty_note": "Distance and stellar mass have measurement or modeling uncertainty; the outer extent, colors, dust and arm pattern are approximate."
+  },
+  "NGC 7814": {
+    "hubble_t": 2,
+    "distance": {
+      "kind": "adopted_local",
+      "mpc": 14.4,
+      "uncertainty_mpc": 0.66,
+      "method": "SPARC Table 1 adopted distance; distance-method flag retained",
+      "source": "2016AJ....152..157L",
+      "method_flag": 2
+    },
+    "template": "spiral",
+    "uncertainty_note": "Bulge dominates; the thin disk and dust lane are approximations. Distance and stellar mass have measurement or modeling uncertainty; the outer extent, colors, dust and arm pattern are approximate."
+  },
+  "NGC 801": {
+    "hubble_t": 5,
+    "uncertainty_note": "Distance and stellar mass have measurement or modeling uncertainty; the outer extent, colors, dust and arm pattern are approximate."
+  },
+  "NGC 891": {
+    "hubble_t": 3,
+    "distance": {
+      "kind": "adopted_local",
+      "mpc": 9.91,
+      "uncertainty_mpc": 0.5,
+      "method": "SPARC Table 1 adopted distance; distance-method flag retained",
+      "source": "2016AJ....152..157L",
+      "method_flag": 2
+    },
+    "uncertainty_note": "Distance and stellar mass have measurement or modeling uncertainty; the outer extent, colors, dust and arm pattern are approximate."
+  },
+  "UGC 128": {
+    "hubble_t": 8,
+    "mass_solar": 6010000000.0,
+    "mass_kind": "estimated stellar mass from SPARC 3.6-micron luminosity, assumed mass-to-light ratio 0.5 solar; excludes dark halo",
+    "uncertainty_note": "Stellar mass assumes a 3.6-micron mass-to-light ratio. Distance and stellar mass have measurement or modeling uncertainty; the outer extent, colors, dust and arm pattern are approximate.",
+    "body_name": "UGC128",
+    "name": "UGC 128"
+  },
+  "_references": {
+    "selection": "Thirty ordinary, weakly barred, or barred spiral disks. No dedicated irregular, collisional-ring, or ongoing-merger model. NGC 1300 and NGC 2997 are reviewed ordinary spiral approximations with unmodeled resonance-pseudoring details. Catalog isophotal diameters vary by passband and omit fainter outskirts.",
+    "PHANGS": {
+      "url": "https://arxiv.org/html/2104.07739",
+      "reference": "Leroy et al. (2021), PHANGS-ALMA, Tables 3 and 4",
+      "raw_record": "data/galaxy_sources/spiral_batch_phangs.json"
+    },
+    "SPARC": {
+      "url": "https://astroweb.cwru.edu/SPARC/SPARC_Lelli2016c.mrt",
+      "reference": "Lelli, McGaugh & Schombert (2016), Table 1",
+      "raw_record": "data/galaxy_sources/spiral_batch_sparc.json"
+    },
+    "IC 5332": [
+      {
+        "url": "https://arxiv.org/html/2104.07739",
+        "reference": "Leroy et al. (2021), PHANGS-ALMA Tables 3 and 4",
+        "catalog_key": "IC 5332",
+        "reported_values": {
+          "inclination_deg": 26.9,
+          "inclination_error_deg": 5.0,
+          "position_angle_deg": 74.4,
+          "position_angle_error_deg": 10.0,
+          "distance_mpc": 9.01,
+          "distance_error_mpc": 0.4,
+          "log10_stellar_mass_solar": 9.68
+        },
+        "adoption": "Representative large-scale disk orientation. Receding-side PA is reduced modulo 180; near side and exact arm/bar phase are not inferred. Adopted local distance may include group or flow-model estimates."
+      },
+      {
+        "database": "SIMBAD",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27IC+5332%27",
+        "raw_record": "data/galaxy_sources/ic_5332.json",
+        "adoption": "J2000 astrometry, observed redshift, angular stellar isophote and photometry; sky PA retained unless superseded by PHANGS."
+      }
+    ],
+    "NGC 1300": [
+      {
+        "url": "https://arxiv.org/html/2104.07739",
+        "reference": "Leroy et al. (2021), PHANGS-ALMA Tables 3 and 4",
+        "catalog_key": "NGC 1300",
+        "reported_values": {
+          "inclination_deg": 31.8,
+          "inclination_error_deg": 6.0,
+          "position_angle_deg": 278.0,
+          "position_angle_error_deg": 1.0,
+          "distance_mpc": 18.99,
+          "distance_error_mpc": 2.86,
+          "log10_stellar_mass_solar": 10.62
+        },
+        "adoption": "Representative large-scale disk orientation. Receding-side PA is reduced modulo 180; near side and exact arm/bar phase are not inferred. Adopted local distance may include group or flow-model estimates."
+      },
+      {
+        "url": "https://science.nasa.gov/asset/hubble/spiral-galaxy-ngc-1300/",
+        "reference": "NASA/ESA Hubble: NGC 1300, ordinary barred spiral",
+        "adoption": "Review the SB(rs)bc classification as a barred spiral approximation; no separate pseudoring or nuclear spiral is rendered."
+      },
+      {
+        "database": "SIMBAD",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+1300%27",
+        "raw_record": "data/galaxy_sources/ngc_1300.json",
+        "adoption": "J2000 astrometry, observed redshift, angular stellar isophote and photometry; sky PA retained unless superseded by PHANGS."
+      }
+    ],
+    "NGC 1365": [
+      {
+        "url": "https://arxiv.org/html/2104.07739",
+        "reference": "Leroy et al. (2021), PHANGS-ALMA Tables 3 and 4",
+        "catalog_key": "NGC 1365",
+        "reported_values": {
+          "inclination_deg": 55.4,
+          "inclination_error_deg": 6.0,
+          "position_angle_deg": 201.1,
+          "position_angle_error_deg": 7.5,
+          "distance_mpc": 19.57,
+          "distance_error_mpc": 0.78,
+          "log10_stellar_mass_solar": 11.0
+        },
+        "adoption": "Representative large-scale disk orientation. Receding-side PA is reduced modulo 180; near side and exact arm/bar phase are not inferred. Adopted local distance may include group or flow-model estimates."
+      },
+      {
+        "database": "SIMBAD",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+1365%27",
+        "raw_record": "data/galaxy_sources/ngc_1365.json",
+        "adoption": "J2000 astrometry, observed redshift, angular stellar isophote and photometry; sky PA retained unless superseded by PHANGS."
+      }
+    ],
+    "NGC 1559": [
+      {
+        "url": "https://arxiv.org/html/2104.07739",
+        "reference": "Leroy et al. (2021), PHANGS-ALMA Tables 3 and 4",
+        "catalog_key": "NGC 1559",
+        "reported_values": {
+          "inclination_deg": 65.4,
+          "inclination_error_deg": 8.4,
+          "position_angle_deg": 244.5,
+          "position_angle_error_deg": 3.0,
+          "distance_mpc": 19.44,
+          "distance_error_mpc": 0.45,
+          "log10_stellar_mass_solar": 10.37
+        },
+        "adoption": "Representative large-scale disk orientation. Receding-side PA is reduced modulo 180; near side and exact arm/bar phase are not inferred. Adopted local distance may include group or flow-model estimates."
+      },
+      {
+        "database": "SIMBAD",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+1559%27",
+        "raw_record": "data/galaxy_sources/ngc_1559.json",
+        "adoption": "J2000 astrometry, observed redshift, angular stellar isophote and photometry; sky PA retained unless superseded by PHANGS."
+      }
+    ],
+    "NGC 1566": [
+      {
+        "url": "https://arxiv.org/html/2104.07739",
+        "reference": "Leroy et al. (2021), PHANGS-ALMA Tables 3 and 4",
+        "catalog_key": "NGC 1566",
+        "reported_values": {
+          "inclination_deg": 29.5,
+          "inclination_error_deg": 10.6,
+          "position_angle_deg": 214.7,
+          "position_angle_error_deg": 4.1,
+          "distance_mpc": 17.69,
+          "distance_error_mpc": 2.02,
+          "log10_stellar_mass_solar": 10.79
+        },
+        "adoption": "Representative large-scale disk orientation. Receding-side PA is reduced modulo 180; near side and exact arm/bar phase are not inferred. Adopted local distance may include group or flow-model estimates."
+      },
+      {
+        "database": "SIMBAD",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+1566%27",
+        "raw_record": "data/galaxy_sources/ngc_1566.json",
+        "adoption": "J2000 astrometry, observed redshift, angular stellar isophote and photometry; sky PA retained unless superseded by PHANGS."
+      }
+    ],
+    "NGC 1672": [
+      {
+        "url": "https://arxiv.org/html/2104.07739",
+        "reference": "Leroy et al. (2021), PHANGS-ALMA Tables 3 and 4",
+        "catalog_key": "NGC 1672",
+        "reported_values": {
+          "inclination_deg": 42.6,
+          "inclination_error_deg": 12.9,
+          "position_angle_deg": 134.3,
+          "position_angle_error_deg": 0.4,
+          "distance_mpc": 19.4,
+          "distance_error_mpc": 2.93,
+          "log10_stellar_mass_solar": 10.73
+        },
+        "adoption": "Representative large-scale disk orientation. Receding-side PA is reduced modulo 180; near side and exact arm/bar phase are not inferred. Adopted local distance may include group or flow-model estimates."
+      },
+      {
+        "url": "https://science.nasa.gov/asset/hubble/hubbles-view-of-barred-spiral-galaxy-ngc-1672/",
+        "reference": "NASA/ESA Hubble, NGC 1672 barred spiral",
+        "adoption": "Numeric Hubble stage alone does not encode its strong bar; use the barred template."
+      },
+      {
+        "database": "SIMBAD",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+1672%27",
+        "raw_record": "data/galaxy_sources/ngc_1672.json",
+        "adoption": "J2000 astrometry, observed redshift, angular stellar isophote and photometry; sky PA retained unless superseded by PHANGS."
+      }
+    ],
+    "NGC 247": [
+      {
+        "url": "https://arxiv.org/html/2104.07739",
+        "reference": "Leroy et al. (2021), PHANGS-ALMA Tables 3 and 4",
+        "catalog_key": "NGC 0247X",
+        "reported_values": {
+          "inclination_deg": 76.4,
+          "inclination_error_deg": 5.0,
+          "position_angle_deg": 167.4,
+          "position_angle_error_deg": 10.0,
+          "distance_mpc": 3.71,
+          "distance_error_mpc": 0.13,
+          "log10_stellar_mass_solar": 9.53
+        },
+        "adoption": "Representative large-scale disk orientation. Receding-side PA is reduced modulo 180; near side and exact arm/bar phase are not inferred. Adopted local distance may include group or flow-model estimates."
+      },
+      {
+        "database": "SIMBAD",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+247%27",
+        "raw_record": "data/galaxy_sources/ngc_247.json",
+        "adoption": "J2000 astrometry, observed redshift, angular stellar isophote and photometry; sky PA retained unless superseded by PHANGS."
+      }
+    ],
+    "NGC 253": [
+      {
+        "url": "https://arxiv.org/html/2104.07739",
+        "reference": "Leroy et al. (2021), PHANGS-ALMA Tables 3 and 4",
+        "catalog_key": "NGC 0253X",
+        "reported_values": {
+          "inclination_deg": 75.0,
+          "inclination_error_deg": 5.0,
+          "position_angle_deg": 52.5,
+          "position_angle_error_deg": 10.0,
+          "distance_mpc": 3.7,
+          "distance_error_mpc": 0.12,
+          "log10_stellar_mass_solar": 10.64
+        },
+        "adoption": "Representative large-scale disk orientation. Receding-side PA is reduced modulo 180; near side and exact arm/bar phase are not inferred. Adopted local distance may include group or flow-model estimates."
+      },
+      {
+        "database": "SIMBAD",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+253%27",
+        "raw_record": "data/galaxy_sources/ngc_253.json",
+        "adoption": "J2000 astrometry, observed redshift, angular stellar isophote and photometry; sky PA retained unless superseded by PHANGS."
+      }
+    ],
+    "NGC 2997": [
+      {
+        "url": "https://arxiv.org/html/2104.07739",
+        "reference": "Leroy et al. (2021), PHANGS-ALMA Tables 3 and 4",
+        "catalog_key": "NGC 2997",
+        "reported_values": {
+          "inclination_deg": 33.0,
+          "inclination_error_deg": 9.0,
+          "position_angle_deg": 108.1,
+          "position_angle_error_deg": 0.7,
+          "distance_mpc": 14.06,
+          "distance_error_mpc": 2.8,
+          "log10_stellar_mass_solar": 10.73
+        },
+        "adoption": "Representative large-scale disk orientation. Receding-side PA is reduced modulo 180; near side and exact arm/bar phase are not inferred. Adopted local distance may include group or flow-model estimates."
+      },
+      {
+        "url": "https://www.eso.org/public/images/ngc_2997/",
+        "reference": "ESO NGC 2997, typical Sc spiral with two dominant arms",
+        "adoption": "Represent the ordinary spiral disk. Weak bar/pseudoring detail is approximate, not a dedicated ring-galaxy model."
+      },
+      {
+        "database": "SIMBAD",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+2997%27",
+        "raw_record": "data/galaxy_sources/ngc_2997.json",
+        "adoption": "J2000 astrometry, observed redshift, angular stellar isophote and photometry; sky PA retained unless superseded by PHANGS."
+      }
+    ],
+    "NGC 3511": [
+      {
+        "url": "https://arxiv.org/html/2104.07739",
+        "reference": "Leroy et al. (2021), PHANGS-ALMA Tables 3 and 4",
+        "catalog_key": "NGC 3511",
+        "reported_values": {
+          "inclination_deg": 75.1,
+          "inclination_error_deg": 2.2,
+          "position_angle_deg": 256.8,
+          "position_angle_error_deg": 0.8,
+          "distance_mpc": 13.94,
+          "distance_error_mpc": 2.1,
+          "log10_stellar_mass_solar": 10.03
+        },
+        "adoption": "Representative large-scale disk orientation. Receding-side PA is reduced modulo 180; near side and exact arm/bar phase are not inferred. Adopted local distance may include group or flow-model estimates."
+      },
+      {
+        "database": "SIMBAD",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+3511%27",
+        "raw_record": "data/galaxy_sources/ngc_3511.json",
+        "adoption": "J2000 astrometry, observed redshift, angular stellar isophote and photometry; sky PA retained unless superseded by PHANGS."
+      }
+    ],
+    "NGC 3621": [
+      {
+        "url": "https://arxiv.org/html/2104.07739",
+        "reference": "Leroy et al. (2021), PHANGS-ALMA Tables 3 and 4",
+        "catalog_key": "NGC 3621",
+        "reported_values": {
+          "inclination_deg": 65.8,
+          "inclination_error_deg": 1.8,
+          "position_angle_deg": 343.8,
+          "position_angle_error_deg": 0.3,
+          "distance_mpc": 7.06,
+          "distance_error_mpc": 0.28,
+          "log10_stellar_mass_solar": 10.06
+        },
+        "adoption": "Representative large-scale disk orientation. Receding-side PA is reduced modulo 180; near side and exact arm/bar phase are not inferred. Adopted local distance may include group or flow-model estimates."
+      },
+      {
+        "database": "SIMBAD",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+3621%27",
+        "raw_record": "data/galaxy_sources/ngc_3621.json",
+        "adoption": "J2000 astrometry, observed redshift, angular stellar isophote and photometry; sky PA retained unless superseded by PHANGS."
+      }
+    ],
+    "NGC 3917": [
+      {
+        "url": "https://astroweb.cwru.edu/SPARC/SPARC_Lelli2016c.mrt",
+        "reference": "Lelli et al. (2016), SPARC Table 1",
+        "reported_values": {
+          "name": "NGC3917",
+          "t": 6,
+          "distance_mpc": 18.0,
+          "distance_error_mpc": 2.5,
+          "distance_method": 4,
+          "inclination_deg": 79.0,
+          "inclination_error_deg": 2.0,
+          "luminosity_3_6_solar": 21966000000.0
+        },
+        "adoption": "Use disk inclination and Hubble stage. Retain SIMBAD sky PA and angular stellar outline. For z below 0.01 use the adopted SPARC distance, which may be a group or flow-model estimate."
+      },
+      {
+        "database": "SIMBAD",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+3917%27",
+        "raw_record": "data/galaxy_sources/ngc_3917.json",
+        "adoption": "J2000 astrometry, observed redshift, angular stellar isophote and photometry; sky PA retained unless superseded by PHANGS."
+      }
+    ],
+    "NGC 3949": [
+      {
+        "url": "https://astroweb.cwru.edu/SPARC/SPARC_Lelli2016c.mrt",
+        "reference": "Lelli et al. (2016), SPARC Table 1",
+        "reported_values": {
+          "name": "NGC3949",
+          "t": 4,
+          "distance_mpc": 18.0,
+          "distance_error_mpc": 2.5,
+          "distance_method": 4,
+          "inclination_deg": 55.0,
+          "inclination_error_deg": 2.0,
+          "luminosity_3_6_solar": 38067000000.0
+        },
+        "adoption": "Use disk inclination and Hubble stage. Retain SIMBAD sky PA and angular stellar outline. For z below 0.01 use the adopted SPARC distance, which may be a group or flow-model estimate."
+      },
+      {
+        "database": "SIMBAD",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+3949%27",
+        "raw_record": "data/galaxy_sources/ngc_3949.json",
+        "adoption": "J2000 astrometry, observed redshift, angular stellar isophote and photometry; sky PA retained unless superseded by PHANGS."
+      }
+    ],
+    "NGC 4217": [
+      {
+        "url": "https://astroweb.cwru.edu/SPARC/SPARC_Lelli2016c.mrt",
+        "reference": "Lelli et al. (2016), SPARC Table 1",
+        "reported_values": {
+          "name": "NGC4217",
+          "t": 3,
+          "distance_mpc": 18.0,
+          "distance_error_mpc": 2.5,
+          "distance_method": 4,
+          "inclination_deg": 86.0,
+          "inclination_error_deg": 2.0,
+          "luminosity_3_6_solar": 85299000000.0
+        },
+        "adoption": "Use disk inclination and Hubble stage. Retain SIMBAD sky PA and angular stellar outline. For z below 0.01 use the adopted SPARC distance, which may be a group or flow-model estimate."
+      },
+      {
+        "database": "SIMBAD",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+4217%27",
+        "raw_record": "data/galaxy_sources/ngc_4217.json",
+        "adoption": "J2000 astrometry, observed redshift, angular stellar isophote and photometry; sky PA retained unless superseded by PHANGS."
+      }
+    ],
+    "NGC 4321": [
+      {
+        "url": "https://arxiv.org/html/2104.07739",
+        "reference": "Leroy et al. (2021), PHANGS-ALMA Tables 3 and 4",
+        "catalog_key": "NGC 4321",
+        "reported_values": {
+          "inclination_deg": 38.5,
+          "inclination_error_deg": 2.4,
+          "position_angle_deg": 156.2,
+          "position_angle_error_deg": 1.7,
+          "distance_mpc": 15.21,
+          "distance_error_mpc": 0.5,
+          "log10_stellar_mass_solar": 10.75
+        },
+        "adoption": "Representative large-scale disk orientation. Receding-side PA is reduced modulo 180; near side and exact arm/bar phase are not inferred. Adopted local distance may include group or flow-model estimates."
+      },
+      {
+        "database": "SIMBAD",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+4321%27",
+        "raw_record": "data/galaxy_sources/ngc_4321.json",
+        "adoption": "J2000 astrometry, observed redshift, angular stellar isophote and photometry; sky PA retained unless superseded by PHANGS."
+      },
+      {
+        "reference": "Requested catalog identity versus SIMBAD preferred alias",
+        "adoption": "Use stable internal body name NGC4321 and display name M 100 (NGC 4321); the raw response preserves the preferred alias and original astrometry."
+      }
+    ],
+    "NGC 4535": [
+      {
+        "url": "https://arxiv.org/html/2104.07739",
+        "reference": "Leroy et al. (2021), PHANGS-ALMA Tables 3 and 4",
+        "catalog_key": "NGC 4535",
+        "reported_values": {
+          "inclination_deg": 44.7,
+          "inclination_error_deg": 10.8,
+          "position_angle_deg": 179.7,
+          "position_angle_error_deg": 1.6,
+          "distance_mpc": 15.77,
+          "distance_error_mpc": 0.37,
+          "log10_stellar_mass_solar": 10.54
+        },
+        "adoption": "Representative large-scale disk orientation. Receding-side PA is reduced modulo 180; near side and exact arm/bar phase are not inferred. Adopted local distance may include group or flow-model estimates."
+      },
+      {
+        "database": "SIMBAD",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+4535%27",
+        "raw_record": "data/galaxy_sources/ngc_4535.json",
+        "adoption": "J2000 astrometry, observed redshift, angular stellar isophote and photometry; sky PA retained unless superseded by PHANGS."
+      }
+    ],
+    "NGC 4945": [
+      {
+        "url": "https://arxiv.org/html/2104.07739",
+        "reference": "Leroy et al. (2021), PHANGS-ALMA Tables 3 and 4",
+        "catalog_key": "NGC 4945X",
+        "reported_values": {
+          "inclination_deg": 90.0,
+          "inclination_error_deg": 5.0,
+          "position_angle_deg": 43.8,
+          "position_angle_error_deg": 10.0,
+          "distance_mpc": 3.47,
+          "distance_error_mpc": 0.12,
+          "log10_stellar_mass_solar": 10.36
+        },
+        "adoption": "Representative large-scale disk orientation. Receding-side PA is reduced modulo 180; near side and exact arm/bar phase are not inferred. Adopted local distance may include group or flow-model estimates."
+      },
+      {
+        "database": "SIMBAD",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+4945%27",
+        "raw_record": "data/galaxy_sources/ngc_4945.json",
+        "adoption": "J2000 astrometry, observed redshift, angular stellar isophote and photometry; sky PA retained unless superseded by PHANGS."
+      }
+    ],
+    "NGC 5033": [
+      {
+        "url": "https://astroweb.cwru.edu/SPARC/SPARC_Lelli2016c.mrt",
+        "reference": "Lelli et al. (2016), SPARC Table 1",
+        "reported_values": {
+          "name": "NGC5033",
+          "t": 5,
+          "distance_mpc": 15.7,
+          "distance_error_mpc": 4.7,
+          "distance_method": 1,
+          "inclination_deg": 66.0,
+          "inclination_error_deg": 1.0,
+          "luminosity_3_6_solar": 110509000000.0
+        },
+        "adoption": "Use disk inclination and Hubble stage. Retain SIMBAD sky PA and angular stellar outline. For z below 0.01 use the adopted SPARC distance, which may be a group or flow-model estimate."
+      },
+      {
+        "database": "SIMBAD",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+5033%27",
+        "raw_record": "data/galaxy_sources/ngc_5033.json",
+        "adoption": "J2000 astrometry, observed redshift, angular stellar isophote and photometry; sky PA retained unless superseded by PHANGS."
+      }
+    ],
+    "NGC 5236": [
+      {
+        "url": "https://arxiv.org/html/2104.07739",
+        "reference": "Leroy et al. (2021), PHANGS-ALMA Tables 3 and 4",
+        "catalog_key": "NGC 5236",
+        "reported_values": {
+          "inclination_deg": 24.0,
+          "inclination_error_deg": 5.0,
+          "position_angle_deg": 225.0,
+          "position_angle_error_deg": 10.0,
+          "distance_mpc": 4.89,
+          "distance_error_mpc": 0.18,
+          "log10_stellar_mass_solar": 10.53
+        },
+        "adoption": "Representative large-scale disk orientation. Receding-side PA is reduced modulo 180; near side and exact arm/bar phase are not inferred. Adopted local distance may include group or flow-model estimates."
+      },
+      {
+        "database": "SIMBAD",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+5236%27",
+        "raw_record": "data/galaxy_sources/ngc_5236.json",
+        "adoption": "J2000 astrometry, observed redshift, angular stellar isophote and photometry; sky PA retained unless superseded by PHANGS."
+      },
+      {
+        "reference": "Requested catalog identity versus SIMBAD preferred alias",
+        "adoption": "Use stable internal body name NGC5236 and display name M 83 (NGC 5236); the raw response preserves the preferred alias and original astrometry."
+      }
+    ],
+    "NGC 5907": [
+      {
+        "url": "https://astroweb.cwru.edu/SPARC/SPARC_Lelli2016c.mrt",
+        "reference": "Lelli et al. (2016), SPARC Table 1",
+        "reported_values": {
+          "name": "NGC5907",
+          "t": 5,
+          "distance_mpc": 17.3,
+          "distance_error_mpc": 0.9,
+          "distance_method": 2,
+          "inclination_deg": 88.0,
+          "inclination_error_deg": 2.0,
+          "luminosity_3_6_solar": 175425000000.0
+        },
+        "adoption": "Use disk inclination and Hubble stage. Retain SIMBAD sky PA and angular stellar outline. For z below 0.01 use the adopted SPARC distance, which may be a group or flow-model estimate."
+      },
+      {
+        "database": "SIMBAD",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+5907%27",
+        "raw_record": "data/galaxy_sources/ngc_5907.json",
+        "adoption": "J2000 astrometry, observed redshift, angular stellar isophote and photometry; sky PA retained unless superseded by PHANGS."
+      },
+      {
+        "reference": "Requested catalog identity versus SIMBAD preferred alias",
+        "adoption": "Use stable internal body name NGC5907 and display name NGC 5907; the raw response preserves the preferred alias and original astrometry."
+      }
+    ],
+    "NGC 5908": [
+      {
+        "database": "SIMBAD",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+5908%27",
+        "raw_record": "data/galaxy_sources/ngc_5908.json",
+        "adoption": "J2000 astrometry, observed redshift, angular stellar isophote and photometry; sky PA retained unless superseded by PHANGS."
+      }
+    ],
+    "NGC 5965": [
+      {
+        "database": "SIMBAD",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+5965%27",
+        "raw_record": "data/galaxy_sources/ngc_5965.json",
+        "adoption": "J2000 astrometry, observed redshift, angular stellar isophote and photometry; sky PA retained unless superseded by PHANGS."
+      }
+    ],
+    "NGC 628": [
+      {
+        "url": "https://arxiv.org/html/2104.07739",
+        "reference": "Leroy et al. (2021), PHANGS-ALMA Tables 3 and 4",
+        "catalog_key": "NGC 0628",
+        "reported_values": {
+          "inclination_deg": 8.9,
+          "inclination_error_deg": 12.2,
+          "position_angle_deg": 20.7,
+          "position_angle_error_deg": 1.0,
+          "distance_mpc": 9.84,
+          "distance_error_mpc": 0.63,
+          "log10_stellar_mass_solar": 10.34
+        },
+        "adoption": "Representative large-scale disk orientation. Receding-side PA is reduced modulo 180; near side and exact arm/bar phase are not inferred. Adopted local distance may include group or flow-model estimates."
+      },
+      {
+        "database": "SIMBAD",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+628%27",
+        "raw_record": "data/galaxy_sources/ngc_628.json",
+        "adoption": "J2000 astrometry, observed redshift, angular stellar isophote and photometry; sky PA retained unless superseded by PHANGS."
+      },
+      {
+        "reference": "Requested catalog identity versus SIMBAD preferred alias",
+        "adoption": "Use stable internal body name NGC628 and display name M 74 (NGC 628); the raw response preserves the preferred alias and original astrometry."
+      }
+    ],
+    "NGC 6503": [
+      {
+        "url": "https://astroweb.cwru.edu/SPARC/SPARC_Lelli2016c.mrt",
+        "reference": "Lelli et al. (2016), SPARC Table 1",
+        "reported_values": {
+          "name": "NGC6503",
+          "t": 6,
+          "distance_mpc": 6.26,
+          "distance_error_mpc": 0.31,
+          "distance_method": 2,
+          "inclination_deg": 74.0,
+          "inclination_error_deg": 2.0,
+          "luminosity_3_6_solar": 12845000000.0
+        },
+        "adoption": "Use disk inclination and Hubble stage. Retain SIMBAD sky PA and angular stellar outline. For z below 0.01 use the adopted SPARC distance, which may be a group or flow-model estimate."
+      },
+      {
+        "database": "SIMBAD",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+6503%27",
+        "raw_record": "data/galaxy_sources/ngc_6503.json",
+        "adoption": "J2000 astrometry, observed redshift, angular stellar isophote and photometry; sky PA retained unless superseded by PHANGS."
+      }
+    ],
+    "NGC 7331": [
+      {
+        "url": "https://astroweb.cwru.edu/SPARC/SPARC_Lelli2016c.mrt",
+        "reference": "Lelli et al. (2016), SPARC Table 1",
+        "reported_values": {
+          "name": "NGC7331",
+          "t": 3,
+          "distance_mpc": 14.7,
+          "distance_error_mpc": 1.5,
+          "distance_method": 3,
+          "inclination_deg": 75.0,
+          "inclination_error_deg": 2.0,
+          "luminosity_3_6_solar": 250631000000.0
+        },
+        "adoption": "Use disk inclination and Hubble stage. Retain SIMBAD sky PA and angular stellar outline. For z below 0.01 use the adopted SPARC distance, which may be a group or flow-model estimate."
+      },
+      {
+        "database": "SIMBAD",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+7331%27",
+        "raw_record": "data/galaxy_sources/ngc_7331.json",
+        "adoption": "J2000 astrometry, observed redshift, angular stellar isophote and photometry; sky PA retained unless superseded by PHANGS."
+      }
+    ],
+    "NGC 7793": [
+      {
+        "url": "https://arxiv.org/html/2104.07739",
+        "reference": "Leroy et al. (2021), PHANGS-ALMA Tables 3 and 4",
+        "catalog_key": "NGC 7793X",
+        "reported_values": {
+          "inclination_deg": 50.0,
+          "inclination_error_deg": 5.0,
+          "position_angle_deg": 290.0,
+          "position_angle_error_deg": 10.0,
+          "distance_mpc": 3.62,
+          "distance_error_mpc": 0.15,
+          "log10_stellar_mass_solar": 9.36
+        },
+        "adoption": "Representative large-scale disk orientation. Receding-side PA is reduced modulo 180; near side and exact arm/bar phase are not inferred. Adopted local distance may include group or flow-model estimates."
+      },
+      {
+        "database": "SIMBAD",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+7793%27",
+        "raw_record": "data/galaxy_sources/ngc_7793.json",
+        "adoption": "J2000 astrometry, observed redshift, angular stellar isophote and photometry; sky PA retained unless superseded by PHANGS."
+      }
+    ],
+    "NGC 7814": [
+      {
+        "url": "https://astroweb.cwru.edu/SPARC/SPARC_Lelli2016c.mrt",
+        "reference": "Lelli et al. (2016), SPARC Table 1",
+        "reported_values": {
+          "name": "NGC7814",
+          "t": 2,
+          "distance_mpc": 14.4,
+          "distance_error_mpc": 0.66,
+          "distance_method": 2,
+          "inclination_deg": 90.0,
+          "inclination_error_deg": 1.0,
+          "luminosity_3_6_solar": 74529000000.0
+        },
+        "adoption": "Use disk inclination and Hubble stage. Retain SIMBAD sky PA and angular stellar outline. For z below 0.01 use the adopted SPARC distance, which may be a group or flow-model estimate."
+      },
+      {
+        "database": "SIMBAD",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+7814%27",
+        "raw_record": "data/galaxy_sources/ngc_7814.json",
+        "adoption": "J2000 astrometry, observed redshift, angular stellar isophote and photometry; sky PA retained unless superseded by PHANGS."
+      }
+    ],
+    "NGC 801": [
+      {
+        "url": "https://astroweb.cwru.edu/SPARC/SPARC_Lelli2016c.mrt",
+        "reference": "Lelli et al. (2016), SPARC Table 1",
+        "reported_values": {
+          "name": "NGC0801",
+          "t": 5,
+          "distance_mpc": 80.7,
+          "distance_error_mpc": 8.07,
+          "distance_method": 1,
+          "inclination_deg": 80.0,
+          "inclination_error_deg": 1.0,
+          "luminosity_3_6_solar": 312570000000.0
+        },
+        "adoption": "Use disk inclination and Hubble stage. Retain SIMBAD sky PA and angular stellar outline. For z below 0.01 use the adopted SPARC distance, which may be a group or flow-model estimate."
+      },
+      {
+        "database": "SIMBAD",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+801%27",
+        "raw_record": "data/galaxy_sources/ngc_801.json",
+        "adoption": "J2000 astrometry, observed redshift, angular stellar isophote and photometry; sky PA retained unless superseded by PHANGS."
+      }
+    ],
+    "NGC 891": [
+      {
+        "url": "https://astroweb.cwru.edu/SPARC/SPARC_Lelli2016c.mrt",
+        "reference": "Lelli et al. (2016), SPARC Table 1",
+        "reported_values": {
+          "name": "NGC0891",
+          "t": 3,
+          "distance_mpc": 9.91,
+          "distance_error_mpc": 0.5,
+          "distance_method": 2,
+          "inclination_deg": 90.0,
+          "inclination_error_deg": 1.0,
+          "luminosity_3_6_solar": 138340000000.0
+        },
+        "adoption": "Use disk inclination and Hubble stage. Retain SIMBAD sky PA and angular stellar outline. For z below 0.01 use the adopted SPARC distance, which may be a group or flow-model estimate."
+      },
+      {
+        "database": "SIMBAD",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+891%27",
+        "raw_record": "data/galaxy_sources/ngc_891.json",
+        "adoption": "J2000 astrometry, observed redshift, angular stellar isophote and photometry; sky PA retained unless superseded by PHANGS."
+      }
+    ],
+    "UGC 128": [
+      {
+        "url": "https://astroweb.cwru.edu/SPARC/SPARC_Lelli2016c.mrt",
+        "reference": "Lelli et al. (2016), SPARC Table 1",
+        "reported_values": {
+          "name": "UGC00128",
+          "t": 8,
+          "distance_mpc": 64.5,
+          "distance_error_mpc": 9.7,
+          "distance_method": 1,
+          "inclination_deg": 57.0,
+          "inclination_error_deg": 10.0,
+          "luminosity_3_6_solar": 12020000000.0
+        },
+        "adoption": "Use disk inclination and Hubble stage. Retain SIMBAD sky PA and angular stellar outline. For z below 0.01 use the adopted SPARC distance, which may be a group or flow-model estimate."
+      },
+      {
+        "database": "SIMBAD",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27UGC+128%27",
+        "raw_record": "data/galaxy_sources/ugc_128.json",
+        "adoption": "J2000 astrometry, observed redshift, angular stellar isophote and photometry; sky PA retained unless superseded by PHANGS."
+      },
+      {
+        "reference": "Requested catalog identity versus SIMBAD preferred alias",
+        "adoption": "Use stable internal body name UGC128 and display name UGC 128; the raw response preserves the preferred alias and original astrometry."
+      }
+    ]
+  }
+}

@@ -86,7 +86,7 @@ def slug(name):
     return name
 
 
-def fetch_records(name):
+def fetch_records(name, simbad_only=False):
     # SQL string literals are escaped; names are never interpreted as code/paths.
     literal=name.replace("'","''")
     result=tap("SELECT TOP 2 "+FIELDS+" FROM basic AS b JOIN ident AS i ON b.oid=i.oidref "
@@ -96,6 +96,12 @@ def fetch_records(name):
     row=result["rows"][0]
     if builder.canonical(row["main_id"]) in builder.EXCLUDED:
         raise CatalogError(f"{name} resolves to an excluded/existing galaxy.")
+    if simbad_only:
+        # An explicit alternate-source workflow, never an error-to-empty fallback.
+        # Missing distances/masses still fail normalize() unless reviewed inputs
+        # or valid cosmological data supply them.
+        return {"requested_name":name,"retrieved_utc":datetime.now(timezone.utc).isoformat(),
+                "simbad":result,"nearby":{"rows":[],"url":None,"text":None,"skipped":True}}
     ra,dec=number(row["ra"],"RA"),number(row["dec"],"Dec")
     nearby=request(VIZIER,{"-source":NEARBY_TABLE,"-c":f"{ra:.10f} {dec:.10f}",
                             "-c.rs":"60","-out.all":"1","-out.max":"20"})
@@ -114,6 +120,9 @@ def optional_float(record,key):
 
 
 def normalize(raw, settings, overrides=None):
+    if raw.get("database")=="LVDB":
+        from fetch_nearby_galaxies import normalize_lvdb
+        return normalize_lvdb(raw,settings,overrides)
     basic=raw["simbad"]["rows"][0]
     nearby_rows=raw["nearby"]["rows"]
     if len(nearby_rows)>1:
@@ -201,6 +210,11 @@ def normalize(raw, settings, overrides=None):
         galaxy["sources"][0]["fields"] += ["angular_major_arcmin","axis_ratio","b_magnitude"]
         galaxy["sources"][1]["note"]="No nearby-catalog match; no measurements adopted from this query."
         galaxy["adoption_notes"]["geometry"]="SIMBAD isophotal dimensions or reviewed deep-starlight extent; bandpass and depth vary."
+    if raw["nearby"].get("skipped"):
+        if nearby:
+            raise CatalogError("A skipped nearby query cannot contain catalog rows.")
+        galaxy["sources"]=galaxy["sources"][:1]
+        galaxy["adoption_notes"]["nearby_catalog"]="Explicitly not queried; no nearby-catalog measurements adopted."
     builder.replacements(galaxy,settings)
     return galaxy
 
@@ -212,6 +226,7 @@ def main(argv=None):
     parser.add_argument("--overrides",type=Path,help="JSON mapping requested names to reviewed replacement fields.")
     parser.add_argument("--refresh",action="store_true",help="Explicitly replace existing saved records and their adopted values.")
     parser.add_argument("--offline",action="store_true",help="Use saved raw records; make no network requests.")
+    parser.add_argument("--simbad-only",action="store_true",help="Explicitly omit the nearby-catalog query; reviewed replacement data may be needed.")
     parser.add_argument("--catalog-only",action="store_true",help="Save fetched data without writing game configs.")
     parser.add_argument("--dry-run",action="store_true",help="Fetch/validate in memory without saving any files.")
     args=parser.parse_args(argv)
@@ -229,7 +244,7 @@ def main(argv=None):
                 continue
             cache=ROOT/f"data/galaxy_sources/{identifier}.json"
             print(f"{'Reading saved records for' if args.offline else 'Fetching'} {name}...")
-            raw=load_catalog(cache) if args.offline else fetch_records(name)
+            raw=load_catalog(cache) if args.offline else fetch_records(name,simbad_only=args.simbad_only)
             if slug(raw["requested_name"])!=identifier:
                 raise CatalogError("Raw cache name does not match the requested galaxy.")
             normalized=normalize(raw,catalog["settings"],overrides.get(name))

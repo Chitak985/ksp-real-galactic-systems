@@ -1,0 +1,265 @@
+{
+  "ESO 383-76": {
+    "uncertainty_note": "B-band D26 gives a conservative stellar outline; larger faint envelopes are omitted. Redshift distance, Ks-based mass, and smooth shape are estimates.",
+    "body_name": "ESO38376",
+    "name": "ESO 383-76",
+    "template": "elliptical",
+    "angular_major_arcmin": 3.8616666666666664,
+    "axis_ratio": 0.5025125628140703,
+    "b_magnitude": 13.02
+  },
+  "ESO 306-17": {
+    "uncertainty_note": "B-band D26 gives a conservative stellar outline; larger faint envelopes are omitted. Redshift distance, Ks-based mass, and smooth shape are estimates.",
+    "body_name": "ESO30617",
+    "name": "ESO 306-17",
+    "template": "elliptical",
+    "angular_major_arcmin": 3.25,
+    "axis_ratio": 0.6578947368421053,
+    "b_magnitude": 13.35
+  },
+  "Holm 15A": {
+    "uncertainty_note": "Catalog isophote omits the faint envelope. Published stellar mass is model-dependent; the depleted central core and dark halo are not resolved by this smooth approximation.",
+    "body_name": "Holm15A",
+    "name": "Holm 15A",
+    "template": "elliptical",
+    "mass_solar": 2500000000000.0,
+    "mass_kind": "published stellar-mass estimate (2.5 +/- 0.64)e12 solar, Mehrgan et al. 2019; excludes dark halo; game point-mass proxy"
+  },
+  "NGC 6173": {
+    "uncertainty_note": "Redshift distance and Ks-based stellar mass are estimates. Catalog light extent omits faint halo; a smooth spheroid approximates the profile."
+  },
+  "NGC 2832": {
+    "uncertainty_note": "Redshift distance and Ks-based mass are estimates. Catalog size omits the faint envelope; nearby companion galaxies and detailed profile structure are not modeled."
+  },
+  "UGC 9799": {
+    "uncertainty_note": "Redshift distance and Ks-based mass are estimates. Faint halo, bright active nucleus and fine structure are omitted; a smooth main-body spheroid is approximate.",
+    "body_name": "UGC9799",
+    "name": "UGC 9799"
+  },
+  "NGC 1600": {
+    "uncertainty_note": "Photometry differs among catalogs; a literature B magnitude is used. Redshift distance, Ks-based mass and smooth shape are estimates; faint halo and boxiness are omitted.",
+    "b_magnitude": 11.93
+  },
+  "NGC 6086": {
+    "uncertainty_note": "Redshift distance and Ks-based stellar mass are estimates. Catalog light extent omits faint halo; a smooth spheroid approximates the profile."
+  },
+  "NGC 4874": {
+    "uncertainty_note": "Redshift distance and Ks-based stellar mass are estimates. Catalog light extent omits faint halo; a smooth spheroid approximates the profile."
+  },
+  "NGC 1132": {
+    "uncertainty_note": "Redshift distance and Ks-based stellar mass are estimates. Catalog light extent omits faint halo; a smooth spheroid approximates the profile."
+  },
+  "_references": {
+    "selection": "Ten large regular elliptical/cD stellar bodies with complete catalog inputs, selected after screening 21 candidate names. Not an exhaustive ten-largest ranking. Gas/radio extents and strongly distorted merging or ring systems are excluded. ESO-LV D26 outlines are conservative B-band isophotes, not D90 extrapolations.",
+    "catalogs": {
+      "SIMBAD": "https://simbad.cfa.harvard.edu/simbad/",
+      "ESO-LV": "https://vizier.cfa.harvard.edu/viz-bin/VizieR?-source=VII/115/esolv1",
+      "ESO-LV_documentation": "https://archive.eso.org/wdb/help/eso/esolv.html",
+      "ESO-LV_raw": "data/galaxy_sources/large_ellipticals_eso_lv.json"
+    },
+    "ESO 383-76": [
+      {
+        "reference": "SIMBAD main-body dimensions, J2000 astrometry, PA, redshift, and photometry",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27ESO+383-76%27",
+        "raw_record": "data/galaxy_sources/eso_383_76.json",
+        "measurement_bibcodes": {
+          "morph_bibcode": "1989ESOLV.C......0L",
+          "galdim_bibcode": "2006AJ....131.1163S",
+          "rvz_bibcode": "2004AJ....128.1558S"
+        },
+        "adoption": "Keep the catalog main stellar isophote and sky PA unless explicitly overridden. Ks mass-to-light ratio 1 solar is an estimate; the resulting mass is a galaxy point-mass proxy, not a black-hole mass."
+      },
+      {
+        "reference": "Lauberts & Valentijn (1989), ESO-LV VII/115/esolv1",
+        "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=VII%2F115%2Fesolv1&-c=206.86827083333333+-32.865005555555555&-c.rs=60&-out.all=1&-out.max=5",
+        "catalog_id": "3830760",
+        "reported_values": {
+          "D26(B)": 231.7,
+          "D90(B)": 555.9,
+          "a/b(0)": 1.99,
+          "BTmag": 13.02
+        },
+        "units": {
+          "D26(B)": "arcsec at B=26 mag/arcsec^2",
+          "D90(B)": "arcsec enclosing 90 percent total B light"
+        },
+        "adoption": "Use D26 and adopted axial ratio for a conservative starlight outline; retain SIMBAD sky PA. D90 is saved for comparison only and is not the rendered diameter."
+      }
+    ],
+    "ESO 306-17": [
+      {
+        "reference": "SIMBAD main-body dimensions, J2000 astrometry, PA, redshift, and photometry",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27ESO+306-17%27",
+        "raw_record": "data/galaxy_sources/eso_306_17.json",
+        "measurement_bibcodes": {
+          "morph_bibcode": "1989ESOLV.C......0L",
+          "galdim_bibcode": "2023ApJS..269....3M",
+          "rvz_bibcode": "1989ESOLV.C......0L"
+        },
+        "adoption": "Keep the catalog main stellar isophote and sky PA unless explicitly overridden. Ks mass-to-light ratio 1 solar is an estimate; the resulting mass is a galaxy point-mass proxy, not a black-hole mass."
+      },
+      {
+        "reference": "Lauberts & Valentijn (1989), ESO-LV VII/115/esolv1",
+        "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=VII%2F115%2Fesolv1&-c=85.02779414693+-40.83651340714&-c.rs=60&-out.all=1&-out.max=5",
+        "catalog_id": "3060170",
+        "reported_values": {
+          "D26(B)": 195.0,
+          "D90(B)": 426.6,
+          "a/b(0)": 1.52,
+          "BTmag": 13.35
+        },
+        "units": {
+          "D26(B)": "arcsec at B=26 mag/arcsec^2",
+          "D90(B)": "arcsec enclosing 90 percent total B light"
+        },
+        "adoption": "Use D26 and adopted axial ratio for a conservative starlight outline; retain SIMBAD sky PA. D90 is saved for comparison only and is not the rendered diameter."
+      },
+      {
+        "url": "https://doi.org/10.1051/0004-6361/201219285",
+        "reference": "Alamo-Martinez et al. (2012), Globular cluster systems in fossil groups",
+        "adoption": "Regular giant elliptical fossil-group host, not a rendering of the entire group or X-ray halo."
+      }
+    ],
+    "Holm 15A": [
+      {
+        "reference": "SIMBAD main-body dimensions, J2000 astrometry, PA, redshift, and photometry",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27Holm+15A%27",
+        "raw_record": "data/galaxy_sources/holm_15a.json",
+        "measurement_bibcodes": {
+          "morph_bibcode": "2011A&A...532A..74B",
+          "galdim_bibcode": "2023ApJS..269....3M",
+          "rvz_bibcode": "2020ApJS..249....3A"
+        },
+        "adoption": "Keep the catalog main stellar isophote and sky PA unless explicitly overridden. Ks mass-to-light ratio 1 solar is an estimate; the resulting mass is a galaxy point-mass proxy, not a black-hole mass."
+      },
+      {
+        "url": "https://arxiv.org/html/1907.10608",
+        "reference": "Mehrgan et al. (2019), Section V.1",
+        "reported_values": {
+          "stellar_mass_solar": 2500000000000.0,
+          "stellar_mass_uncertainty_solar": 640000000000.0
+        },
+        "adoption": "Use the stellar-mass estimate, not the separate 4e10-solar-mass black hole. A smooth Gaussian does not reproduce the depleted core."
+      }
+    ],
+    "NGC 6173": [
+      {
+        "reference": "SIMBAD main-body dimensions, J2000 astrometry, PA, redshift, and photometry",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+6173%27",
+        "raw_record": "data/galaxy_sources/ngc_6173.json",
+        "measurement_bibcodes": {
+          "morph_bibcode": "2021A&A...648A..64K",
+          "galdim_bibcode": "2023ApJS..269....3M",
+          "rvz_bibcode": "2012ApJS..203...21A"
+        },
+        "adoption": "Keep the catalog main stellar isophote and sky PA unless explicitly overridden. Ks mass-to-light ratio 1 solar is an estimate; the resulting mass is a galaxy point-mass proxy, not a black-hole mass."
+      },
+      {
+        "url": "https://arxiv.org/abs/astro-ph/0612229",
+        "reference": "Seigar, Graham & Jerjen (2007), cD stellar envelopes",
+        "adoption": "These galaxies need multi-component light profiles for detailed modeling. Keep conservative catalog outline, not the full cluster-light component."
+      }
+    ],
+    "NGC 2832": [
+      {
+        "reference": "SIMBAD main-body dimensions, J2000 astrometry, PA, redshift, and photometry",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+2832%27",
+        "raw_record": "data/galaxy_sources/ngc_2832.json",
+        "measurement_bibcodes": {
+          "morph_bibcode": "2022MNRAS.514.3410H",
+          "galdim_bibcode": "2023ApJS..269....3M",
+          "rvz_bibcode": "2006AJ....132..197W"
+        },
+        "adoption": "Keep the catalog main stellar isophote and sky PA unless explicitly overridden. Ks mass-to-light ratio 1 solar is an estimate; the resulting mass is a galaxy point-mass proxy, not a black-hole mass."
+      }
+    ],
+    "UGC 9799": [
+      {
+        "reference": "SIMBAD main-body dimensions, J2000 astrometry, PA, redshift, and photometry",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27UGC+9799%27",
+        "raw_record": "data/galaxy_sources/ugc_9799.json",
+        "measurement_bibcodes": {
+          "morph_bibcode": "2011A&A...532A..74B",
+          "galdim_bibcode": "2023ApJS..269....3M",
+          "rvz_bibcode": "2015ApJS..219...12A"
+        },
+        "adoption": "Keep the catalog main stellar isophote and sky PA unless explicitly overridden. Ks mass-to-light ratio 1 solar is an estimate; the resulting mass is a galaxy point-mass proxy, not a black-hole mass."
+      },
+      {
+        "url": "https://arxiv.org/abs/astro-ph/0612229",
+        "reference": "Seigar, Graham & Jerjen (2007), cD stellar envelopes",
+        "adoption": "These galaxies need multi-component light profiles for detailed modeling. Keep conservative catalog outline, not the full cluster-light component."
+      }
+    ],
+    "NGC 1600": [
+      {
+        "reference": "SIMBAD main-body dimensions, J2000 astrometry, PA, redshift, and photometry",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+1600%27",
+        "raw_record": "data/galaxy_sources/ngc_1600.json",
+        "measurement_bibcodes": {
+          "morph_bibcode": "2010A&A...516A...4P",
+          "galdim_bibcode": "2023ApJS..269....3M",
+          "rvz_bibcode": "2002LEDA.........0P"
+        },
+        "adoption": "Keep the catalog main stellar isophote and sky PA unless explicitly overridden. Ks mass-to-light ratio 1 solar is an estimate; the resulting mass is a galaxy point-mass proxy, not a black-hole mass."
+      },
+      {
+        "url": "https://www.uv.es/ferbaro/papers/ngc1600.pdf",
+        "reference": "Smith et al. (2008), NGC 1600: Cluster or Field Elliptical?, Table 1",
+        "reported_values": {
+          "b_magnitude": 11.93
+        },
+        "adoption": "Override SIMBAD B=8.9 with the documented B=11.93; do not bleach the volume using a discrepant catalog flux."
+      }
+    ],
+    "NGC 6086": [
+      {
+        "reference": "SIMBAD main-body dimensions, J2000 astrometry, PA, redshift, and photometry",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+6086%27",
+        "raw_record": "data/galaxy_sources/ngc_6086.json",
+        "measurement_bibcodes": {
+          "morph_bibcode": "2011A&A...532A..74B",
+          "galdim_bibcode": "2023ApJS..269....3M",
+          "rvz_bibcode": "2014ApJ...797...82L"
+        },
+        "adoption": "Keep the catalog main stellar isophote and sky PA unless explicitly overridden. Ks mass-to-light ratio 1 solar is an estimate; the resulting mass is a galaxy point-mass proxy, not a black-hole mass."
+      }
+    ],
+    "NGC 4874": [
+      {
+        "reference": "SIMBAD main-body dimensions, J2000 astrometry, PA, redshift, and photometry",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+4874%27",
+        "raw_record": "data/galaxy_sources/ngc_4874.json",
+        "measurement_bibcodes": {
+          "morph_bibcode": "2015A&A...576A.135G",
+          "galdim_bibcode": "2023ApJS..269....3M",
+          "rvz_bibcode": "2011yCat.2306....0A"
+        },
+        "adoption": "Keep the catalog main stellar isophote and sky PA unless explicitly overridden. Ks mass-to-light ratio 1 solar is an estimate; the resulting mass is a galaxy point-mass proxy, not a black-hole mass."
+      },
+      {
+        "url": "https://arxiv.org/abs/astro-ph/0612229",
+        "reference": "Seigar, Graham & Jerjen (2007), cD stellar envelopes",
+        "adoption": "These galaxies need multi-component light profiles for detailed modeling. Keep conservative catalog outline, not the full cluster-light component."
+      }
+    ],
+    "NGC 1132": [
+      {
+        "reference": "SIMBAD main-body dimensions, J2000 astrometry, PA, redshift, and photometry",
+        "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+1132%27",
+        "raw_record": "data/galaxy_sources/ngc_1132.json",
+        "measurement_bibcodes": {
+          "morph_bibcode": "2003A&A...412...45P",
+          "galdim_bibcode": "2023ApJS..269....3M",
+          "rvz_bibcode": "2002LEDA.........0P"
+        },
+        "adoption": "Keep the catalog main stellar isophote and sky PA unless explicitly overridden. Ks mass-to-light ratio 1 solar is an estimate; the resulting mass is a galaxy point-mass proxy, not a black-hole mass."
+      },
+      {
+        "url": "https://doi.org/10.1051/0004-6361/201219285",
+        "reference": "Alamo-Martinez et al. (2012), Globular cluster systems in fossil groups",
+        "adoption": "Regular giant elliptical fossil-group host, not a rendering of the entire group or X-ray halo."
+      }
+    ]
+  }
+}

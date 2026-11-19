@@ -1,0 +1,139 @@
+{
+  "version": "v1.1.2",
+  "selection": "Nearest eligible confirmed galaxies, ordered by nominal heliocentric distance.",
+  "selected_ids": [
+    "segue_1",
+    "hydrus_1",
+    "triangulum_2",
+    "reticulum_2",
+    "ursa_major_2",
+    "segue_2",
+    "carina_2",
+    "bootes_2",
+    "coma_berenices_1",
+    "pictor_2",
+    "tucana_4",
+    "bootes_3",
+    "tucana_5",
+    "grus_2",
+    "tucana_2",
+    "bootes_1",
+    "eridanus_4",
+    "ursa_minor_1",
+    "delve_2",
+    "horologium_1",
+    "draco_1",
+    "phoenix_2",
+    "sculptor_1",
+    "aquarius_3",
+    "sextans_1",
+    "ursa_major_1",
+    "bootes_5",
+    "carina_1",
+    "aquarius_2",
+    "leo_6",
+    "crater_2",
+    "centaurus_1",
+    "antlia_2",
+    "grus_1",
+    "hercules_1",
+    "fornax_1",
+    "hydra_2",
+    "leo_4",
+    "canes_venatici_2",
+    "leo_5",
+    "columba_1",
+    "pisces_2",
+    "leo_2",
+    "canes_venatici_1",
+    "pegasus_3",
+    "leo_1",
+    "eridanus_2",
+    "andromeda_16",
+    "cassiopeia_2",
+    "andromeda_24"
+  ],
+  "within_100000_ly": 3,
+  "skipped_before_last_addition": [
+    {
+      "key": "draco_2",
+      "distance_kpc": 21.58,
+      "reason": "Current literature still debates galaxy versus star-cluster status; defer this object."
+    },
+    {
+      "key": "sagittarius_1",
+      "distance_kpc": 26.3,
+      "reason": "Actively disrupting, extremely extended system; the current bounded smooth templates do not represent its full structure."
+    },
+    {
+      "key": "carina_3",
+      "distance_kpc": 27.8,
+      "reason": "Sparse spectroscopy leaves a conservative galaxy/cluster classification; defer this object."
+    },
+    {
+      "key": "willman_1",
+      "distance_kpc": 38.02,
+      "reason": "Current spectroscopy still describes the galaxy/cluster classification as ambiguous."
+    },
+    {
+      "key": "lmc",
+      "distance_kpc": 49.59,
+      "reason": "Already present or excluded."
+    },
+    {
+      "key": "smc",
+      "distance_kpc": 62.81,
+      "reason": "Already present or excluded."
+    },
+    {
+      "key": "leo_minor_1",
+      "distance_kpc": 81.66,
+      "reason": "No measured flattening or tight near-circular upper limit."
+    },
+    {
+      "key": "pegasus_4",
+      "distance_kpc": 89.95,
+      "reason": "No measured flattening or tight near-circular upper limit."
+    },
+    {
+      "key": "reticulum_3",
+      "distance_kpc": 91.62,
+      "reason": "No measured flattening or tight near-circular upper limit."
+    },
+    {
+      "key": "carina_4",
+      "distance_kpc": 104.71,
+      "reason": "Missing LVDB measurement: vlos_systemic"
+    },
+    {
+      "key": "phoenix_1",
+      "distance_kpc": 409.26,
+      "reason": "Unsupported nearby morphology: dIrr/dSph"
+    },
+    {
+      "key": "leo_t",
+      "distance_kpc": 413.05,
+      "reason": "Unsupported nearby morphology: dIrr/dSph"
+    },
+    {
+      "key": "leo_k",
+      "distance_kpc": 434.51,
+      "reason": "Missing LVDB measurement: vlos_systemic"
+    },
+    {
+      "key": "leo_m",
+      "distance_kpc": 459.2,
+      "reason": "Missing LVDB measurement: vlos_systemic"
+    },
+    {
+      "key": "ngc_6822",
+      "distance_kpc": 570.16,
+      "reason": "Unsupported nearby morphology: dIrr"
+    },
+    {
+      "key": "lgs_3",
+      "distance_kpc": 605.34,
+      "reason": "Unsupported nearby morphology: dIrr/dSph"
+    }
+  ]
+}

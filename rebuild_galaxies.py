@@ -35,6 +35,7 @@ RENDER_LIMITS = {
     "armIrregularity": (float,0,0.5), "interarmFraction": (float,0,1),
     "bulgeFraction": (float,0,1), "dustOpacity": (float,0,80),
     "bulgeScaleX": (float,0,100), "bulgeScaleY": (float,0,100), "bulgeScaleZ": (float,0,100),
+    "barLength": (float,0,200), "barWidth": (float,0,200), "barHeight": (float,0,200),
     "dustCloudCount": (int,0,2000), "minDustCloudSize": (float,0.05,100),
     "maxDustCloudSize": (float,0.05,100), "dustLaneStrength": (float,0,4),
     "dustLaneWidth": (float,0.1,2), "dustCloudClumpiness": (float,0,1),
@@ -150,10 +151,12 @@ def distance_measures(galaxy, settings):
     distance = galaxy["distance"]
     if distance["kind"] == "cosmological_redshift":
         return cosmology(distance["cosmological_redshift"], settings["cosmology"])
-    if distance["kind"] != "redshift_independent":
-        raise CatalogError("distance.kind must be redshift_independent or cosmological_redshift.")
+    if distance["kind"] not in {"redshift_independent", "adopted_local"}:
+        raise CatalogError("distance.kind must be redshift_independent, adopted_local, or cosmological_redshift.")
     d = number(distance["mpc"], "distance.mpc", positive=True)
     # A local radial velocity can be negative; it is never a cosmological clock.
+    # An adopted local compilation may include group or flow-model distances;
+    # do not mislabel those estimates as redshift-independent measurements.
     return {"placement_mpc": d, "angular_diameter_mpc": d, "luminosity_mpc": d,
             "lookback_years": d * 1e6 * PARSEC_M / (C_KM_S * 1000) / YEAR_SECONDS}
 
@@ -235,6 +238,9 @@ def replacements(galaxy, settings, inclination_deg=None, position_angle_deg=None
         inclination=number(inclination_deg,"rendering inclination")
         if not 0 <= inclination <= 90:
             raise CatalogError("Rendering inclination must be between 0 and 90 degrees.")
+    extent_sigma = number(galaxy.get("spheroid_extent_sigma",3.5),"spheroid extent sigma",positive=True)
+    if not 2 <= extent_sigma <= 6 or ("spheroid_extent_sigma" in galaxy and family not in SPHEROIDS):
+        raise CatalogError("A spheroid extent must be between 2 and 6 sigma and only applies to spheroids.")
     angles = orientation(ra, dec, pa, inclination)
     xyz = heliocentric_position({"frame":"ICRS", "epoch":"J2000", "ra_deg":ra,
                                 "dec_deg":dec, "distance_pc":distances["placement_mpc"]*1e6})
@@ -259,12 +265,15 @@ def replacements(galaxy, settings, inclination_deg=None, position_angle_deg=None
         description += " Apparent elongation follows sky measurements; three-dimensional shape and rotation axis are uncertain."
     else:
         description += " A single plane approximates the disk; near-side choice, spiral phase, and any warp remain uncertain."
-    # Integrated observed B magnitude already includes redshift and propagation
-    # losses. Do not apply Tolman dimming to this photometry a second time.
-    bmag = galaxy.get("b_magnitude")
-    if bmag is not None:
+    # Catalog B, or measured V when B is unavailable, already describes received
+    # light. Nearby V may explicitly be extinction-corrected. Do not apply
+    # cosmological surface-brightness dimming to this photometry a second time.
+    magnitude,band = galaxy.get("b_magnitude"),"B"
+    if magnitude is None:
+        magnitude,band = galaxy.get("v_magnitude"),"V"
+    if magnitude is not None:
         area = math.pi * (major*30)**2 * q
-        mu = number(bmag, "B magnitude") + 2.5 * math.log10(area)
+        mu = number(magnitude,band+" magnitude") + 2.5 * math.log10(area)
         brightness = max(0.03, min(1, 0.5 * 10**(-0.4*(mu-23))))
     else:
         brightness = min(1, (1+max(0,z))**-4)
@@ -288,7 +297,7 @@ def replacements(galaxy, settings, inclination_deg=None, position_angle_deg=None
         "gravity_g":G*mass_kg/STANDARD_GRAVITY, "orbit":render_orbit(orbit),
         "object_scale":render_radius_pc*PARSEC_M/100/number(settings["scaled_space_factor"], "scaled space factor", positive=True),
         "rotation_x":angles[0], "rotation_y":angles[1], "rotation_z":angles[2],
-        "spheroid_sigma":100/3.5, "spheroid_minor_sigma":100*q/3.5,
+        "spheroid_sigma":100/extent_sigma, "spheroid_minor_sigma":100*q/extent_sigma,
         "seed":int.from_bytes(name.encode("ascii"),"little") % 2147483647,
         "brightness":brightness,
         "star_brightness":star_brightness,

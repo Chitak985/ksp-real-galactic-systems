@@ -1,0 +1,34 @@
+{
+  "requested_name": "NGC 7814",
+  "retrieved_utc": "2026-11-18T21:48:29.831300+00:00",
+  "simbad": {
+    "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+7814%27",
+    "text": "{\"metadata\":[{\"name\":\"main_id\",\"description\":\"Main identifier for an object\",\"datatype\":\"CHAR\",\"arraysize\":\"*\",\"ucd\":\"meta.id;meta.main\",\"utype\":\"mango:MangoObject.identifier\"},{\"name\":\"ra\",\"description\":\"Right ascension\",\"datatype\":\"DOUBLE\",\"unit\":\"deg\",\"ucd\":\"pos.eq.ra;meta.main\",\"utype\":\"mango:EpochPosition.longitude[CS.spaceSys=ICRS CT.epoch=J2000]\"},{\"name\":\"dec\",\"description\":\"Declination\",\"datatype\":\"DOUBLE\",\"unit\":\"deg\",\"ucd\":\"pos.eq.dec;meta.main\",\"utype\":\"mango:EpochPosition.latitude[CS.spaceSys=ICRS CT.epoch=J2000]\"},{\"name\":\"otype\",\"description\":\"Object type\",\"datatype\":\"CHAR\",\"arraysize\":\"*\",\"ucd\":\"src.class\",\"utype\":\"mango:Label.text[CT.vocabulary=https://www.ivoa.net/rdf/uat#classification]\"},{\"name\":\"morph_type\",\"description\":\"Morphological type\",\"datatype\":\"CHAR\",\"arraysize\":\"*\",\"ucd\":\"src.morph.type\"},{\"name\":\"morph_bibcode\",\"description\":\"morphological type reference\",\"datatype\":\"CHAR\",\"arraysize\":\"19\",\"ucd\":\"meta.bib.bibcode;src.morph.type\"},{\"name\":\"galdim_majaxis\",\"description\":\"Angular size major axis\",\"datatype\":\"FLOAT\",\"unit\":\"arcmin\",\"ucd\":\"phys.angSize.smajAxis\"},{\"name\":\"galdim_minaxis\",\"description\":\"Angular size minor axis\",\"datatype\":\"FLOAT\",\"unit\":\"arcmin\",\"ucd\":\"phys.angSize.sminAxis\"},{\"name\":\"galdim_angle\",\"description\":\"Galaxy ellipse angle\",\"datatype\":\"SHORT\",\"unit\":\"deg\",\"ucd\":\"pos.posAng\"},{\"name\":\"galdim_bibcode\",\"description\":\"Galaxy dimension reference\",\"datatype\":\"CHAR\",\"arraysize\":\"19\",\"ucd\":\"meta.bib.bibcode;phys.angSize\"},{\"name\":\"rvz_redshift\",\"description\":\"redshift\",\"datatype\":\"DOUBLE\",\"ucd\":\"src.redshift\"},{\"name\":\"rvz_radvel\",\"description\":\"Radial Velocity\",\"datatype\":\"DOUBLE\",\"unit\":\"km.s-1\",\"ucd\":\"spect.dopplerVeloc.opt\",\"utype\":\"mango:EpochPosition.radialVelocity[CS.spaceSys=ICRS CT.epoch=J2000]\"},{\"name\":\"rvz_bibcode\",\"description\":\"Radial velocity / redshift reference\",\"datatype\":\"CHAR\",\"arraysize\":\"19\",\"ucd\":\"meta.bib.bibcode;spect.dopplerVeloc\"},{\"name\":\"B\",\"description\":\"B magnitude\",\"datatype\":\"DOUBLE\",\"ucd\":\"phot.mag;em.opt.B\",\"utype\":\"mango:Brightness.value[CS.photCal=B]\"},{\"name\":\"V\",\"description\":\"V magnitude\",\"datatype\":\"DOUBLE\",\"ucd\":\"phot.mag;em.opt.V\",\"utype\":\"mango:Brightness.value[CS.photCal=V]\"},{\"name\":\"K\",\"description\":\"K magnitude\",\"datatype\":\"DOUBLE\",\"ucd\":\"phot.mag;em.IR.K\",\"utype\":\"mango:Brightness.value[CS.photCal=K]\"}],\"data\":[[\"NGC  7814\",0.8122791666666666,16.14522777777778,\"GiG\",\"S\",\"2019MNRAS.488..590B\",6.76467,3.28019,134,\"2023ApJS..269....3M\",0.003501883273441919,1048,\"2022ApJS..261...21Y\",12,null,7.084]]}",
+    "rows": [
+      {
+        "main_id": "NGC  7814",
+        "ra": 0.8122791666666666,
+        "dec": 16.14522777777778,
+        "otype": "GiG",
+        "morph_type": "S",
+        "morph_bibcode": "2019MNRAS.488..590B",
+        "galdim_majaxis": 6.76467,
+        "galdim_minaxis": 3.28019,
+        "galdim_angle": 134,
+        "galdim_bibcode": "2023ApJS..269....3M",
+        "rvz_redshift": 0.003501883273441919,
+        "rvz_radvel": 1048,
+        "rvz_bibcode": "2022ApJS..261...21Y",
+        "B": 12,
+        "V": null,
+        "K": 7.084
+      }
+    ]
+  },
+  "nearby": {
+    "rows": [],
+    "url": null,
+    "text": null,
+    "skipped": true
+  }
+}

@@ -1,6 +1,15 @@
 # Galaxy disk orientations
 
-All 13 current `GalacticDiskDefinition` nodes were reviewed on 2026-11-18.
+All 103 current `GalacticDiskDefinition` nodes have saved orientation inputs.
+The original 13 were reviewed on 2026-11-18; ten additional large ellipticals
+use catalog position angles and apparent flattening from their saved records.
+[Thirty more spirals](SpiralGalaxies.md) add published disk inclinations for 28
+objects and explicit axial-ratio estimates for two; their full orientation table
+and source uncertainties are documented separately.
+[Fifty nearby dwarf spheroidals](NearbyGalaxies.md) add measured projected
+major-axis position angles and axial ratios; Crater II explicitly uses a
+near-circular upper-limit approximation. These shapes do not establish physical
+spin axes or disk inclinations.
 These settings describe their observed orientation, not a rigid rotation speed.
 The observed light already represents the emission epoch. Disks remain static
 with `rotationPeriod = 0` and `alignRotationToOrbit = false`. They also explicitly
@@ -29,6 +38,16 @@ and must not be used to orient a galaxy.
 | NGC 4889 | 75 degrees | unknown | Retained projected spheroid; true shape and depth are unknown. |
 | NGC 6166 | 34 degrees | unknown | Retained projected spheroid; true shape and depth are unknown. |
 | IC 1101 | 22 degrees | unknown | Retained SIMBAD PA; a single ellipsoid cannot reproduce radial isophote twists. |
+| ESO 383-76 | 5 degrees | unknown | Catalog projected stellar ellipsoid; see the [new batch notes](LargeEllipticalGalaxies.md). |
+| ESO 306-17 | 178 degrees | unknown | Catalog projected stellar ellipsoid; see the [new batch notes](LargeEllipticalGalaxies.md). |
+| Holm 15A | 148 degrees | unknown | Catalog projected stellar ellipsoid; see the [new batch notes](LargeEllipticalGalaxies.md). |
+| NGC 6173 | 141 degrees | unknown | Catalog projected stellar ellipsoid; see the [new batch notes](LargeEllipticalGalaxies.md). |
+| NGC 2832 | 161 degrees | unknown | Catalog projected stellar ellipsoid; see the [new batch notes](LargeEllipticalGalaxies.md). |
+| UGC 9799 | 34 degrees | unknown | Catalog projected stellar ellipsoid; see the [new batch notes](LargeEllipticalGalaxies.md). |
+| NGC 1600 | 9 degrees | unknown | Catalog projected stellar ellipsoid; see the [new batch notes](LargeEllipticalGalaxies.md). |
+| NGC 6086 | 3 degrees | unknown | Catalog projected stellar ellipsoid; see the [new batch notes](LargeEllipticalGalaxies.md). |
+| NGC 4874 | 63 degrees | unknown | Catalog projected stellar ellipsoid; see the [new batch notes](LargeEllipticalGalaxies.md). |
+| NGC 1132 | 139 degrees | unknown | Catalog projected stellar ellipsoid; see the [new batch notes](LargeEllipticalGalaxies.md). |
 
 For spheroids, the renderer's local XZ ellipse faces Sol and reproduces the
 catalog elongation. The internal zero-degree inclination is a rendering
