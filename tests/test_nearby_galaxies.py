@@ -2,6 +2,7 @@
 
 import copy
 import hashlib
+import json
 import math
 from pathlib import Path
 import shutil
@@ -105,6 +106,12 @@ class NearbyGalaxyTests(unittest.TestCase):
             shutil.copytree(ROOT/"templates/galaxies",root/"templates/galaxies")
             for rel in ["data/galaxies.json","data/nearby_galaxy_review.json","data/galaxy_sources/lvdb_nearby_snapshot.json"]:
                 target=root/rel;target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(ROOT/rel,target)
+            # Keep one known measured object available even after all LVDB
+            # candidates have been installed by a subsequent bulk batch.
+            catalog=load_catalog(root/"data/galaxies.json")
+            catalog["galaxies"]=[b for b in catalog["galaxies"] if b["id"]!="segue_1"]
+            catalog["rendering_overrides"].pop("segue_1",None)
+            (root/"data/galaxies.json").write_text(json.dumps(catalog))
             before={p.relative_to(root):hashlib.sha256(p.read_bytes()).hexdigest() for p in root.rglob("*") if p.is_file()}
             with mock.patch.object(nearby,"ROOT",root),mock.patch.object(nearby.urllib.request,"urlopen",side_effect=AssertionError("network used")):
                 self.assertEqual(nearby.main(["--count","1","--offline","--dry-run"]),0)
@@ -120,13 +127,18 @@ class NearbyGalaxyTests(unittest.TestCase):
                         "data/galaxy_sources/lvdb_nearby_snapshot.json",
                         "data/nearby_galaxy_selection.json",original_config]:
                 target=root/rel;target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(ROOT/rel,target)
+            catalog=load_catalog(root/"data/galaxies.json")
+            available=next(b for b in catalog["galaxies"] if "lvdb_key" in b and b["id"]!="segue_1")
+            catalog["galaxies"]=[b for b in catalog["galaxies"] if b["id"]!=available["id"]]
+            catalog["rendering_overrides"].pop(available["id"],None)
+            (root/"data/galaxies.json").write_text(json.dumps(catalog))
             original_bytes=(root/original_config).read_bytes()
             with mock.patch.object(nearby,"ROOT",root),mock.patch.object(nearby.urllib.request,"urlopen",side_effect=AssertionError("network used")):
                 self.assertEqual(nearby.main(["--count","1","--offline"]),0)
             updated=load_catalog(root/"data/galaxies.json")
             saved={b["id"]:b for b in updated["galaxies"]}
-            self.assertEqual(len(saved),len(self.catalog["galaxies"])+1)
-            for body in self.catalog["galaxies"]:self.assertEqual(saved[body["id"]],body)
+            self.assertEqual(len(saved),len(catalog["galaxies"])+1)
+            for body in catalog["galaxies"]:self.assertEqual(saved[body["id"]],body)
             self.assertEqual((root/original_config).read_bytes(),original_bytes)
             report=load_catalog(root/"data/nearby_galaxy_selection.json")
             self.assertEqual(len(report["selected_ids"]),1)

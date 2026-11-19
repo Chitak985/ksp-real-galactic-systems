@@ -2,6 +2,7 @@
 """Rebuild galaxy barycenters and their volumetric appearance from saved data."""
 
 import argparse
+from functools import lru_cache
 import math
 from pathlib import Path
 import re
@@ -29,6 +30,7 @@ FAMILY_LABELS = {family: family.replace("_", " ") for family in FAMILIES}
 # Per-galaxy visual refinements may change appearance, never position, scale,
 # the barycenter, or its orbit. Bounds follow the GalacticDisk loader.
 RENDER_LIMITS = {
+    "starCount": (int,0,2000000),
     "diskThickness": (float,0,100), "armCount": (int,0,12),
     "armWidth": (float,0.01,2), "armConcentration": (float,0,1),
     "armPitchAngle": (float,5,35), "armStartRadius": (float,0.05,0.5),
@@ -138,13 +140,20 @@ def cosmology(redshift, settings):
     radiation = number(settings["omega_r"], "omega_r")
     if radiation < 0 or matter + radiation >= 1:
         raise CatalogError("Flat cosmology requires 0 < omega_m + omega_r < 1.")
+    # Reuse identical integrals during large rebuilds and source replay. Validate
+    # each call above, key by every cosmological input, and return a fresh dict.
+    values = _cosmology_values(z, h0, matter, radiation)
+    return dict(zip(("placement_mpc", "angular_diameter_mpc", "luminosity_mpc", "lookback_years"), values))
+
+
+@lru_cache(maxsize=8192)
+def _cosmology_values(z, h0, matter, radiation):
     def expansion(x):
         return math.sqrt(matter * (1+x)**3 + radiation * (1+x)**4 + 1-matter-radiation)
     comoving = C_KM_S / h0 * _simpson(lambda x: 1 / expansion(x), z)
     hubble_seconds = 1e3 * PARSEC_M / h0
     lookback = hubble_seconds * _simpson(lambda x: 1 / ((1+x) * expansion(x)), z)
-    return {"placement_mpc": comoving, "angular_diameter_mpc": comoving / (1+z),
-            "luminosity_mpc": comoving * (1+z), "lookback_years": lookback / YEAR_SECONDS}
+    return (comoving, comoving / (1+z), comoving * (1+z), lookback / YEAR_SECONDS)
 
 
 def distance_measures(galaxy, settings):

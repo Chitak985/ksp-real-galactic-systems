@@ -328,3 +328,25 @@ explicitly marked extinction-corrected; foreground reddening is not recreated.
 spheroid families only). Its default is 3.5, preserving existing output. The
 nearby importer adopts 3 and converts measured half-light semi-major radii so
 their projected sizes and axis ratios are preserved.
+
+
+## Bulk measured-galaxy import
+
+[The 900-galaxy batch](BulkGalaxies.md) brings the generated catalog to 1,000.
+`fetch_bulk_galaxies.py` combines remaining eligible LVDB systems with explicit
+spectroscopic SIMBAD records, retaining a response snapshot, per-object records
+and a selection audit. `--offline` uses the saved response; `--dry-run` validates
+without writes. Each new object has an explicit `starCount = 2000` rendering
+override to limit mesh costs; original objects and template defaults are preserved.
+See the batch document for sources, selection limits, commands, estimates and
+remaining live-game performance checks.
+
+
+## Second thousand and preserved source snapshots
+
+[Another 1,000 galaxies](SecondThousandGalaxies.md) brings the generated catalog
+to 2,000. The bulk importer now defaults to 1,000 additions, uses a bounded
+continuation query starting at z=0.02582, and preserves every new original
+response under a checksum-based filename. The old 900-galaxy snapshot and audit
+remain available. Repeated distance integrals are cached in process without
+changing output; see the batch document for the list, source limits and tests.
