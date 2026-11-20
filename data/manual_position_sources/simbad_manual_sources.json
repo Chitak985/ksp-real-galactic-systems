@@ -1,0 +1,66 @@
+{
+  "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+i.id%2Cb.main_id%2Cb.ra%2Cb.dec%2Cb.coo_bibcode%2Cb.rvz_redshift%2Cb.rvz_bibcode+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+WHERE+i.id+IN+%28%27GN-z11%27%2C%27JADES-GS-z14-0%27%2C%27NGC+5866%27%2C%27NAME+LMC%27%2C%27NAME+SMC%27%2C%27V%2A+AE+And%27%2C%27MGC1%27%2C%27Sgr+A%2A%27%29",
+  "text": "{\"metadata\":[{\"name\":\"id\",\"description\":\"Identifier\",\"datatype\":\"CHAR\",\"arraysize\":\"*\",\"ucd\":\"meta.id\"},{\"name\":\"main_id\",\"description\":\"Main identifier for an object\",\"datatype\":\"CHAR\",\"arraysize\":\"*\",\"ucd\":\"meta.id;meta.main\",\"utype\":\"mango:MangoObject.identifier\"},{\"name\":\"ra\",\"description\":\"Right ascension\",\"datatype\":\"DOUBLE\",\"unit\":\"deg\",\"ucd\":\"pos.eq.ra;meta.main\",\"utype\":\"mango:EpochPosition.longitude[CS.spaceSys=ICRS CT.epoch=J2000]\"},{\"name\":\"dec\",\"description\":\"Declination\",\"datatype\":\"DOUBLE\",\"unit\":\"deg\",\"ucd\":\"pos.eq.dec;meta.main\",\"utype\":\"mango:EpochPosition.latitude[CS.spaceSys=ICRS CT.epoch=J2000]\"},{\"name\":\"coo_bibcode\",\"description\":\"Coordinate reference\",\"datatype\":\"CHAR\",\"arraysize\":\"19\",\"ucd\":\"meta.bib.bibcode;pos.eq\"},{\"name\":\"rvz_redshift\",\"description\":\"redshift\",\"datatype\":\"DOUBLE\",\"ucd\":\"src.redshift\"},{\"name\":\"rvz_bibcode\",\"description\":\"Radial velocity / redshift reference\",\"datatype\":\"CHAR\",\"arraysize\":\"19\",\"ucd\":\"meta.bib.bibcode;spect.dopplerVeloc\"}],\"data\":[[\"MGC     1\",\"MGC     1\",150.15333333333334,0.1903333333333333,\"2003MNRAS.344..307L\",null,null],[\"NAME LMC\",\"NAME LMC\",80.89416666666666,-69.75611111111111,\"2003A&A...412...45P\",8.749878593401483E-4,\"2012AJ....144....4M\"],[\"NAME Sgr A*\",\"NAME Sgr A*\",266.41681662499997,-29.00782497222222,\"2011AJ....142...35P\",null,null],[\"NAME SMC\",\"NAME SMC\",13.158333333333333,-72.80027777777778,\"2003A&A...412...45P\",4.85787317253461E-4,\"2012AJ....144....4M\"],[\"NGC  5866\",\"M 102\",226.62317083333332,55.76330833333333,\"2006AJ....131.1163S\",0.002528,\"2002LEDA.........0P\"],[\"V* AE And\",\"SV* HV  4476\",10.76047693892,41.82005892336,\"2020yCat.1350....0G\",null,null]]}",
+  "rows": [
+    {
+      "id": "MGC     1",
+      "main_id": "MGC     1",
+      "ra": 150.15333333333334,
+      "dec": 0.1903333333333333,
+      "coo_bibcode": "2003MNRAS.344..307L",
+      "rvz_redshift": null,
+      "rvz_bibcode": null
+    },
+    {
+      "id": "NAME LMC",
+      "main_id": "NAME LMC",
+      "ra": 80.89416666666666,
+      "dec": -69.75611111111111,
+      "coo_bibcode": "2003A&A...412...45P",
+      "rvz_redshift": 0.0008749878593401483,
+      "rvz_bibcode": "2012AJ....144....4M"
+    },
+    {
+      "id": "NAME Sgr A*",
+      "main_id": "NAME Sgr A*",
+      "ra": 266.41681662499997,
+      "dec": -29.00782497222222,
+      "coo_bibcode": "2011AJ....142...35P",
+      "rvz_redshift": null,
+      "rvz_bibcode": null
+    },
+    {
+      "id": "NAME SMC",
+      "main_id": "NAME SMC",
+      "ra": 13.158333333333333,
+      "dec": -72.80027777777778,
+      "coo_bibcode": "2003A&A...412...45P",
+      "rvz_redshift": 0.000485787317253461,
+      "rvz_bibcode": "2012AJ....144....4M"
+    },
+    {
+      "id": "NGC  5866",
+      "main_id": "M 102",
+      "ra": 226.62317083333332,
+      "dec": 55.76330833333333,
+      "coo_bibcode": "2006AJ....131.1163S",
+      "rvz_redshift": 0.002528,
+      "rvz_bibcode": "2002LEDA.........0P"
+    },
+    {
+      "id": "V* AE And",
+      "main_id": "SV* HV  4476",
+      "ra": 10.76047693892,
+      "dec": 41.82005892336,
+      "coo_bibcode": "2020yCat.1350....0G",
+      "rvz_redshift": null,
+      "rvz_bibcode": null
+    }
+  ],
+  "retrieved_utc": "2026-11-20T23:33:52.441230+00:00",
+  "sha256": "baecd240111075cd6ecae703bb898f09170e548c5d24052f48cf60f5721a854b",
+  "rejected_match": {
+    "id": "MGC1",
+    "reason": "Resolves to a star at RA150.1533 Dec0.1903, not the M31 globular cluster. Use Mackey et al. coordinates instead."
+  }
+}

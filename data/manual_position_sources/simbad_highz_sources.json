@@ -1,0 +1,16 @@
+{
+  "url": "https://simbad.cfa.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+i.id%2Cb.main_id%2Cb.ra%2Cb.dec%2Cb.coo_bibcode%2Cb.rvz_redshift%2Cb.rvz_bibcode+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+WHERE+i.id+IN+%28%27%5BOBV2016%5D+GN-z11%27%2C%27JADES-GS-z14-0%27%2C%27JADES-GS%2B53.08251-27.85563%27%29",
+  "text": "{\"metadata\":[{\"name\":\"id\",\"description\":\"Identifier\",\"datatype\":\"CHAR\",\"arraysize\":\"*\",\"ucd\":\"meta.id\"},{\"name\":\"main_id\",\"description\":\"Main identifier for an object\",\"datatype\":\"CHAR\",\"arraysize\":\"*\",\"ucd\":\"meta.id;meta.main\",\"utype\":\"mango:MangoObject.identifier\"},{\"name\":\"ra\",\"description\":\"Right ascension\",\"datatype\":\"DOUBLE\",\"unit\":\"deg\",\"ucd\":\"pos.eq.ra;meta.main\",\"utype\":\"mango:EpochPosition.longitude[CS.spaceSys=ICRS CT.epoch=J2000]\"},{\"name\":\"dec\",\"description\":\"Declination\",\"datatype\":\"DOUBLE\",\"unit\":\"deg\",\"ucd\":\"pos.eq.dec;meta.main\",\"utype\":\"mango:EpochPosition.latitude[CS.spaceSys=ICRS CT.epoch=J2000]\"},{\"name\":\"coo_bibcode\",\"description\":\"Coordinate reference\",\"datatype\":\"CHAR\",\"arraysize\":\"19\",\"ucd\":\"meta.bib.bibcode;pos.eq\"},{\"name\":\"rvz_redshift\",\"description\":\"redshift\",\"datatype\":\"DOUBLE\",\"ucd\":\"src.redshift\"},{\"name\":\"rvz_bibcode\",\"description\":\"Radial velocity / redshift reference\",\"datatype\":\"CHAR\",\"arraysize\":\"19\",\"ucd\":\"meta.bib.bibcode;spect.dopplerVeloc\"}],\"data\":[[\"[OBV2016] GN-z11\",\"[OBV2016] GN-z11\",189.10608333333332,62.24205555555555,\"2014ApJ...786..108O\",10.604423,\"2023ApJS..269...16R\"]]}",
+  "rows": [
+    {
+      "id": "[OBV2016] GN-z11",
+      "main_id": "[OBV2016] GN-z11",
+      "ra": 189.10608333333332,
+      "dec": 62.24205555555555,
+      "coo_bibcode": "2014ApJ...786..108O",
+      "rvz_redshift": 10.604423,
+      "rvz_bibcode": "2023ApJS..269...16R"
+    }
+  ],
+  "sha256": "e7fafcff49a3535768e1b0129e4da0772d010349d8e98492777d2868e63c12f7"
+}

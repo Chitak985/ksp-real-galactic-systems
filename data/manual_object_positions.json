@@ -1,0 +1,262 @@
+{
+  "schema_version": 1,
+  "reviewed_utc": "2026-11-20T23:37:59.348943+00:00",
+  "settings": {
+    "epoch_seconds": 0,
+    "frozen_period_seconds": 3e+300,
+    "cosmology": {
+      "h0_km_s_mpc": 67.4,
+      "omega_m": 0.315,
+      "omega_r": 9.2e-05
+    }
+  },
+  "policy": "All manual placements are heliocentric frozen Sun-parented circular hidden orbits. SOIs are explicit compact game-core boundaries. Stock Sun and physical/scaled/light properties are preserved.",
+  "objects": [
+    {
+      "body_name": "SagittariusA",
+      "path": "RealGalacticSystems/Systems/MilkyWay/Configs/SagittariusA.cfg",
+      "position": {
+        "kind": "icrs_distance",
+        "frame": "ICRS",
+        "epoch": "J2000",
+        "ra_deg": 266.416816625,
+        "dec_deg": -29.00782497222222,
+        "distance_pc": 8277,
+        "uncertainty_stat_pc": 9,
+        "uncertainty_systematic_pc": 33
+      },
+      "core_soi_m": 3.0856775814913674e+18,
+      "sources": [
+        "data/manual_position_sources/simbad_manual_sources.json",
+        "https://arxiv.org/abs/2112.07478"
+      ],
+      "uncertainty_note": "Galactic-center distance and direction are measured; Sun remains the root. The 100-pc SOI is a game core boundary, not the black hole's measured influence radius."
+    },
+    {
+      "body_name": "AndromedaA",
+      "path": "RealGalacticSystems/Systems/Andromeda/Configs/AndromedaA.cfg",
+      "position": {
+        "kind": "icrs_distance",
+        "frame": "ICRS",
+        "epoch": "J2000",
+        "ra_deg": 10.6847083,
+        "dec_deg": 41.26875,
+        "distance_pc": 777787.0294666477
+      },
+      "core_soi_m": 3.0856775814913674e+18,
+      "sources": [
+        "data/legacy_disk_orientations.json",
+        "https://academic.oup.com/mnras/article/528/2/2653/7512223"
+      ],
+      "uncertainty_note": "Existing valid heliocentric direction and representative distance retained; M31 has depth and distance-scale uncertainty."
+    },
+    {
+      "body_name": "TriangulumBarycenter",
+      "path": "RealGalacticSystems/Systems/Triangulum/Configs/TriangulumBarycenter.cfg",
+      "position": {
+        "kind": "icrs_distance",
+        "frame": "ICRS",
+        "epoch": "J2000",
+        "ra_deg": 23.4621,
+        "dec_deg": 30.6602,
+        "distance_pc": 836121.0566766461
+      },
+      "core_soi_m": 3e+17,
+      "sources": [
+        "data/legacy_disk_orientations.json",
+        "https://doi.org/10.1051/0004-6361/201834437"
+      ],
+      "uncertainty_note": "Existing valid heliocentric direction and representative distance retained; existing 3E17-m core boundary retained."
+    },
+    {
+      "body_name": "LargeMagellanicCloud",
+      "path": "RealGalacticSystems/Systems/MilkyWay/LargeMagellanicCloud/Configs/LargeMagellanicCloud.cfg",
+      "position": {
+        "kind": "icrs_distance",
+        "frame": "ICRS",
+        "epoch": "J2000",
+        "ra_deg": 80.89416666666666,
+        "dec_deg": -69.75611111111111,
+        "distance_pc": 49590,
+        "uncertainty_stat_pc": 90,
+        "uncertainty_systematic_pc": 540
+      },
+      "core_soi_m": 3.0856775814913674e+18,
+      "sources": [
+        "data/manual_position_sources/simbad_manual_sources.json",
+        "https://arxiv.org/abs/1903.08096"
+      ],
+      "uncertainty_note": "Irregular-galaxy center and line-of-sight depth are approximate; adopted distance is the eclipsing-binary mean."
+    },
+    {
+      "body_name": "SmallMagellanicCloud",
+      "path": "RealGalacticSystems/Systems/MilkyWay/SmallMagellanicCloud/Configs/SmallMagellanicCloud.cfg",
+      "position": {
+        "kind": "icrs_distance",
+        "frame": "ICRS",
+        "epoch": "J2000",
+        "ra_deg": 13.158333333333333,
+        "dec_deg": -72.80027777777778,
+        "distance_pc": 62440,
+        "uncertainty_stat_pc": 470
+      },
+      "core_soi_m": 3.0856775814913674e+18,
+      "sources": [
+        "data/manual_position_sources/simbad_manual_sources.json",
+        "https://arxiv.org/abs/2010.08754"
+      ],
+      "uncertainty_note": "Elongated irregular galaxy with substantial depth; center is a conventional catalog point and the distance is a measured mean."
+    },
+    {
+      "body_name": "NGC5866",
+      "path": "RealGalacticSystems/Systems/NGC5866/Configs/NGC5866.cfg",
+      "position": {
+        "kind": "icrs_distance",
+        "frame": "ICRS",
+        "epoch": "J2000",
+        "ra_deg": 226.62317083333332,
+        "dec_deg": 55.76330833333333,
+        "distance_pc": 15300000.0,
+        "uncertainty_pc": 700000.0
+      },
+      "core_soi_m": 3.0856775814913674e+18,
+      "sources": [
+        "data/manual_position_sources/simbad_manual_sources.json",
+        "https://doi.org/10.1088/0004-6256/144/6/164"
+      ],
+      "uncertainty_note": "Adopted 15.3-Mpc literature distance has roughly 0.7-Mpc uncertainty; core boundary is a gameplay convention."
+    },
+    {
+      "body_name": "TheGreatAttractor",
+      "path": "RealGalacticSystems/Systems/TheGreatAttractor/Configs/TheGreatAttractor.cfg",
+      "position": {
+        "kind": "galactic_distance",
+        "frame": "Galactic",
+        "epoch": "J2000",
+        "longitude_deg": 307,
+        "latitude_deg": 9,
+        "distance_pc": 64540059.347181,
+        "uncertainty_pc": 5192878.338278932
+      },
+      "core_soi_m": 3.0856775814913674e+18,
+      "sources": [
+        "https://academic.oup.com/mnras/article/369/3/1131/1227816",
+        "https://ned.ipac.caltech.edu/level5/March01/Strauss/Strauss7.html"
+      ],
+      "uncertainty_note": "Broad historical flow-model overdensity, not a unique compact center. Adopt l=307, b=+9 and Hubble-flow distance 4350/H0 Mpc; quoted radial range and center definition are uncertain. The tiny SOI only isolates the game placeholder."
+    },
+    {
+      "body_name": "AE_Andromedae",
+      "path": "RealGalacticSystems/Systems/Andromeda/Systems/AE_Andromedae/Configs/AE_Andromedae.cfg",
+      "position": {
+        "kind": "icrs_distance",
+        "frame": "ICRS",
+        "epoch": "J2000",
+        "ra_deg": 10.76047693892,
+        "dec_deg": 41.82005892336,
+        "distance_pc": 777787.0294666477
+      },
+      "core_soi_m": 3.085677581491367e+16,
+      "sources": [
+        "data/manual_position_sources/simbad_manual_sources.json",
+        "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=AE+And"
+      ],
+      "uncertainty_note": "Gaia sky direction adopted, but its distance is M31's mean, not a reliable stellar parallax; M31 depth is unknown. The 1-pc SOI is a conservative game boundary, not a measured stellar Hill radius."
+    },
+    {
+      "body_name": "MGC1",
+      "path": "RealGalacticSystems/Systems/Andromeda/Systems/MGC1/Configs/MGC1Barycenter.cfg",
+      "position": {
+        "kind": "icrs_distance",
+        "frame": "ICRS",
+        "epoch": "J2000",
+        "ra_deg": 12.676875,
+        "dec_deg": 32.91630555555555,
+        "distance_pc": 616595.0018614822,
+        "distance_modulus": 23.95,
+        "distance_modulus_error": 0.06
+      },
+      "core_soi_m": 1.5428387907456835e+17,
+      "sources": [
+        "https://academic.oup.com/mnras/article/401/1/533/1008146",
+        "https://arxiv.org/abs/0909.1456"
+      ],
+      "uncertainty_note": "M31 globular cluster at about 617 kpc, not the unrelated star resolved by the bare SIMBAD identifier MGC1. Its distance uncertainty is about 17 kpc; 5 pc is an artificial compact core boundary."
+    },
+    {
+      "body_name": "GN-z11",
+      "path": "RealGalacticSystems/Systems/GN-Z11/Configs/GN-Z11Blackhole.cfg",
+      "position": {
+        "kind": "cosmological_redshift",
+        "frame": "ICRS",
+        "epoch": "J2000",
+        "ra_deg": 189.10608333333332,
+        "dec_deg": 62.24205555555555,
+        "redshift": 10.6022,
+        "redshift_error": 0.0004
+      },
+      "core_soi_m": 1.5428387907456835e+17,
+      "sources": [
+        "data/manual_position_sources/simbad_highz_sources.json",
+        "https://arxiv.org/html/2412.12826v1",
+        "https://doi.org/10.1051/0004-6361/202346159"
+      ],
+      "uncertainty_note": "Adopt the MIRI [O III] systemic-line redshift. NIRSpec 10.6034 +/- 0.0013 and the catalog value 10.604423 differ slightly; line offsets and calibration dominate any false precision. Flat-FLRW comoving distance sets game placement, not lookback times c or luminosity distance.",
+      "distance_diagnostics": {
+        "placement_mpc": 9754.639020039043,
+        "angular_diameter_mpc": 840.7577028528248,
+        "luminosity_mpc": 113175.27283829698,
+        "lookback_years": 13356799629.752226,
+        "note": "Reference values only; the updater recomputes them from saved cosmology. No physical size or luminosity is changed."
+      }
+    },
+    {
+      "body_name": "JADES-GS-Z14-0",
+      "path": "RealGalacticSystems/Systems/JADES-GS-Z14-0/Configs/JADES-GS-Z14-0Barycenter.cfg",
+      "position": {
+        "kind": "cosmological_redshift",
+        "frame": "ICRS",
+        "epoch": "J2000",
+        "ra_deg": 53.082937083333334,
+        "dec_deg": -27.855629166666667,
+        "redshift": 14.1793,
+        "redshift_error": 0.0007
+      },
+      "core_soi_m": 1.5428387907456835e+17,
+      "sources": [
+        "https://arxiv.org/html/2409.20549v2",
+        "https://arxiv.org/abs/2409.20533"
+      ],
+      "uncertainty_note": "ALMA redshift 14.1793 +/- 0.0007 agrees with independent 14.1796 +/- 0.0007, replacing the broad earlier NIRSpec-break estimate. Table-1 JWST position adopted; foreground lensing and centroid differences are negligible here. Comoving distance is a cosmological inference, not directly measured present-day position.",
+      "distance_diagnostics": {
+        "placement_mpc": 10338.305340918374,
+        "angular_diameter_mpc": 681.0791894829389,
+        "luminosity_mpc": 156928.23826140226,
+        "lookback_years": 13501112675.257261,
+        "note": "Reference values only; the updater recomputes them from saved cosmology. No physical size or luminosity is changed."
+      }
+    },
+    {
+      "body_name": "unknown",
+      "path": "RealGalacticSystems/Configs/Unknown.cfg",
+      "position": {
+        "kind": "preserved_orbit",
+        "original_orbit": {
+          "inclination": 34.0,
+          "eccentricity": 0.01,
+          "longitudeOfAscendingNode": 0.0,
+          "argumentOfPeriapsis": 0.0,
+          "meanAnomalyAtEpoch": 2.0,
+          "epoch": 2000.0,
+          "semiMajorAxis": 5e+35,
+          "period": 3e+300
+        }
+      },
+      "core_soi_m": 10000000000.0,
+      "sources": [
+        "RealGalacticSystems/Configs/Unknown.cfg"
+      ],
+      "uncertainty_note": "Fictional object: no real-world astrometry exists. Preserve its original Cartesian position at game time zero and only normalize the orbit representation; huge distance remains intentionally fictional."
+    }
+  ]
+}

@@ -384,3 +384,12 @@ must be finite and nonnegative, matching the renderer's accepted range; values
 above 1 amplify visibility. Rebuild with `python rebuild_galaxies.py` and verify
 with `python rebuild_galaxies.py --check`. These presets have not been calibrated
 against live KSP atmosphere screenshots.
+
+
+## Hand-written object placement
+
+[Manual object orbits](ManualObjectOrbits.md) documents the twelve original
+objects, their researched positions, cosmological distances and compact game
+SOIs. `rebuild_manual_orbits.py` uses the same frozen Sun-parented positioning
+adapter as generated bodies, without replacing their hand-written configs.
+Use `--check` to verify saved manual placements; stock Sun remains untouched.
