@@ -30,6 +30,9 @@ FAMILY_LABELS = {family: family.replace("_", " ") for family in FAMILIES}
 # Per-galaxy visual refinements may change appearance, never position, scale,
 # the barycenter, or its orbit. Bounds follow the GalacticDisk loader.
 RENDER_LIMITS = {
+    "insideOpacityMultiplier": (float,0,math.inf),
+    "atmosphereOpacityMultiplier": (float,0,math.inf),
+    "atmosphereNightOpacityMultiplier": (float,0,math.inf),
     "starCount": (int,0,2000000),
     "diskThickness": (float,0,100), "armCount": (int,0,12),
     "armWidth": (float,0.01,2), "armConcentration": (float,0,1),

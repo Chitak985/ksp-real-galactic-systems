@@ -361,3 +361,26 @@ remain null and use an unshifted display palette; cluster and flow-model proxies
 are labeled. These modes require local distances. Raw LVDB rows remain intact
 while separate literature-review blocks record measurement updates and sources.
 Default strict imports and original generated configs retain their behavior.
+
+
+## Opacity in disks and atmospheres
+
+The common galaxy template explicitly sets `insideOpacityMultiplier = 0.2`,
+`atmosphereOpacityMultiplier = 0.01`, and
+`atmosphereNightOpacityMultiplier = 0.65`, matching the Milky Way. Andromeda and
+Triangulum have the same explicit settings in their hand-written disk configs.
+These are consistent viewing presets; galaxy-specific brightness and structure
+remain controlled by their existing appearance settings.
+
+The renderer multiplies the inside-disk and atmosphere factors, with transitions
+at disk/atmosphere boundaries and between day and night. At full weighting, the
+combined multiplier is 0.002 inside a disk in daylight atmosphere and 0.13 at
+night. A view outside the disk and any atmosphere retains a multiplier of 1.
+
+Edit the common template and rebuild to change all generated defaults. Individual
+values can be set in `data/galaxies.json` under the galaxy's
+`rendering_overrides` / `parameters` using these same three field names. Overrides
+must be finite and nonnegative, matching the renderer's accepted range; values
+above 1 amplify visibility. Rebuild with `python rebuild_galaxies.py` and verify
+with `python rebuild_galaxies.py --check`. These presets have not been calibrated
+against live KSP atmosphere screenshots.
