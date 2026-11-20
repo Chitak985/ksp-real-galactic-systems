@@ -79,7 +79,7 @@ class NearbyGalaxyTests(unittest.TestCase):
         catalog["galaxies"]=[b for b in catalog["galaxies"] if b["id"] not in self.ids]
         rows=nearby.snapshot_rows(self.snapshot,self.review)
         selected,skipped=nearby.select_nearest(rows,self.review,self.snapshot,catalog,50)
-        saved=sorted((b for b in self.catalog["galaxies"] if b["id"] in self.ids),
+        saved=sorted((b for b in self.catalog["galaxies"] if b["id"] in self.ids and "redshift_status" not in b),
                      key=lambda b:(b["distance"]["mpc"],b["id"]))[:50]
         self.assertEqual([b["id"] for b,raw in selected],[b["id"] for b in saved])
         distances=[b["distance"]["mpc"] for b,raw in selected]

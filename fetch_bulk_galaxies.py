@@ -118,8 +118,10 @@ def select_bulk(snapshot, catalog, count):
             continue
         selected.append((body, raw))
         aliases.update(nearby.canonical(body[key]) for key in ("id", "name", "body_name"))
-        if len(selected) == count:
+        if count is not None and len(selected) == count:
             return selected, skipped
+    if count is None:
+        return selected, skipped
     raise CatalogError(f"Only {len(selected)} new bulk galaxies pass the checks; requested {count}.")
 
 

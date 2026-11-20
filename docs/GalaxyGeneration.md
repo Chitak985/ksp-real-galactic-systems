@@ -350,3 +350,14 @@ continuation query starting at z=0.02582, and preserves every new original
 response under a checksum-based filename. The old 900-galaxy snapshot and audit
 remain available. Repeated distance integrals are cached in process without
 changing output; see the batch document for the list, source limits and tests.
+
+
+## Reviewed missing velocities and selected distant additions
+
+[The 57-galaxy batch](FarAndNearbyGalaxies.md) brings the generated catalog to
+2,057. `add_reviewed_galaxies.py` imports fifteen explicitly reviewed nearby
+candidates and saved-source galaxies beyond 150 Mpc. Nearby unknown redshifts
+remain null and use an unshifted display palette; cluster and flow-model proxies
+are labeled. These modes require local distances. Raw LVDB rows remain intact
+while separate literature-review blocks record measurement updates and sources.
+Default strict imports and original generated configs retain their behavior.

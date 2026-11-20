@@ -224,7 +224,17 @@ def replacements(galaxy, settings, inclination_deg=None, position_angle_deg=None
     ra, dec = number(galaxy["ra_deg"], "RA"), number(galaxy["dec_deg"], "Dec")
     if not 0 <= ra < 360 or not -90 <= dec <= 90:
         raise CatalogError("Invalid J2000 sky coordinates.")
-    z = number(galaxy["redshift"], "observed redshift")
+    redshift_status = galaxy.get("redshift_status", "measured")
+    if redshift_status not in {"measured", "unmeasured", "cluster_proxy", "model_proxy"}:
+        raise CatalogError("Unsupported redshift status.")
+    if redshift_status != "measured" and galaxy["distance"]["kind"] not in {"adopted_local", "redshift_independent"}:
+        raise CatalogError("An unknown or proxy redshift requires an independent local distance.")
+    if redshift_status == "unmeasured":
+        if galaxy.get("redshift") is not None:
+            raise CatalogError("An unmeasured redshift must be null; an unshifted palette is only a display approximation.")
+        z = 0.0
+    else:
+        z = number(galaxy["redshift"], "observed or proxy redshift")
     if not -0.1 < z <= 30:
         raise CatalogError("Observed redshift must be in (-0.1, 30].")
     major = number(galaxy["angular_major_arcmin"], "angular diameter", positive=True)
@@ -268,8 +278,11 @@ def replacements(galaxy, settings, inclination_deg=None, position_angle_deg=None
     display = config_text(galaxy["name"], "name")
     lookback_myr = distances["lookback_years"] / 1e6
     config_text(galaxy["morphology"], "morphology")
+    redshift_label = ("radial velocity unmeasured; unshifted color approximation" if redshift_status == "unmeasured"
+                      else f"z={z:.6g}" if redshift_status == "measured"
+                      else f"approximate z={z:.6g}, {redshift_status.replace('_', ' ')}")
     description = (f"{display}: {FAMILY_LABELS[family]}. "
-                   f"Seen approximately {lookback_myr:.2f} million years ago (z={z:.6g}). {notes}")
+                   f"Seen approximately {lookback_myr:.2f} million years ago ({redshift_label}). {notes}")
     if family in SPHEROIDS:
         description += " Apparent elongation follows sky measurements; three-dimensional shape and rotation axis are uncertain."
     else:

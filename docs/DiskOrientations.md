@@ -1,6 +1,6 @@
 # Galaxy disk orientations
 
-All 2,003 current `GalacticDiskDefinition` nodes have saved orientation inputs.
+All 2,060 current `GalacticDiskDefinition` nodes have saved orientation inputs.
 The original 13 were reviewed on 2026-11-18; ten additional large ellipticals
 use catalog position angles and apparent flattening from their saved records.
 [Thirty more spirals](SpiralGalaxies.md) add published disk inclinations for 28
@@ -14,6 +14,8 @@ spin axes or disk inclinations.
 and flattening; the new sample spans all nine supported regular families.
 [A further thousand galaxies](SecondThousandGalaxies.md) add source-based
 orientations across six regular galaxy families.
+[Fifteen reviewed nearby and forty-two distant galaxies](FarAndNearbyGalaxies.md)
+add measured sky geometry and explicit research assumptions.
 These settings describe their observed orientation, not a rigid rotation speed.
 The observed light already represents the emission epoch. Disks remain static
 with `rotationPeriod = 0` and `alignRotationToOrbit = false`. They also explicitly

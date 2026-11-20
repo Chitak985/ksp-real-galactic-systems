@@ -60,7 +60,18 @@ def normalize_lvdb(raw,settings,overrides=None):
         raise CatalogError("Unsupported LVDB raw-record schema.")
     if overrides:
         raise CatalogError("LVDB corrections belong in the reviewed LVDB metadata, not SIMBAD overrides.")
-    row,meta=raw["row"],raw["metadata"]
+    row,meta=copy.deepcopy(raw["row"]),raw["metadata"]
+    literature=raw.get("literature_review")
+    if literature is not None:
+        if literature.get("schema_version")!=1 or not literature.get("sources"):
+            raise CatalogError("A literature review requires its schema and primary sources.")
+        allowed={"ra","dec","distance","distance_em","distance_ep","distance_measurement_method",
+                 "rhalf","ellipticity","position_angle","apparent_magnitude_v","mass_stellar",
+                 "ref_distance","ref_structure","ref_m_v"}
+        updates=literature.get("row_updates",{})
+        if set(updates)-allowed:
+            raise CatalogError("Unsupported literature measurement update.")
+        row.update(updates)
     key=row["key"]
     if not re.fullmatch(r"[a-z][a-z0-9_]*",key) or meta["key"]!=key:
         raise CatalogError("LVDB key is unsafe or does not match its metadata.")
@@ -97,7 +108,23 @@ def normalize_lvdb(raw,settings,overrides=None):
     logmass=scalar(row,"mass_stellar")  # LOG10 Msun, not a linear mass.
     if not -3 <= logmass <= 15:
         raise CatalogError("LVDB stellar mass is outside the supported range.")
-    velocity=scalar(row,"vlos_systemic")  # Heliocentric km/s.
+    velocity_status="measured"
+    velocity_review=literature.get("radial_velocity",{}) if literature else {}
+    if row.get("vlos_systemic"):
+        if velocity_review:
+            raise CatalogError("Reviewed velocity policy cannot discard a catalog measurement.")
+        velocity=scalar(row,"vlos_systemic")  # Heliocentric km/s.
+    elif velocity_review.get("status")=="unmeasured":
+        velocity=None;velocity_status="unmeasured"
+        if velocity_review.get("km_s") is not None:
+            raise CatalogError("An unknown radial velocity must remain null.")
+    elif velocity_review.get("status") in {"cluster_proxy","model_proxy"}:
+        velocity_status=velocity_review["status"]
+        velocity=number(velocity_review["km_s"],"reviewed velocity proxy")
+        if not velocity_review.get("note"):
+            raise CatalogError("Velocity proxies require an uncertainty note.")
+    else:
+        velocity=scalar(row,"vlos_systemic")
     name=config_text(row["name"],"LVDB name")
     body="".join(part[:1].upper()+part[1:] for part in key.split("_"))
     notes=("Gaussian extent is inferred from measured half-light size; profile, depth and stellar M/L are estimates. "
@@ -105,10 +132,13 @@ def normalize_lvdb(raw,settings,overrides=None):
     if round_assumed:notes+=" Near-circular shape is assumed from an ellipticity upper limit."
     special=raw["assumptions"].get("notes","")
     if special:notes+=" "+config_text(special,"nearby uncertainty note")
+    if literature:
+        notes+=" "+config_text(literature["note"],"literature uncertainty note")
+        if velocity_review:notes+=" "+config_text(velocity_review["note"],"velocity uncertainty note")
     entry={
         "id":key,"body_name":body,"name":name,"template":family,"lvdb_key":key,
         "ra_deg":scalar(row,"ra"),"dec_deg":scalar(row,"dec"),
-        "redshift":velocity/builder.C_KM_S,
+        "redshift":velocity/builder.C_KM_S if velocity is not None else None,
         "distance":{"kind":"redshift_independent","mpc":distance_kpc/1000,
                     "uncertainty_minus_mpc":scalar(row,"distance_em")/1000 if row.get("distance_em") else None,
                     "uncertainty_plus_mpc":scalar(row,"distance_ep")/1000 if row.get("distance_ep") else None,
@@ -136,6 +166,19 @@ def normalize_lvdb(raw,settings,overrides=None):
     }
     if entry["distance"]["method"] in {"host","nam","tf","btf"}:
         entry["distance"]["kind"]="adopted_local"
+    if literature:
+        entry["redshift_status"]=velocity_status
+        entry["radial_velocity_review"]=copy.deepcopy(velocity_review)
+        entry["sources"].append({"database":"Reviewed primary literature","reviewed_utc":literature["reviewed_utc"],
+                                 "sources":literature["sources"],"fields":list(literature.get("row_updates",{})),
+                                 "radial_velocity":copy.deepcopy(velocity_review)})
+        entry["adoption_notes"]["literature_review"]=copy.deepcopy(literature)
+        if velocity_status!="measured":
+            entry["adoption_notes"]["redshift"]=("No measured galaxy systemic radial velocity. "
+                "Unknown values remain null with an unshifted display palette; explicit proxies are labeled. Local distance and lookback do not use this value.")
+        if literature.get("mass_kind"):
+            entry["mass_kind"]=config_text(literature["mass_kind"],"reviewed mass kind")
+            entry["adoption_notes"]["gravity"]=entry["mass_kind"]
     builder.replacements(entry,settings)
     return entry
 

@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "reviewed_utc": "2026-11-20T20:16:42.006117+00:00",
+  "purpose": "Fifteen explicitly reviewed nearby candidates; preserve raw LVDB measurements and distinguish unknown velocities from proxies.",
+  "candidates": {
+    "carina_4": {
+      "schema_version": 1,
+      "reviewed_utc": "2026-11-20T20:16:42.006117+00:00",
+      "sources": [
+        "https://doi.org/10.3847/1538-4357/ae43e2",
+        "https://eprints.lancs.ac.uk/id/eprint/236016/1/pdf.pdf"
+      ],
+      "note": "Sparse dwarf candidate; its LMC association and kinematics remain uncertain.",
+      "row_updates": {},
+      "radial_velocity": {
+        "status": "unmeasured",
+        "km_s": null,
+        "note": "Systemic radial velocity is unmeasured; an unshifted color palette is a display approximation."
+      }
+    },
+    "andromeda_35": {
+      "schema_version": 1,
+      "reviewed_utc": "2026-11-20T20:16:42.006117+00:00",
+      "sources": [
+        "https://arxiv.org/abs/2502.19516"
+      ],
+      "note": "Very sparse stellar population; measured photometric size and distance remain uncertain.",
+      "row_updates": {},
+      "radial_velocity": {
+        "status": "unmeasured",
+        "km_s": null,
+        "note": "Systemic radial velocity is unmeasured; an unshifted color palette is a display approximation."
+      }
+    },
+    "andromeda_36": {
+      "schema_version": 1,
+      "reviewed_utc": "2026-11-20T20:16:42.006117+00:00",
+      "sources": [
+        "https://arxiv.org/html/2603.28492v1"
+      ],
+      "note": "Distance assumes M31 membership; dwarf-versus-cluster classification and the nearly round shape remain uncertain.",
+      "row_updates": {
+        "distance": "776",
+        "distance_em": "",
+        "distance_ep": "",
+        "ref_distance": "Sakowska2026A&A...710A.342S"
+      },
+      "radial_velocity": {
+        "status": "unmeasured",
+        "km_s": null,
+        "note": "Systemic radial velocity is unmeasured; an unshifted color palette is a display approximation."
+      }
+    },
+    "pegasus_7": {
+      "schema_version": 1,
+      "reviewed_utc": "2026-11-20T20:16:42.006117+00:00",
+      "sources": [
+        "https://arxiv.org/html/2502.09792v1"
+      ],
+      "note": "M31 association and possible tidal elongation lack a measured orbit.",
+      "row_updates": {},
+      "radial_velocity": {
+        "status": "unmeasured",
+        "km_s": null,
+        "note": "Systemic radial velocity is unmeasured; an unshifted color palette is a display approximation."
+      }
+    },
+    "pisces_7": {
+      "schema_version": 1,
+      "reviewed_utc": "2026-11-20T20:16:42.006117+00:00",
+      "sources": [
+        "https://arxiv.org/html/2508.00984v2"
+      ],
+      "note": "M33 association remains uncertain without spectroscopy; HI observations provide upper limits.",
+      "row_updates": {
+        "distance_measurement_method": "hb"
+      },
+      "radial_velocity": {
+        "status": "unmeasured",
+        "km_s": null,
+        "note": "Systemic radial velocity is unmeasured; an unshifted color palette is a display approximation."
+      }
+    },
+    "leo_k": {
+      "schema_version": 1,
+      "reviewed_utc": "2026-11-20T20:16:42.006117+00:00",
+      "sources": [
+        "https://arxiv.org/html/2307.08738v2"
+      ],
+      "note": "Horizontal-branch distance has a large asymmetric error; depth and mass are model dependent.",
+      "row_updates": {
+        "distance": "434",
+        "distance_em": "127",
+        "distance_ep": "17",
+        "distance_measurement_method": "hb",
+        "mass_stellar": "4.079181246047625"
+      },
+      "radial_velocity": {
+        "status": "unmeasured",
+        "km_s": null,
+        "note": "Systemic radial velocity is unmeasured; an unshifted color palette is a display approximation."
+      },
+      "mass_kind": "estimated stellar mass from published star-formation-history fitting; model dependent, excludes dark halo; game point-mass proxy"
+    },
+    "leo_m": {
+      "schema_version": 1,
+      "reviewed_utc": "2026-11-20T20:16:42.006117+00:00",
+      "sources": [
+        "https://arxiv.org/html/2307.08738v2"
+      ],
+      "note": "Horizontal-branch distance and stellar-population mass have published uncertainties.",
+      "row_updates": {
+        "distance": "459",
+        "distance_em": "18",
+        "distance_ep": "21",
+        "distance_measurement_method": "hb",
+        "mass_stellar": "4.2552725051033065"
+      },
+      "radial_velocity": {
+        "status": "unmeasured",
+        "km_s": null,
+        "note": "Systemic radial velocity is unmeasured; an unshifted color palette is a display approximation."
+      },
+      "mass_kind": "estimated stellar mass from published star-formation-history fitting; model dependent, excludes dark halo; game point-mass proxy"
+    },
+    "sculptor_a": {
+      "schema_version": 1,
+      "reviewed_utc": "2026-11-20T20:16:42.006117+00:00",
+      "sources": [
+        "https://arxiv.org/html/2409.16345v2"
+      ],
+      "note": "Distance uncertainty affects association with NGC 300; a Gaussian approximates its stellar profile.",
+      "row_updates": {
+        "distance": "1350",
+        "distance_em": "80",
+        "distance_ep": "220",
+        "distance_measurement_method": "trgb",
+        "mass_stellar": "4.7"
+      },
+      "radial_velocity": {
+        "status": "unmeasured",
+        "km_s": null,
+        "note": "Systemic radial velocity is unmeasured; an unshifted color palette is a display approximation."
+      },
+      "mass_kind": "estimated stellar mass from published star-formation-history fitting; model dependent, excludes dark halo; game point-mass proxy"
+    },
+    "sculptor_b": {
+      "schema_version": 1,
+      "reviewed_utc": "2026-11-20T20:16:42.006117+00:00",
+      "sources": [
+        "https://arxiv.org/html/2409.16345v2"
+      ],
+      "note": "Distance uncertainty affects association with NGC 300; a Gaussian approximates its stellar profile.",
+      "row_updates": {
+        "distance": "2480",
+        "distance_em": "240",
+        "distance_ep": "210",
+        "distance_measurement_method": "trgb",
+        "mass_stellar": "5.1"
+      },
+      "radial_velocity": {
+        "status": "unmeasured",
+        "km_s": null,
+        "note": "Systemic radial velocity is unmeasured; an unshifted color palette is a display approximation."
+      },
+      "mass_kind": "estimated stellar mass from published star-formation-history fitting; model dependent, excludes dark halo; game point-mass proxy"
+    },
+    "sculptor_c": {
+      "schema_version": 1,
+      "reviewed_utc": "2026-11-20T20:16:42.006117+00:00",
+      "sources": [
+        "https://arxiv.org/html/2409.16345v2"
+      ],
+      "note": "Distance uncertainty affects association with NGC 300; a Gaussian approximates its stellar profile.",
+      "row_updates": {
+        "distance": "2040",
+        "distance_em": "110",
+        "distance_ep": "100",
+        "distance_measurement_method": "trgb",
+        "mass_stellar": "5.7"
+      },
+      "radial_velocity": {
+        "status": "unmeasured",
+        "km_s": null,
+        "note": "Systemic radial velocity is unmeasured; an unshifted color palette is a display approximation."
+      },
+      "mass_kind": "estimated stellar mass from published star-formation-history fitting; model dependent, excludes dark halo; game point-mass proxy"
+    },
+    "centaurus_c": {
+      "schema_version": 1,
+      "reviewed_utc": "2026-11-20T20:16:42.006117+00:00",
+      "sources": [
+        "https://arxiv.org/html/2610.40765v1"
+      ],
+      "note": "HST photometric structure and mass are model dependent.",
+      "row_updates": {
+        "distance": "4050",
+        "distance_em": "400",
+        "distance_ep": "400",
+        "mass_stellar": "5.23"
+      },
+      "radial_velocity": {
+        "status": "model_proxy",
+        "km_s": 300,
+        "uncertainty_km_s": null,
+        "note": "Velocity 300 km/s is the paper's CosmicFlows-4 prediction, not a measurement; peculiar velocities are uncertain."
+      },
+      "mass_kind": "estimated stellar mass from published star-formation-history fitting; model dependent, excludes dark halo; game point-mass proxy"
+    },
+    "donatiello_8": {
+      "schema_version": 1,
+      "reviewed_utc": "2026-11-20T20:16:42.006117+00:00",
+      "sources": [
+        "https://arxiv.org/html/2610.40765v1"
+      ],
+      "note": "Also named Cetus B; resolved-star geometry replaces the older integrated-light fit.",
+      "row_updates": {
+        "distance": "3630",
+        "distance_em": "400",
+        "distance_ep": "400",
+        "rhalf": "0.31666666666666665",
+        "ellipticity": "0.64",
+        "position_angle": "16",
+        "ra": "10.145485",
+        "dec": "-20.556725",
+        "mass_stellar": "5.44"
+      },
+      "radial_velocity": {
+        "status": "unmeasured",
+        "km_s": null,
+        "note": "Systemic radial velocity is unmeasured; an unshifted color palette is a display approximation."
+      },
+      "mass_kind": "estimated stellar mass from published star-formation-history fitting; model dependent, excludes dark halo; game point-mass proxy"
+    },
+    "hydrus_a": {
+      "schema_version": 1,
+      "reviewed_utc": "2026-11-20T20:16:42.006117+00:00",
+      "sources": [
+        "https://arxiv.org/html/2610.40765v1"
+      ],
+      "note": "Quenched stellar population; its gas content and past environment are uncertain.",
+      "row_updates": {
+        "distance": "4040",
+        "distance_em": "260",
+        "distance_ep": "260",
+        "mass_stellar": "5.79"
+      },
+      "radial_velocity": {
+        "status": "unmeasured",
+        "km_s": null,
+        "note": "Systemic radial velocity is unmeasured; an unshifted color palette is a display approximation."
+      },
+      "mass_kind": "estimated stellar mass from published star-formation-history fitting; model dependent, excludes dark halo; game point-mass proxy"
+    },
+    "ikn": {
+      "schema_version": 1,
+      "reviewed_utc": "2026-11-20T20:16:42.006117+00:00",
+      "sources": [
+        "https://arxiv.org/abs/2406.01279",
+        "https://arxiv.org/html/2405.11749v1",
+        "https://arxiv.org/abs/1909.12997"
+      ],
+      "note": "Luminosity and derived stellar mass are uncertain; a cluster spectrum provides only a systemic-velocity proxy.",
+      "row_updates": {
+        "distance_em": "",
+        "distance_ep": "",
+        "distance_measurement_method": "trgb"
+      },
+      "radial_velocity": {
+        "status": "cluster_proxy",
+        "km_s": 38,
+        "uncertainty_km_s": 30,
+        "note": "Velocity 38 +/- 30 km/s comes from the IKN4/5 cluster spectrum; other clusters differ, so the galaxy systemic velocity remains uncertain."
+      }
+    },
+    "bedin_1": {
+      "schema_version": 1,
+      "reviewed_utc": "2026-11-20T20:16:42.006117+00:00",
+      "sources": [
+        "https://arxiv.org/abs/1902.00271"
+      ],
+      "note": "V brightness approximates F606W; foreground-cluster contamination and NGC 6744 association remain uncertain.",
+      "row_updates": {
+        "distance": "8700",
+        "distance_em": "700",
+        "distance_ep": "500",
+        "distance_measurement_method": "trgb"
+      },
+      "radial_velocity": {
+        "status": "unmeasured",
+        "km_s": null,
+        "note": "Systemic radial velocity is unmeasured; an unshifted color palette is a display approximation."
+      }
+    }
+  }
+}
