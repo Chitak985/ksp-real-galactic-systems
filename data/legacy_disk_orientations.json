@@ -84,6 +84,114 @@
           ]
         }
       ]
+    },
+    {
+      "body_name": "GN-z11",
+      "path": "RealGalacticSystems/Systems/GN-Z11/Configs/GN-Z11Blackhole.cfg",
+      "orientation_kind": "sky_spheroid",
+      "ra_deg": 189.10608333333332,
+      "dec_deg": 62.24205555555555,
+      "position_angle_deg": 34.0,
+      "inclination_deg": 0,
+      "axis_ratio": 0.67,
+      "note": "The smooth envelope represents the resolved host, not the combined 64-pc point-source-plus-host size. The existing central accretion effect is retained separately; its brightness is not fitted to the observed nuclear flux. The uncertain northeastern haze is omitted. The published PA is adopted as the sky major-axis angle; true depth, detailed profile and infrared display colors are approximations.",
+      "envelope": {
+        "profile": "Gaussian approximation to resolved rest-UV host",
+        "angular_half_light_radius_arcsec": 0.049,
+        "sigma_units": 28.571428571428573,
+        "depth_to_major_sigma": 0.8185352771872451,
+        "depth_status": "estimated, unconstrained by image-plane morphology",
+        "size_policy": "Preserve measured apparent angle at the comoving positioning distance; scaled-space factor 6000.",
+        "physical_half_light_radius_pc": 199.7293100522287,
+        "render_object_scale": 354259707915568.06,
+        "color_policy": "Near-infrared/rest-UV light mapped to pale blue for display; not a visible-light or calibrated photometric prediction.",
+        "display_parameters": {
+          "color_rgba": [
+            0.65,
+            0.79,
+            1,
+            0.85
+          ],
+          "volume_intensity": 1.5,
+          "volume_exposure": 1,
+          "star_brightness": 0.25,
+          "star_samples": 2000
+        },
+        "display_status": "Estimated display exposure checked in an enlarged isolated Unity renderer preview; no absolute photometric calibration."
+      },
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2302.07234v2",
+          "reference": "Tacchella et al. (2023), section 3.2 and Table 2",
+          "reported_values": {
+            "extended_half_light_radius_mas": 49,
+            "extended_half_light_radius_error_mas": 3,
+            "extended_half_light_radius_pc": 200,
+            "sersic_index": 0.9,
+            "sersic_index_error": 0.1,
+            "axis_ratio": 0.67,
+            "axis_ratio_error": 0.05,
+            "position_angle_deg": 34,
+            "position_angle_error_deg": 5
+          }
+        }
+      ]
+    },
+    {
+      "body_name": "JADES-GS-Z14-0",
+      "path": "RealGalacticSystems/Systems/JADES-GS-Z14-0/Configs/JADES-GS-Z14-0Barycenter.cfg",
+      "orientation_kind": "sky_spheroid",
+      "ra_deg": 53.082937083333334,
+      "dec_deg": -27.855629166666667,
+      "position_angle_deg": 8.238922634831525,
+      "inclination_deg": 0,
+      "axis_ratio": 0.425,
+      "note": "Adopt the observed image-plane size and elongation, including any foreground lensing; do not de-lens them and then render at the unlensed angular size. ForcePho angle is north of east, converted to east of north as 90 - degrees(1.427). The smooth Gaussian approximates a measured near-exponential profile; true depth, detailed structure and infrared display colors are uncertain. No mature spiral arms or central black hole are inferred.",
+      "envelope": {
+        "profile": "Gaussian approximation to resolved rest-UV host",
+        "angular_half_light_radius_arcsec": 0.0788,
+        "sigma_units": 28.571428571428573,
+        "depth_to_major_sigma": 0.6519202405202649,
+        "depth_status": "estimated, unconstrained by image-plane morphology",
+        "size_policy": "Preserve measured apparent angle at the comoving positioning distance; scaled-space factor 6000.",
+        "physical_half_light_radius_pc": 260.194849076507,
+        "render_object_scale": 603795747543105.4,
+        "color_policy": "Near-infrared/rest-UV light mapped to pale blue for display; not a visible-light or calibrated photometric prediction.",
+        "display_parameters": {
+          "color_rgba": [
+            0.65,
+            0.79,
+            1,
+            0.85
+          ],
+          "volume_intensity": 1.2,
+          "volume_exposure": 1,
+          "star_brightness": 0.25,
+          "star_samples": 2000
+        },
+        "display_status": "Estimated display exposure checked in an enlarged isolated Unity renderer preview; no absolute photometric calibration."
+      },
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2405.18462v3",
+          "reference": "Helton et al. (2025), section 1.3.1",
+          "reported_values": {
+            "half_light_radius_arcsec": 0.0788,
+            "half_light_radius_error_arcsec": 0.0006,
+            "sersic_index": 0.877,
+            "sersic_index_error": 0.027,
+            "axis_ratio": 0.425,
+            "axis_ratio_error": 0.008,
+            "forcepho_position_angle_rad": 1.427,
+            "forcepho_position_angle_error_rad": 0.008
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/bd-j/forcepho/main/forcepho/sources.py",
+          "reference": "ForcePho Source.pa documents north-of-east angles; slow/gaussmodel.py uses a standard counterclockwise rotation in (east,north).",
+          "adoption": "Convert the raw fitted PA to the east-of-north convention used by the orbit-to-world orientation adapter."
+        }
+      ]
     }
   ]
 }
