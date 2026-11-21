@@ -14,6 +14,7 @@
   "objects": [
     {
       "body_name": "SagittariusA",
+      "object_type": "galaxy",
       "path": "RealGalacticSystems/Systems/MilkyWay/Configs/SagittariusA.cfg",
       "position": {
         "kind": "icrs_distance",
@@ -34,6 +35,7 @@
     },
     {
       "body_name": "AndromedaA",
+      "object_type": "galaxy",
       "path": "RealGalacticSystems/Systems/Andromeda/Configs/AndromedaA.cfg",
       "position": {
         "kind": "icrs_distance",
@@ -52,6 +54,7 @@
     },
     {
       "body_name": "TriangulumBarycenter",
+      "object_type": "galaxy",
       "path": "RealGalacticSystems/Systems/Triangulum/Configs/TriangulumBarycenter.cfg",
       "position": {
         "kind": "icrs_distance",
@@ -70,6 +73,7 @@
     },
     {
       "body_name": "LargeMagellanicCloud",
+      "object_type": "galaxy",
       "path": "RealGalacticSystems/Systems/MilkyWay/LargeMagellanicCloud/Configs/LargeMagellanicCloud.cfg",
       "position": {
         "kind": "icrs_distance",
@@ -90,6 +94,7 @@
     },
     {
       "body_name": "SmallMagellanicCloud",
+      "object_type": "galaxy",
       "path": "RealGalacticSystems/Systems/MilkyWay/SmallMagellanicCloud/Configs/SmallMagellanicCloud.cfg",
       "position": {
         "kind": "icrs_distance",
@@ -109,6 +114,7 @@
     },
     {
       "body_name": "NGC5866",
+      "object_type": "galaxy",
       "path": "RealGalacticSystems/Systems/NGC5866/Configs/NGC5866.cfg",
       "position": {
         "kind": "icrs_distance",
@@ -185,6 +191,7 @@
     },
     {
       "body_name": "GN-z11",
+      "object_type": "galaxy",
       "path": "RealGalacticSystems/Systems/GN-Z11/Configs/GN-Z11Blackhole.cfg",
       "position": {
         "kind": "cosmological_redshift",
@@ -212,6 +219,7 @@
     },
     {
       "body_name": "JADES-GS-Z14-0",
+      "object_type": "galaxy",
       "path": "RealGalacticSystems/Systems/JADES-GS-Z14-0/Configs/JADES-GS-Z14-0Barycenter.cfg",
       "position": {
         "kind": "cosmological_redshift",

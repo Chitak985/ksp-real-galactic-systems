@@ -4,6 +4,7 @@
   Body
   {
     name = {{galaxy_name}}
+    RGSType = {{rgs_type}}
     cacheFile = RealGalacticSystems/Cache/{{galaxy_name}}.bin
     Template
     {

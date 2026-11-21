@@ -133,8 +133,10 @@ python rebuild_manual_orbits.py --dry-run
 python rebuild_manual_orbits.py
 ```
 
-The updater edits only each registered Orbit node and the explicit
-`Properties/sphereOfInfluence` value. It preserves hand-written line endings and
+The updater edits each registered Orbit node and the explicit
+`Properties/sphereOfInfluence` value. For records marked `object_type = galaxy`,
+it also sets the direct `Body/RGSType` field to `None`. Hand-written galaxies
+remain enabled regardless of their distance. It preserves hand-written line endings and
 cosmetic orbit colors/camera settings. It refuses a Sun target, a generated
 config, an identity mismatch, invalid coordinates or an SOI enclosing Sol.
 Repeat execution is idempotent. Run the normal star and galaxy rebuild scripts

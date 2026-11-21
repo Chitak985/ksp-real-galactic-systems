@@ -173,6 +173,18 @@ def distance_measures(galaxy, settings):
             "lookback_years": d * 1e6 * PARSEC_M / (C_KM_S * 1000) / YEAR_SECONDS}
 
 
+def distance_group(distance_mpc):
+    """RGS toggle group from heliocentric placement distance, in Mpc."""
+    distance = number(distance_mpc, "galaxy placement distance")
+    if distance < 0:
+        raise CatalogError("Galaxy placement distance cannot be negative.")
+    for maximum, group in ((100, "None"), (125, "Far1"), (150, "Far2")):
+        if distance <= maximum:
+            return group
+    # Far4 and Far5 are reserved until their distance ranges are assigned.
+    return "Far3"
+
+
 def sky_basis(ra_deg, dec_deg):
     ra, dec = map(math.radians, (ra_deg, dec_deg))
     return ((math.cos(dec)*math.cos(ra), math.cos(dec)*math.sin(ra), math.sin(dec)),
@@ -248,6 +260,7 @@ def replacements(galaxy, settings, inclination_deg=None, position_angle_deg=None
     if position_angle_deg is not None:
         pa = number(position_angle_deg, "rendering position angle") % 180
     distances = distance_measures(galaxy, settings)
+    group = distance_group(distances["placement_mpc"])
     tangent = math.tan(math.radians(major / 120))
     render_radius_pc = distances["placement_mpc"] * 1e6 * tangent
     physical_radius_pc = distances["angular_diameter_mpc"] * 1e6 * tangent
@@ -318,6 +331,8 @@ def replacements(galaxy, settings, inclination_deg=None, position_angle_deg=None
     stage = spiral_stage(galaxy)
     values = {
         "galaxy_name":name, "display_name":display, "description":description,
+        "rgs_type":group,
+        "disk_error_options":"silenceNoBodyError = True" if group in {"Far1","Far2","Far3","Far4","Far5"} else "",
         "mass_kg":mass_kg, "soi":soi_pc*PARSEC_M,
         "gravity_g":G*mass_kg/STANDARD_GRAVITY, "orbit":render_orbit(orbit),
         "object_scale":render_radius_pc*PARSEC_M/100/number(settings["scaled_space_factor"], "scaled space factor", positive=True),
