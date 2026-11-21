@@ -1,0 +1,42 @@
+{
+  "requested_name": "UGC 10006",
+  "retrieved_utc": "2026-11-19T11:28:05.328865+00:00",
+  "bulk_snapshot": "data/galaxy_sources/simbad_bulk_0837ea28eb1729c1a6676f4bc92e4766ff206fa71305c03508f20aadb0b05af2.json",
+  "bulk_snapshot_sha256": "0837ea28eb1729c1a6676f4bc92e4766ff206fa71305c03508f20aadb0b05af2",
+  "simbad": {
+    "url": "https://simbad.idia.ac.za/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+4000+b.oid%2Cb.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K%2Cb.rvz_nature%2Cb.rvz_qual%2Cb.rvz_err%2Cb.galdim_qual+FROM+basic+AS+b+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+b.otype%3D%27G%27+AND+b.rvz_redshift%3E%3D0.02582+AND+b.rvz_redshift%3C%3D0.1+AND+b.galdim_majaxis%3E0+AND+b.galdim_minaxis%3E0+AND+b.galdim_angle+IS+NOT+NULL+AND+b.morph_type+IS+NOT+NULL+AND+f.B+IS+NOT+NULL+AND+f.K+IS+NOT+NULL+ORDER+BY+rvz_redshift%2Coid",
+    "rows": [
+      {
+        "oid": 2880866,
+        "main_id": "UGC 10006",
+        "ra": 236.17924445833327,
+        "dec": 32.40375705555556,
+        "otype": "G",
+        "morph_type": "SAB",
+        "morph_bibcode": "2019MNRAS.488..590B",
+        "galdim_majaxis": 0.974797,
+        "galdim_minaxis": 0.251303,
+        "galdim_angle": 117,
+        "galdim_bibcode": "2023ApJS..269....3M",
+        "rvz_redshift": 0.03154,
+        "rvz_radvel": 9306.41347787139,
+        "rvz_bibcode": "2020ApJS..249....3A",
+        "B": 16,
+        "V": null,
+        "K": 12.317,
+        "rvz_nature": "s",
+        "rvz_qual": "C",
+        "rvz_err": 1e-05,
+        "galdim_qual": "B"
+      }
+    ],
+    "text": null,
+    "note": "Original response text and metadata are retained in bulk_snapshot."
+  },
+  "nearby": {
+    "rows": [],
+    "url": null,
+    "text": null,
+    "skipped": true
+  }
+}

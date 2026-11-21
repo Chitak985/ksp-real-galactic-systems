@@ -83,7 +83,7 @@ FLRW distance conversion. Selection is strictly greater than 150 Mpc in nominal
 comoving placement distance, extending to 150.752 Mpc. This is all eligible unused
 data beyond that threshold in the saved continuation snapshot; no completeness
 claim is made about the real universe. The 655 eligible records below the
-threshold are left available for later batches.
+threshold were subsequently added in the [100-150 Mpc batch](Remaining100To150MpcGalaxies.md).
 
 Each raw record links to the existing immutable SIMBAD response snapshot. The
 complete selected IDs and source rejections are saved separately in
