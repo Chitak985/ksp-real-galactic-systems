@@ -80,7 +80,7 @@ def main(argv=None):
         pending={ROOT/body["raw_record"]:json.dumps(raw,indent=2,allow_nan=False)+"\n" for body,raw in chosen}
         pending.update({ROOT/"data/galaxies.json":json.dumps(updated,indent=2,allow_nan=False)+"\n",
                         ROOT/REPORT:json.dumps(report,indent=2,allow_nan=False)+"\n"})
-        write_configs(pending);write_configs(configs)
+        write_configs(pending);builder.write_galaxy_configs(configs,updated,ROOT,ids)
         return 0
     except (CatalogError,OSError,KeyError,ValueError,TypeError) as exc:
         print("Cannot add reviewed galaxies: "+str(exc),file=sys.stderr);return 2

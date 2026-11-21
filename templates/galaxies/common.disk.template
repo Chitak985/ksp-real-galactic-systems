@@ -1,4 +1,3 @@
-{{disk_error_options}}
 // galaxyRadius is normalized; objectScale sets the observed angular size.
 galaxyRadius = 100
 objectScale = {{object_scale}}

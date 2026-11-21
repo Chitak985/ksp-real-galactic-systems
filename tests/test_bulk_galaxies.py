@@ -61,9 +61,9 @@ class BulkGalaxyTests(unittest.TestCase):
                 raw = load_catalog(ROOT/body["raw_record"])
                 if "lvdb_key" not in body:
                     adopted, _ = bulk.normalize_row(raw["simbad"]["rows"][0], self.snapshot, self.catalog["settings"])
-                    self.assertEqual(adopted, body)
+                    self.assertEqual(adopted, {k:v for k,v in body.items() if k!="far"})
                     self.assertEqual(raw["bulk_snapshot_sha256"], self.snapshot["sha256"])
-                text = (ROOT/"RealGalacticSystems/Systems"/(body["id"]+".cfg")).read_text()
+                text = builder.config_path(body,ROOT).read_text()
                 self.assertIn("starCount = 2000", text)
                 self.assertIn("referenceBody = Sun", text)
                 self.assertIn("period = 3E300", text)

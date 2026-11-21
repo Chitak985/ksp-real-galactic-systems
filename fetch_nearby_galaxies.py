@@ -261,7 +261,7 @@ def main(argv=None):
         pending.update({ROOT/"data/galaxies.json":json.dumps(updated,indent=2,allow_nan=False)+"\n",
                         snapshot_path:json.dumps(snapshot,indent=2,allow_nan=False)+"\n",
                         report_path:json.dumps(report,indent=2,allow_nan=False)+"\n"})
-        write_configs(pending);write_configs(configs)
+        write_configs(pending);builder.write_galaxy_configs(configs,updated,ROOT,identifiers)
         print(f"Added {len(configs)} nearby galaxies; catalog now contains {len(updated['galaxies'])}.")
         return 0
     except (CatalogError,OSError,KeyError,TypeError,ValueError) as exc:

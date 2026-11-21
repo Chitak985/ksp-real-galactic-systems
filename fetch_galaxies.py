@@ -161,7 +161,7 @@ def normalize(raw, settings, overrides=None):
                   b_magnitude=optional_float(nearby,"Bmag") if nearby else optional_float(basic,"B"))
     override=copy.deepcopy(overrides or {})
     allowed={"template","body_name","name","distance","angular_major_arcmin","axis_ratio",
-             "position_angle_deg","morphology","hubble_t","mass_solar","mass_kind","b_magnitude","redshift","uncertainty_note"}
+             "position_angle_deg","morphology","hubble_t","mass_solar","mass_kind","b_magnitude","redshift","uncertainty_note","far"}
     if set(override)-allowed:
         raise CatalogError("Unknown override fields: "+", ".join(sorted(set(override)-allowed)))
     galaxy.update(override)
@@ -248,6 +248,7 @@ def main(argv=None):
             if slug(raw["requested_name"])!=identifier:
                 raise CatalogError("Raw cache name does not match the requested galaxy.")
             normalized=normalize(raw,catalog["settings"],overrides.get(name))
+            normalized.setdefault("far",by_id.get(identifier,{}).get("far","None"))
             by_id[identifier]=normalized
             pending[cache]=json.dumps(raw,indent=2,ensure_ascii=True,allow_nan=False)+"\n"
         catalog["galaxies"]=sorted(by_id.values(),key=lambda g:builder.distance_measures(g,catalog["settings"])["placement_mpc"])
@@ -258,7 +259,7 @@ def main(argv=None):
         # Validate the entire batch before writing caches, adopted catalog, or configs.
         pending[args.catalog]=json.dumps(catalog,indent=2,ensure_ascii=True,allow_nan=False)+"\n"
         write_configs(pending)
-        if not args.catalog_only:write_configs(configs)
+        if not args.catalog_only:builder.write_galaxy_configs(configs,catalog,ROOT)
         print(f"Saved {len(catalog['galaxies'])} galaxy record(s)"+
               ("." if args.catalog_only else f" and rebuilt {len(configs)} config(s)."))
         return 0

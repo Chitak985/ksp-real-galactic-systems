@@ -47,9 +47,11 @@ file; templates and game output paths still resolve against the script directory
 Every selected galaxy is validated before the importer starts writing. Each file
 is replaced atomically; the multi-file operation is not a database transaction.
 
-All output configurations are **files directly under**
-`RealGalacticSystems/Systems`, such as `ngc_300.cfg`. No per-galaxy directories are
-created. Files without this generator's ownership header, existing body names,
+Output configurations are flat files in the folder selected by each galaxy's
+`far` field: `Far1` uses `RealGalacticSystems/Extension1`, `Far2` uses
+`Extension2`, and `Far3` uses `Extension3`. Missing, null, `None`, and other values
+use `RealGalacticSystems/Systems`. See [GalaxyExtensions.md](GalaxyExtensions.md).
+No per-galaxy directories are created. Files without this generator's ownership header, existing body names,
 duplicate entries, and unsafe paths are protected. Removing a catalog entry does
 not delete its old configuration automatically.
 

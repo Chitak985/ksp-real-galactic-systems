@@ -39,7 +39,7 @@ class ReviewedGalaxyTests(unittest.TestCase):
             before=copy.deepcopy(raw)
             self.assertFalse(raw["row"]["vlos_systemic"])
             self.assertTrue(raw["literature_review"]["sources"])
-            self.assertEqual(nearby.normalize_lvdb(raw,self.catalog["settings"]),self.by_id[key])
+            self.assertEqual(nearby.normalize_lvdb(raw,self.catalog["settings"]),{k:v for k,v in self.by_id[key].items() if k!="far"})
             self.assertEqual(raw,before)
 
     def test_unknown_redshifts_are_null_with_approximate_colors_only(self):

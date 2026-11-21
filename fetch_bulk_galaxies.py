@@ -194,7 +194,7 @@ def main(argv=None):
                         ROOT/snapshot_record_path(snapshot): json.dumps(snapshot, indent=2, allow_nan=False)+"\n",
                         ROOT/REPORT: json.dumps(report, indent=2, allow_nan=False)+"\n"})
         write_configs(pending)
-        write_configs(configs)
+        builder.write_galaxy_configs(configs,updated,ROOT,ids)
         print(f"Saved sources, selection audit and {len(configs)} new configs.")
         return 0
     except (CatalogError, OSError, ValueError, TypeError, KeyError) as exc:

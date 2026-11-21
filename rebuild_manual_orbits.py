@@ -54,31 +54,6 @@ def span(text,name):
     raise CatalogError("Unclosed "+name+" node.")
 
 
-def set_galaxy_group(text,group):
-    """Set only the direct Body field, preserving nested nodes and comments."""
-    start,end,opening=span(text,"Body")
-    body=text[start:end]
-    clean=re.sub(r"//[^\r\n]*",lambda m:" "*len(m.group()),body)
-    offset=0;depth=0;matches=[]
-    for line in clean.splitlines(keepends=True):
-        match=re.match(r"([ \t]*RGSType[ \t]*=)[^\r\n]*",line)
-        if depth==1 and match:
-            matches.append((start+offset+match.end(1),start+offset+match.end()))
-        depth+=line.count("{")-line.count("}")
-        offset+=len(line)
-    if len(matches)>1:raise CatalogError("Duplicate Body/RGSType fields.")
-    if matches:
-        first,last=matches[0]
-        # The masked line includes comment columns; preserve the original comment.
-        comment=text.find("//",first,last)
-        if comment!=-1:last=comment
-        suffix=" " if comment!=-1 else ""
-        return text[:first]+" "+group+suffix+text[last:]
-    newline="\r\n" if "\r\n" in text else "\n"
-    indent=re.match(r"[ \t]*",text[start:]).group()+"  "
-    return text[:opening+1]+newline+indent+"RGSType = "+group+text[opening+1:]
-
-
 def update_config(text,record,settings):
     if record["body_name"].casefold()=="sun":raise CatalogError("Stock Sun must remain the root and cannot be updated.")
     actual=re.findall(r"(?m)^\s*name\s*=\s*([^\r\n/]+)",node_contents(text,"Body"))
@@ -109,9 +84,6 @@ def update_config(text,record,settings):
         body_indent=re.match(r"[ \t]*",node).group()+"  "
         node=node[:local_open]+newline+body_indent+"sphereOfInfluence = "+format_number(soi)+node[local_open:]
     text=text[:start]+node+text[end:]
-    if record.get("object_type")=="galaxy":
-        # Hand-written galaxy hosts stay enabled regardless of distance.
-        text=set_galaxy_group(text,"None")
     return text
 
 
