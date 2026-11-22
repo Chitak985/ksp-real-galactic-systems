@@ -8,9 +8,10 @@ To download the mod, do Download ZIP and put the RealGalacticSystems folder into
 Do **NOT** download the release, it's for history purposes and is utter stupidity and bugginess.
 
 ## Important info (READ THIS!!!!!)
+- Make sure to remove the Extension1 and Extension2 folders from the mod folder! These contain over 2000 galaxies and will implode your PC unless you have a NASA supercomputer
 - If you plan on going to literally anywhere outside the home system (if you zoom out while centered on the home star, the moment you see other stars around you is the absolute limit), YOU MUST ENABLE HEAT CHEATS! This is because KSP breaks down at these camera distances and applies Infinity kelvin temperatures to everything, capable of vaporizing the entire universe instantly.
 - EVERYTHING IS REAL SCALE! If you can't go 100 times the speed of light, don't even bother going anywhere other than the closest stars.
-- Make sure to **NOT** set your time warp to quadrillions and warp until a star, KSP will crash when saving after about 100,000 years.
+- Make sure to **NOT** set your time warp to quadrillions and warp until a star, KSP will crash when saving after about 10,000,000 years.
 - The home system is not changed in any way and is placed at where Sol is in the Milky Way galaxy, which is why real-scale Sol will work the best with this mod.
 - Some planet mods **do** work correctly, however they need to be tested first. Please open an issue or tell me in my modding server if you find a mod that is compatible or incompatible. (link above)
 - All data comes from online stellar databases, however the farther you go from the home system the more estimates and approximations there are. Also pretty much all names are identifiers like NGC 404 except for a few exceptions
