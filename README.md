@@ -20,6 +20,7 @@ Do **NOT** download the release, it's for history purposes and is utter stupidit
 - Kopernicus Expansion Continued-er
 - ModuleManager
 - Singularity (Black hole rendering)
+- [SDF (Space Distance Fix)](https://spacedock.info/mod/4585/SDF%20(Space%20Distance%20Fix)) (Fixes various horrible bugs that happen in deep space)
 - Sigma Loading Screens (Awesome loading screens)
 - Scaled Decorator (Pulsar jets)
 - [GalacticDisk](https://github.com/Chitak985/GalacticDisk) (Disks around galaxies and a few other things)
