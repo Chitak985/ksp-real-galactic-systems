@@ -31,7 +31,7 @@ class ManualOrbitTests(unittest.TestCase):
             body=node_contents(text,"Body")
             found.add(re.search(r"(?m)^\s*name\s*=\s*([^\r\n]+)",body)[1].strip())
         self.assertEqual(found,set(self.records))
-        self.assertEqual(len(found),11)
+        self.assertEqual(len(found),10)
         self.assertNotIn("Sun",found)
 
     def test_frozen_orbits_recover_all_positions_and_never_move(self):

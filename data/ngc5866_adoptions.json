@@ -1,0 +1,22 @@
+{
+  "NGC 5866": {
+    "body_name": "NGC5866",
+    "name": "NGC 5866",
+    "template": "lenticular",
+    "morphology": "SA0",
+    "distance": {
+      "kind": "redshift_independent",
+      "mpc": 15.3,
+      "uncertainty_mpc": 0.7,
+      "method": "published distance modulus 30.93 +/- 0.12; adopted literature distance",
+      "source": "https://doi.org/10.1088/0004-6256/144/6/164"
+    },
+    "angular_major_arcmin": 4.7,
+    "axis_ratio": 0.40425531914893614,
+    "position_angle_deg": 127,
+    "mass_solar": 158489319246.11108,
+    "mass_kind": "estimated stellar mass: published log10(M/M_sun)=11.2 (2012 AJ 144, 164); excludes dark halo; game point-mass proxy",
+    "far": "None",
+    "uncertainty_note": "Near-edge-on lenticular Spindle Galaxy with a central dust lane. Distance and stellar mass are literature estimates; the dust opacity, bulge profile, colors and core gravity are approximate. The measured disk inclination is adopted independently of the rounder bulge-dominated isophotal axis ratio. SIMBAD also identifies this object as M 102."
+  }
+}

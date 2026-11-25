@@ -54,7 +54,7 @@ RENDER_LIMITS = {
 }
 EXCLUDED = {
     "milkyway", "namemilkyway", "sagittariusa", "andromeda", "m31", "ngc224", "andromedaa",
-    "triangulum", "m33", "ngc598", "triangulumbarycenter", "ngc5866",
+    "triangulum", "m33", "ngc598", "triangulumbarycenter",
     "gnz11", "jadesgsz140",
 }
 

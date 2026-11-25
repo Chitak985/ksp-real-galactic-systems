@@ -2,7 +2,9 @@
 
 The retired fictional Unknown object is excluded from the active manual registry and validation. Its old configuration is not required or recreated. Earlier discussion of that object below is historical.
 
-All eleven active hand-written objects are covered by `data/manual_object_positions.json`
+NGC 5866 now uses the [generated lenticular catalog](NGC5866.md), not the manual updater.
+
+All ten active hand-written objects are covered by `data/manual_object_positions.json`
 and `rebuild_manual_orbits.py`. They use the same `frozen_orbit`,
 `heliocentric_position` and cosmology functions as the generated objects. Each
 Orbit is Sun-parented, circular, at epoch zero, with `period = 3E300` and
@@ -29,7 +31,6 @@ separately. A megaparsec is about 3.262 million light-years.
 | [TriangulumBarycenter](../RealGalacticSystems/Systems/Triangulum/Configs/TriangulumBarycenter.cfg) | 0.836121 | 0.00273 | 9.72234 | icrs distance |
 | [LargeMagellanicCloud](../RealGalacticSystems/Systems/MilkyWay/LargeMagellanicCloud/Configs/LargeMagellanicCloud.cfg) | 0.049590 | 0.00016 | 100 | icrs distance |
 | [SmallMagellanicCloud](../RealGalacticSystems/Systems/MilkyWay/SmallMagellanicCloud/Configs/SmallMagellanicCloud.cfg) | 0.062440 | 0.00020 | 100 | icrs distance |
-| [NGC5866](../RealGalacticSystems/Systems/NGC5866/Configs/NGC5866.cfg) | 15.300000 | 0.04990 | 100 | icrs distance |
 | [TheGreatAttractor](../RealGalacticSystems/Systems/TheGreatAttractor/Configs/TheGreatAttractor.cfg) | 64.540059 | Not inferred | 100 | galactic distance |
 | [AE_Andromedae](../RealGalacticSystems/Systems/Andromeda/Systems/AE_Andromedae/Configs/AE_Andromedae.cfg) | 0.777787 | 0.00254 | 1 | icrs distance |
 | [MGC1](../RealGalacticSystems/Systems/Andromeda/Systems/MGC1/Configs/MGC1Barycenter.cfg) | 0.616595 | 0.00201 | 5 | icrs distance |
@@ -50,9 +51,6 @@ separately. A megaparsec is about 3.262 million light-years.
   49.59 and 62.44 kpc. Their irregular shapes, substantial depth and choice of
   center limit a point-object interpretation. [LMC](https://arxiv.org/abs/1903.08096),
   [SMC](https://arxiv.org/abs/2010.08754).
-- **NGC 5866:** catalog position with the literature distance 15.3 Mpc,
-  approximately 0.7 Mpc uncertainty. The old artificial orbit placed it much
-  too close. [Distance table](https://doi.org/10.1088/0004-6256/144/6/164).
 - **Great Attractor:** a representative historical flow-model center at
   Galactic longitude 307 degrees, latitude +9 degrees and distance 4350/H0 Mpc,
   or about 64.54 Mpc. The quoted 350 km/s radial-scale uncertainty alone is
@@ -114,7 +112,7 @@ integration error is negligible compared with the scientific assumptions.
 ## Core boundaries and hierarchy
 
 Manual SOIs are explicit small **game boundaries**, not measured gravitational
-influence radii. Sagittarius A, Andromeda, the Magellanic Clouds, NGC 5866 and the
+influence radii. Sagittarius A, Andromeda, the Magellanic Clouds and the
 Great Attractor use 100 pc; Triangulum retains its existing 3E17 m boundary.
 GN-z11, JADES and MGC1 use 5 pc, AE And uses 1 pc, and Unknown retains 1E10 m.
 This removes automatic huge parent-relative SOIs for AE And and GN-z11 and

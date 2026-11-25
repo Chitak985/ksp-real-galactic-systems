@@ -9094,6 +9094,90 @@
       }
     },
     {
+      "id": "ngc_5866",
+      "body_name": "NGC5866",
+      "name": "NGC 5866",
+      "ra_deg": 226.62317083333332,
+      "dec_deg": 55.76330833333333,
+      "redshift": 0.002528,
+      "distance": {
+        "kind": "redshift_independent",
+        "mpc": 15.3,
+        "uncertainty_mpc": 0.7,
+        "method": "published distance modulus 30.93 +/- 0.12; adopted literature distance",
+        "source": "https://doi.org/10.1088/0004-6256/144/6/164"
+      },
+      "angular_major_arcmin": 4.7,
+      "axis_ratio": 0.40425531914893614,
+      "position_angle_deg": 127,
+      "morphology": "SA0",
+      "hubble_t": null,
+      "b_magnitude": 10.74,
+      "template": "lenticular",
+      "mass_solar": 158489319246.11108,
+      "mass_kind": "estimated stellar mass: published log10(M/M_sun)=11.2 (2012 AJ 144, 164); excludes dark halo; game point-mass proxy",
+      "far": "None",
+      "uncertainty_note": "Near-edge-on lenticular Spindle Galaxy with a central dust lane. Distance and stellar mass are literature estimates; the dust opacity, bulge profile, colors and core gravity are approximate. The measured disk inclination is adopted independently of the rounder bulge-dominated isophotal axis ratio. SIMBAD also identifies this object as M 102.",
+      "sources": [
+        {
+          "database": "SIMBAD",
+          "url": "https://simbad.idia.ac.za/simbad/sim-tap/sync?request=doQuery&lang=adql&format=json&query=SELECT+TOP+2+b.main_id%2Cb.ra%2Cb.dec%2Cb.otype%2Cb.morph_type%2Cb.morph_bibcode%2Cb.galdim_majaxis%2Cb.galdim_minaxis%2Cb.galdim_angle%2Cb.galdim_bibcode%2Cb.rvz_redshift%2Cb.rvz_radvel%2Cb.rvz_bibcode%2Cf.B%2Cf.V%2Cf.K+FROM+basic+AS+b+JOIN+ident+AS+i+ON+b.oid%3Di.oidref+LEFT+JOIN+allfluxes+AS+f+ON+b.oid%3Df.oidref+WHERE+i.id%3D%27NGC+5866%27",
+          "retrieved_utc": "2026-11-25T22:26:56.435539+00:00",
+          "bibcodes": {
+            "morph_bibcode": "2019MNRAS.488..590B",
+            "galdim_bibcode": "2003A&A...412...45P",
+            "rvz_bibcode": "2002LEDA.........0P"
+          },
+          "fields": [
+            "ra_deg",
+            "dec_deg",
+            "morphology",
+            "position_angle_deg",
+            "redshift",
+            "angular_major_arcmin",
+            "axis_ratio",
+            "b_magnitude"
+          ]
+        },
+        {
+          "database": "VizieR Updated Nearby Galaxy Catalog",
+          "catalog": "J/AJ/145/101/catalog",
+          "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F145%2F101%2Fcatalog&-c=226.6231708333+55.7633083333&-c.rs=60&-out.all=1&-out.max=20",
+          "bibcode": "2013AJ....145..101K",
+          "fields": [],
+          "matched_name": null,
+          "note": "No nearby-catalog match; no measurements adopted from this query."
+        }
+      ],
+      "raw_record": "data/galaxy_sources/ngc_5866.json",
+      "adoption_notes": {
+        "geometry": "SIMBAD isophotal dimensions or reviewed deep-starlight extent; bandpass and depth vary.",
+        "lookback": "Observed morphology is already retarded; no additional rewinding/evolution is applied.",
+        "color": "Template blackbody-equivalent palettes shifted by observed redshift; approximate, not measured spectra.",
+        "gravity": "estimated stellar mass: published log10(M/M_sun)=11.2 (2012 AJ 144, 164); excludes dark halo; game point-mass proxy",
+        "overrides": {
+          "body_name": "NGC5866",
+          "name": "NGC 5866",
+          "template": "lenticular",
+          "morphology": "SA0",
+          "distance": {
+            "kind": "redshift_independent",
+            "mpc": 15.3,
+            "uncertainty_mpc": 0.7,
+            "method": "published distance modulus 30.93 +/- 0.12; adopted literature distance",
+            "source": "https://doi.org/10.1088/0004-6256/144/6/164"
+          },
+          "angular_major_arcmin": 4.7,
+          "axis_ratio": 0.40425531914893614,
+          "position_angle_deg": 127,
+          "mass_solar": 158489319246.11108,
+          "mass_kind": "estimated stellar mass: published log10(M/M_sun)=11.2 (2012 AJ 144, 164); excludes dark halo; game point-mass proxy",
+          "far": "None",
+          "uncertainty_note": "Near-edge-on lenticular Spindle Galaxy with a central dust lane. Distance and stellar mass are literature estimates; the dust opacity, bulge profile, colors and core gravity are approximate. The measured disk inclination is adopted independently of the rounder bulge-dominated isophotal axis ratio. SIMBAD also identifies this object as M 102."
+        }
+      }
+    },
+    {
       "id": "ngc_5033",
       "far": "None",
       "body_name": "NGC5033",
@@ -184254,12 +184338,35 @@
       "sources": [
         "docs/Remaining100To150MpcGalaxies.md"
       ]
+    },
+    "ngc_5866": {
+      "inclination_deg": 89,
+      "position_angle_deg": 127,
+      "parameters": {
+        "starCount": 12000,
+        "diskThickness": 6,
+        "enableDustClouds": true,
+        "dustCloudCount": 180,
+        "minDustCloudSize": 0.5,
+        "maxDustCloudSize": 2,
+        "dustCloudClumpiness": 0.6,
+        "dustLaneStrength": 3,
+        "dustOpacity": 60,
+        "starBrightness": 0.25
+      },
+      "notes": "Published disk inclination and PA (Topal et al. 2016 Table 1) replace inclination inferred from the bulge-dominated isophotal flattening. Smooth lenticular light with a thin absorbing midplane approximates the prominent dust lane; dust density and exposure are display estimates.",
+      "sources": [
+        "https://doi.org/10.1093/mnras/stw2257",
+        "https://doi.org/10.1088/0004-6256/144/6/164",
+        "docs/NGC5866.md"
+      ]
     }
   },
   "reviewed_adoptions_file": "data/giant_galaxy_adoptions.json",
   "additional_reviewed_adoptions_files": [
     "data/large_elliptical_adoptions.json",
     "data/spiral_galaxy_adoptions.json",
-    "data/nearby_galaxy_review.json"
+    "data/nearby_galaxy_review.json",
+    "data/ngc5866_adoptions.json"
   ]
 }

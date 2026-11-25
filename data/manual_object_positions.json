@@ -113,26 +113,6 @@
       "uncertainty_note": "Elongated irregular galaxy with substantial depth; center is a conventional catalog point and the distance is a measured mean."
     },
     {
-      "body_name": "NGC5866",
-      "object_type": "galaxy",
-      "path": "RealGalacticSystems/Systems/NGC5866/Configs/NGC5866.cfg",
-      "position": {
-        "kind": "icrs_distance",
-        "frame": "ICRS",
-        "epoch": "J2000",
-        "ra_deg": 226.62317083333332,
-        "dec_deg": 55.76330833333333,
-        "distance_pc": 15300000.0,
-        "uncertainty_pc": 700000.0
-      },
-      "core_soi_m": 3.0856775814913674e+18,
-      "sources": [
-        "data/manual_position_sources/simbad_manual_sources.json",
-        "https://doi.org/10.1088/0004-6256/144/6/164"
-      ],
-      "uncertainty_note": "Adopted 15.3-Mpc literature distance has roughly 0.7-Mpc uncertainty; core boundary is a gameplay convention."
-    },
-    {
       "body_name": "TheGreatAttractor",
       "path": "RealGalacticSystems/Systems/TheGreatAttractor/Configs/TheGreatAttractor.cfg",
       "position": {
