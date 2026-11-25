@@ -31,7 +31,7 @@ class ManualOrbitTests(unittest.TestCase):
             body=node_contents(text,"Body")
             found.add(re.search(r"(?m)^\s*name\s*=\s*([^\r\n]+)",body)[1].strip())
         self.assertEqual(found,set(self.records))
-        self.assertEqual(len(found),12)
+        self.assertEqual(len(found),11)
         self.assertNotIn("Sun",found)
 
     def test_frozen_orbits_recover_all_positions_and_never_move(self):
@@ -77,12 +77,6 @@ class ManualOrbitTests(unittest.TestCase):
             self.assertLess(d["lookback_years"],13.8e9)
             self.assertGreater(d["placement_mpc"]/d["angular_diameter_mpc"],11)
             self.assertGreater(d["luminosity_mpc"]/d["placement_mpc"],11)
-
-    def test_unknown_preserves_its_original_fictional_location(self):
-        record=self.records["unknown"]
-        xyz,_=manual.placement(record,self.catalog["settings"])
-        self.assertEqual(xyz,orbit_position(record["position"]["original_orbit"],0))
-        self.assertEqual(record["core_soi_m"],1e10)
 
     def test_compact_sois_cannot_enclose_sol_or_other_manual_cores(self):
         points=[]

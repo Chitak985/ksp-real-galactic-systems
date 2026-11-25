@@ -243,28 +243,6 @@
         "lookback_years": 13501112675.257261,
         "note": "Reference values only; the updater recomputes them from saved cosmology. No physical size or luminosity is changed."
       }
-    },
-    {
-      "body_name": "unknown",
-      "path": "RealGalacticSystems/Configs/Unknown.cfg",
-      "position": {
-        "kind": "preserved_orbit",
-        "original_orbit": {
-          "inclination": 34.0,
-          "eccentricity": 0.01,
-          "longitudeOfAscendingNode": 0.0,
-          "argumentOfPeriapsis": 0.0,
-          "meanAnomalyAtEpoch": 2.0,
-          "epoch": 2000.0,
-          "semiMajorAxis": 5e+35,
-          "period": 3e+300
-        }
-      },
-      "core_soi_m": 10000000000.0,
-      "sources": [
-        "RealGalacticSystems/Configs/Unknown.cfg"
-      ],
-      "uncertainty_note": "Fictional object: no real-world astrometry exists. Preserve its original Cartesian position at game time zero and only normalize the orbit representation; huge distance remains intentionally fictional."
     }
   ]
 }

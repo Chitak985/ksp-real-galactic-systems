@@ -1,6 +1,8 @@
 # Manual object positions and frozen Sun-parented orbits
 
-All twelve hand-written objects are covered by `data/manual_object_positions.json`
+The retired fictional Unknown object is excluded from the active manual registry and validation. Its old configuration is not required or recreated. Earlier discussion of that object below is historical.
+
+All eleven active hand-written objects are covered by `data/manual_object_positions.json`
 and `rebuild_manual_orbits.py`. They use the same `frozen_orbit`,
 `heliocentric_position` and cosmology functions as the generated objects. Each
 Orbit is Sun-parented, circular, at epoch zero, with `period = 3E300` and

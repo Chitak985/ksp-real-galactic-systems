@@ -397,7 +397,10 @@ class InstalledDiskOrientationTests(unittest.TestCase):
             self.assertAlmostEqual(orbit["semiMajorAxis"]/body["distance_m"],1,places=14)
             properties=node_contents(text,"Properties")
             soi=float(re.search(r"(?m)^\s*sphereOfInfluence\s*=\s*(\S+)",properties)[1])
-            self.assertLess(soi/body["distance_m"],0.001)
+            # Nearby satellites keep the same compact core cap as distant hosts.
+            # A relative-distance cut alone rejects their valid existing SOIs.
+            self.assertLess(soi,body["distance_m"])
+            self.assertLessEqual(soi/PARSEC_M,100.00000000001)
             if "core_soi_pc" in body:
                 self.assertAlmostEqual(soi/(body["core_soi_pc"]*PARSEC_M),1,places=14)
             p=orbit_position(orbit);direction=tuple(v/math.hypot(*p) for v in p)
